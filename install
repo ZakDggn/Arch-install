@@ -97,15 +97,11 @@ sed -i '/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^# //' /mnt/etc/sudoers
 
 DIR="/install"
 mkdir /mnt$DIR
-#cp scripts/* /mnt/$DIR
 mount -o bind,ro scripts /mnt$DIR
 
 arch-chroot /mnt $DIR/02-configure-system
-#arch-chroot /mnt sudo -u "$USERNAME" --preserve-env=LAPTOP,DIR /$DIR/03-user-setup
-#arch-chroot -u "$USERNAME" /mnt env HOME="/home/$USERNAME" USER="$USERNAME" $DIR/03-user-setup
 arch-chroot -u "$USERNAME":"$USERNAME" /mnt $DIR/03-user-setup
 
-# Unmount scripts bind
 umount /mnt$DIR
 rmdir /mnt$DIR
 

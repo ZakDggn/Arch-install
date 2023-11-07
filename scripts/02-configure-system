@@ -152,7 +152,6 @@ systemctl enable systemd-timesyncd.service
 
 # Configure and enable reflector.timer
 mv /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup
-#printf "--country GB,\n--protocol https\n--fastest 5\n--sort score\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
 printf -- "--country GB,\n--protocol https\n--completion-percent 100\n--sort rate\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
 systemctl enable reflector.timer
 

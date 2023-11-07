@@ -45,11 +45,6 @@ git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 echo 'alias config='\''git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'\' >> "$HOME"/.bashrc
 $config config status.showUntrackedFiles no
-#$config pull
-#for file in $($config status | grep deleted | awk '{print $2}'); do
-#  $config restore --staged $file
-#  $config restore $file
-#done;
 mv .bashrc .bashrc.backup
 $config checkout
 
