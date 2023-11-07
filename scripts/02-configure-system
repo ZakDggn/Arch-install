@@ -1,0 +1,186 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+# Users and groups
+useradd -mG wheel "$USERNAME"
+echo "$USERNAME:$PASSWORD" | chpasswd
+#sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /etc/sudoers
+
+# Enable parallel downloads, multilib and color in pacman
+sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+sed -i '/^#\[multilib\]$/{s/^#//;n;s/^#//}' /etc/pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+
+# Install packages
+pacman -S --needed --noconfirm - < "$DIR"/packages.txt
+pacman -S --needed --noconfirm --asdeps - < "$DIR"/packages-deps.txt
+if [[ $LAPTOP = "yes" ]]; then
+  pacman -S --needed --noconfirm - < "$DIR"/packages-laptop.txt
+  systemctl enable tlp.service
+  systemctl mask systemd-rfkill.service
+  systemctl mask systemd-rfkill.socket
+  systemctl enable NetworkManager-dispatcher.service
+  echo 'Section "InputClass"
+	  Identifier "touchpad catchall"
+	  Driver "libinput"
+	  Option "Tapping" "on"
+	  Option "AccelProfile" "flat"
+	  Option "AccelSpeed" "0.5"
+  EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf
+fi
+if [[ $NVIDIA = "yes" ]]; then
+  pacman -S --needed --noconfirm nvidia
+fi
+
+# Enable parallel compilation in makepkg.conf
+sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf
+
+# Install yay
+git clone https://aur.archlinux.org/yay.git
+chown -R "$USERNAME":"$USERNAME" yay
+cd yay
+sudo -u "$USERNAME" makepkg -sirc --noconfirm
+cd ..
+rm -rf yay
+
+# Install AUR packages
+sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$DIR"/packages-aur.txt
+
+# Time zone
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+hwclock --systohc
+
+# Localization
+sed -i 's/#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
+sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+locale-gen
+echo 'LANG=en_GB.UTF-8' > /etc/locale.conf
+echo 'KEYMAP=uk' > /etc/vconsole.conf
+
+# Network configuration
+echo "$HOSTNAME" > /etc/hostname
+systemctl enable NetworkManager.service
+
+# Initramfs
+
+# Root password
+echo "root:$PASSWORD" | chpasswd
+
+# Plymouth
+sed -i '/^HOOKS=/s/)/ plymouth)/' /etc/mkinitcpio.conf
+
+# Boot loader
+ESP="/boot"
+UUID=$(blkid "$ROOT_PARTITION" --match-tag UUID -o value)
+bootctl install
+printf "default arch.conf\ntimeout 0\n" > $ESP/loader/loader.conf
+printf "title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=UUID=%s rw quiet splash" "$UUID" > $ESP/loader/entries/arch.conf
+if [[ $NVIDIA = "yes" ]]; then
+  echo nvidia_drm.modeset=1 >> $ESP/loader/entries/arch.conf
+  sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
+  # Enable early kms for plymouth?
+#  sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+#  mkdir -p /etc/pacman.d/hooks
+#  printf "[Trigger]
+#Operation=Install
+#Operation=Upgrade
+#Operation=Remove
+#Type=Package
+#Target=nvidia
+#Target=linux
+#
+#[Action]
+#Description=Update NVIDIA module in initcpio
+#Depends=mkinitcpio
+#When=PostTransaction
+#NeedsTargets
+#Exec=/bin/sh -c 'while read -r trg; do case $trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'" > /etc/pacman.d/hooks/nvidia.hook
+  mkinitcpio -P
+fi
+systemctl enable systemd-boot-update.service
+# add arch-lts.conf?
+
+# Create swapfile
+if [[ $SWAP_SIZE -ne 0 ]]; then
+    dd if=/dev/zero of=/swapfile bs=1M count="${SWAP_SIZE}k" status=progress
+    chmod 0600 /swapfile
+    mkswap -U clear /swapfile
+    swapon /swapfile
+    echo "/swapfile none swap defaults 0 0" >> /etc/fstab
+fi
+
+# Enforce a delay after a failed login attempt
+# Lock out user after three failed login attempts
+# Restricting root login (passwd --lock root)
+
+# Firewalls (ufw)
+ufw default deny incoming
+ufw default allow outgoing
+#ufw enable
+systemctl enable ufw.service
+
+# Keyd
+printf "[ids]\n\n*\n\n[main]\n
+capslock = overload(capslock_layer, esc)\n
+[capslock_layer]\n
+h = left
+j = down
+k = up
+l = right
+backspace = delete" > /etc/keyd/default.conf
+systemctl enable keyd.service
+
+# Lightdm
+systemctl enable lightdm.service
+sed -i 's/^#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+# more setup to configure greeter, wallpaper etc.?
+# edit lightdm-webkit2-greeter.conf
+# NumLock on by default
+sed -i 's/#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
+
+# Enable automtic trim
+systemctl enable fstrim.timer
+
+# Enable systemd-timesync
+systemctl enable systemd-timesyncd.service
+# Automatic timezone?
+
+# Configure and enable reflector.timer
+mv /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup
+#printf "--country GB,\n--protocol https\n--fastest 5\n--sort score\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
+printf -- "--country GB,\n--protocol https\n--completion-percent 100\n--sort rate\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
+systemctl enable reflector.timer
+
+# Enable paccache.timer
+systemctl enable paccache.timer
+
+# Disable PC Speaker
+echo 'blacklist pcspkr' > /etc/modprobe.d/nobeep.conf
+
+# Power button suspends
+mkdir -p /etc/systemd/logind.conf.d
+printf '[Login]\nHandlePowerKey=suspend\n' > /etc/systemd/logind.conf.d/powerbutton.conf
+
+# Disable mouse acceleration
+echo 'Section "InputClass"
+	Identifier "My Mouse"
+	Driver "libinput"
+	MatchProduct "Mouse"
+	Option "AccelProfile" "flat"
+	Option "AccelSpeed" "-0.6"
+EndSection' > /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+
+# Set default editor to neovim and terminal to alacritty
+sed -i '/VISUAL=/d;/EDITOR=/d;/TERMINAL=/d' /etc/environment
+printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=alacritty\n' >> /etc/environment
+
+# Spotify remove banner
+"$DIR"/spotify-remove-banner
+
+# Sandboxing? (Firejail/Bubblejail)
+# Protect against rogue USB devices? (USBGuard)

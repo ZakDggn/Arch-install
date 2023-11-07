@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+function user_confirmation {
+  local CONFIRMED
+  read -rp "$1 [Y/n]: " CONFIRMED
+  if ! [[ $CONFIRMED =~ ^[Yy]|^\s*$ ]]; then
+    exit 1
+  fi
+}
+
+# Acquire and installation image (download iso and signature)
+if ! [[ -f archlinux-x86_64.iso ]]; then
+  curl --remote-name https://www.mirrorservice.org/sites/ftp.archlinux.org/iso/latest/archlinux-x86_64.iso
+fi
+if ! [[ -f archlinux-x86_64.iso.sig ]]; then
+  curl --remote-name https://archlinux.org/iso/latest/archlinux-x86_64.iso.sig
+fi
+
+# Verify signature
+gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig
+pacman-key -v archlinux-x86_64.iso.sig
+
+# Prepare an installation medium
+user_confirmation "Flash to USB now?"
+lsblk
+read -rp "Enter drive to flash iso onto: " DRIVE
+user_confirmation "Flash iso onto $DRIVE?"
+sudo dd bs=4M if=archlinux-x86_64.iso of="$DRIVE" conv=fsync oflag=direct status=progress

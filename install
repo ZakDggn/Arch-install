@@ -1,0 +1,115 @@
+#!/bin/bash
+
+set -euo pipefail -o allexport
+
+function user_confirmation {
+  local CONFIRMED
+  read -rp "$1 [Y/n]: " CONFIRMED
+  if ! [[ $CONFIRMED =~ ^[Yy]|^\s*$ ]]; then
+    exit 1
+  fi
+}
+export -f user_confirmation
+
+echo "Checking internet connection..."
+TRIES=10
+for i in $(seq $TRIES); do
+  ping -W 1 -c 1 archlinux.org &> /dev/null && break
+  sleep 1
+done
+if [[ $i -eq $TRIES ]]; then
+  echo "No internet connection. Exiting."
+  exit 1
+fi
+
+VALID_DRIVES=$(lsblk -pn | grep -o '^/dev/\S*')
+lsblk
+printf "\nSelect installation drive:\n"
+select DRIVE in $VALID_DRIVES; do
+  if [[ -n "$DRIVE" ]]; then
+    break
+  fi
+done
+if grep -q "nvme" <<< "$DRIVE"; then
+  EFI_PARTITION="${DRIVE}p1"
+  ROOT_PARTITION="${DRIVE}p2"
+else
+  EFI_PARTITION="${DRIVE}1"
+  ROOT_PARTITION="${DRIVE}2"
+fi
+
+read -rp "Enter username: " USERNAME
+
+while true; do
+  echo "Enter password:"
+  read -rs PASSWORD
+  echo "Confirm password:"
+  read -rs PASSWORD_CONFIRM
+  [[ $PASSWORD != "$PASSWORD_CONFIRM" ]] || break
+  printf "\nPasswords do not match, try again\n"
+done
+
+read -rp "Laptop? [y/N]: " LAPTOP
+[[ $LAPTOP =~ ^[Yy] ]] && LAPTOP=yes || LAPTOP=no
+
+read -rp "NVIDIA graphics? [y/N]: " NVIDIA
+[[ $NVIDIA =~ ^[Yy] ]] && NVIDIA=yes || NVIDIA=no
+
+read -rp "Enter hostname: " HOSTNAME
+
+DEFAULT_SWAP_SIZE=4
+read -rp "Enter swap size in GiB (0 to disable, default $DEFAULT_SWAP_SIZE): " SWAP_SIZE
+if [[ $SWAP_SIZE =~ [^0-9] || $SWAP_SIZE -gt 16 ]]; then
+  echo "Invalid swap size. Exiting."
+  exit 1
+fi
+if [[ -z $SWAP_SIZE ]]; then
+  SWAP_SIZE=$DEFAULT_SWAP_SIZE
+fi
+
+cat << EOF
+
+Confirm configuration:
+EFI partition: $EFI_PARTITION
+Root partition: $ROOT_PARTITION
+Username: $USERNAME
+Laptop: $LAPTOP
+NVIDIA: $NVIDIA
+Hostname: $HOSTNAME
+Swap size: $SWAP_SIZE GiB
+
+EOF
+if [[ -z $PASSWORD ]]; then
+  printf "Note: password is empty\n"
+fi
+user_confirmation "Continue with installation?"
+
+scripts/01-installation
+
+# daemon-reload to use updated fstab
+#systemctl daemon-reload
+
+# remount boot after fstab modified?
+#mount -o remount "$EFI_PARTITION" /mnt/boot
+
+# allow sudo without password for installation
+sed -i '/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^# //' /mnt/etc/sudoers
+
+DIR="/install"
+mkdir /mnt$DIR
+#cp scripts/* /mnt/$DIR
+mount -o bind,ro scripts /mnt$DIR
+
+arch-chroot /mnt $DIR/02-configure-system
+#arch-chroot /mnt sudo -u "$USERNAME" --preserve-env=LAPTOP,DIR /$DIR/03-user-setup
+#arch-chroot -u "$USERNAME" /mnt env HOME="/home/$USERNAME" USER="$USERNAME" $DIR/03-user-setup
+arch-chroot -u "$USERNAME":"$USERNAME" /mnt $DIR/03-user-setup
+
+# Unmount scripts bind
+umount /mnt$DIR
+rmdir /mnt$DIR
+
+# reset sudo privileges
+sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /mnt/etc/sudoers
+sed -i '/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^/^# /' /mnt/etc/sudoers
+

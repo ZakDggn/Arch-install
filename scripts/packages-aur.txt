@@ -1,0 +1,7 @@
+bluetuith-bin
+i3lock-fancy-git
+keyd
+ncpamixer
+spotify
+spotify-adblock-git
+xidlehook

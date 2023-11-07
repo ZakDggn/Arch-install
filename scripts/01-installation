@@ -1,0 +1,78 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+# Set the console keyboard layout
+localectl set-keymap uk
+
+# Verify the boot mode
+if ! [ -f /sys/firmware/efi/fw_platform_size ]; then
+  echo 'System is not booted in UEFI mode'
+  exit 1
+fi
+if [[ $(cat /sys/firmware/efi/fw_platform_size) -ne 64 ]]; then
+  echo 'System is booted into 32-bit UEFI mode'
+  exit 1
+fi
+
+# Connect to the internet
+#if ! ping -W 1 -c 1 archlinux.org &> /dev/null; then
+#  iwctl adapter phy0 set-property Powered on
+#  echo "Scanning Wi-Fi networks..."
+#  iwctl station wlan0 scan
+#  iwctl station wlan0 get-networks
+#  while true; do
+#    read -rp 'Enter SSID: ' SSID
+#    echo 'Enter passphrase:'
+#    read -rs PASSPHRASE
+#    iwctl --passphrase "$PASSPHRASE" station wlan0 connect "$SSID" && break
+#    echo "Connection failed, try again"
+#  done
+#  echo "Checking internet connection..."
+#  TRIES=10
+#  for i in $(seq $TRIES); do
+#    ping -W 1 -c 1 archlinux.org &> /dev/null && break
+#    sleep 1
+#  done
+#  if [[ $i -eq $TRIES ]]; then
+#    echo "No internet connection. Exiting."
+#    exit 1
+#  fi
+#fi
+
+# Update the system clock
+#timedatectl
+#user_confirmation "Confirm system clock is accurate?"
+
+# Partition the disks
+sgdisk -Z "${DRIVE}"
+sgdisk -o "${DRIVE}"
+sgdisk -I -n 1:0:+1000M -t=1:ef00 "${DRIVE}"
+sgdisk -I -n 2:0:0      -t=2:8300 "${DRIVE}"
+
+# Format the partitions
+mkfs.fat -F 32 "$EFI_PARTITION"
+mkfs.ext4 "$ROOT_PARTITION"
+
+# Mount the file systems
+mount "$ROOT_PARTITION" /mnt
+mount --mkdir "$EFI_PARTITION" /mnt/boot
+
+# Select the mirrors
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+reflector --country 'GB,' --protocol https --completion-percent 100 --sort rate --save /etc/pacman.d/mirrorlist
+
+# Manually initialise pacman keyring if required
+if grep -q 'Active: failed' <<< "$(systemctl status pacman-init.service)"; then
+  pacman-key --init
+fi
+
+# Install essential packages
+sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+sed -i '/^#\[multilib\]$/{s/^#//;n;s/^#//}' /etc/pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+pacstrap -K /mnt base base-devel linux linux-firmware
+
+# Fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+sed -i 's/fmask=0022,dmask=0022/fmask=0137,dmask=0027/' /etc/fstab

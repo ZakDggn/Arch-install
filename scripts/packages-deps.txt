@@ -1,0 +1,11 @@
+ffmpeg4.4
+gvfs
+gvfs-mtp
+python-gobject
+python-pyxdg
+systembus-notify
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
+tumbler
+zenity
