@@ -17,17 +17,6 @@ pacman -S --needed --noconfirm - < "$DIR"/packages.txt
 pacman -S --needed --noconfirm --asdeps - < "$DIR"/packages-deps.txt
 if [[ $LAPTOP = "yes" ]]; then
   pacman -S --needed --noconfirm - < "$DIR"/packages-laptop.txt
-  systemctl enable tlp.service
-  systemctl mask systemd-rfkill.service
-  systemctl mask systemd-rfkill.socket
-  systemctl enable NetworkManager-dispatcher.service
-  echo 'Section "InputClass"
-	  Identifier "touchpad catchall"
-	  Driver "libinput"
-	  Option "Tapping" "on"
-	  Option "AccelProfile" "flat"
-	  Option "AccelSpeed" "0.5"
-  EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf
 fi
 if [[ $NVIDIA = "yes" ]]; then
   pacman -S --needed --noconfirm nvidia
@@ -114,6 +103,30 @@ if [[ $SWAP_SIZE -ne 0 ]]; then
     echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 fi
 
+# Laptop setup
+if [[ $LAPTOP = "yes" ]]; then
+  # Enable tlp
+  systemctl enable tlp.service
+  systemctl mask systemd-rfkill.service
+  systemctl mask systemd-rfkill.socket
+  systemctl enable NetworkManager-dispatcher.service
+
+  # Touchpad
+  echo 'Section "InputClass"
+	  Identifier "touchpad catchall"
+	  Driver "libinput"
+	  Option "Tapping" "on"
+	  Option "AccelProfile" "flat"
+	  Option "AccelSpeed" "0.5"
+  EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf
+
+  # Add user to video group and allow to change the brightness
+  usermod -aG video "$USERNAME"
+  echo 'ACTION=="add", SUBSYSTEM=="backlight", \
+    RUN+="/bin/chgrp video $sys$devpath/brightness", \
+    RUN+="/bin/chmod g+w $sys$devpath/brightness"' > /etc/udev/rules.d/backlight.rules
+fi
+
 # Enforce a delay after a failed login attempt
 # Lock out user after three failed login attempts
 # Restricting root login (passwd --lock root)
@@ -180,6 +193,9 @@ printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=alacritty\n' >> /etc/environment
 
 # Spotify remove banner
 "$DIR"/spotify-remove-banner
+
+# Set X11 keymap
+localectl set-x11-keymap gb
 
 # Sandboxing? (Firejail/Bubblejail)
 # Protect against rogue USB devices? (USBGuard)
