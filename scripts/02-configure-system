@@ -151,10 +151,9 @@ systemctl enable keyd.service
 # Lightdm
 systemctl enable lightdm.service
 sed -i 's/^#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
-# more setup to configure greeter, wallpaper etc.?
-# edit lightdm-webkit2-greeter.conf
-# NumLock on by default
 sed -i 's/#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
+sed -i '/^webkit_theme/s/=.*/= litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
+cp "$DIR"/wallpaper.png /usr/share/backgrounds/
 
 # Enable automtic trim
 systemctl enable fstrim.timer
