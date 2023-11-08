@@ -24,7 +24,7 @@ lightdm
 lightdm-webkit-theme-litarvan
 linux-headers
 lsd
-lxappearance
+lxappearance-gtk3
 man-db
 man-pages
 mpv

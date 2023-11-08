@@ -107,5 +107,7 @@ rmdir /mnt$DIR
 
 # reset sudo privileges
 sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /mnt/etc/sudoers
-sed -i '/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^/^# /' /mnt/etc/sudoers
+sed -i '/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^/# /' /mnt/etc/sudoers
+
+printf "\nInstallation successful!\n"
 
