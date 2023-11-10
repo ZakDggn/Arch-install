@@ -9,41 +9,10 @@ cd "$HOME"
 # Enable pipewire-pulse.service
 sudo systemctl --user enable pipewire-pulse.service
 
-# Create systemd sleep hook to lock when suspending
-echo '[Unit]
-Description=User suspend actions
-Before=sleep.target
-
-[Service]
-User=%I
-Type=forking
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock-fancy
-ExecStartPost=/usr/bin/sleep 1
-
-[Install]
-WantedBy=sleep.target' | sudo tee /etc/systemd/system/suspend@.service > /dev/null
-sudo systemctl enable suspend@"$USER".service
-
-# Create systemd resume hook to turn the display on when resuming from suspend
-echo '[Unit]
-Description=User resume actions
-After=suspend.target
-
-[Service]
-User=%I
-Type=simple
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/xset dpms force on
-
-[Install]
-WantedBy=suspend.target' | sudo tee /etc/systemd/system/resume@.service > /dev/null
-sudo systemctl enable resume@"$USER".service
-
 # Bare clone dotfiles repo and set up config alias
 git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-echo 'alias config='\''git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'\' >> "$HOME"/.bashrc
+echo "alias config='git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME'" >> "$HOME"/.bashrc
 $config config status.showUntrackedFiles no
 mv .bashrc .bashrc.backup
 $config checkout
@@ -57,26 +26,9 @@ cd "$HOME"/dwmblocks-async
 sudo make install
 cd "$HOME"
 sudo mkdir -p /usr/share/xsessions
-printf "[Desktop Entry]
-Name=dwm
-Exec=dwm
-Type=Application" | sudo tee /usr/share/xsessions/dwm.desktop > /dev/null
+sudo cp "$UTILS"/dwm.desktop /usr/share/xsessions/dwm.desktop
 # also add symlink to make dwm default?
 #sudo ln -s /usr/share/xsessions/dwm.desktop /usr/share/xsessions/default.desktop
-
-# Desktop setup
-if [[ $LAPTOP = "no" ]]; then
-  sudo mkdir -p /media/hdd
-  sudo chown root:root /media
-  sudo chown "$USER":"$USER" /media/hdd
-  sudo chmod 755 /media
-  chmod 700 /media/hdd
-  # get hdd uuid or hardcode
-  if ! grep -q 'ea862cc9-c5b3-4c8a-a07b-ece92b9a649a' /etc/fstab; then
-    echo 'UUID=ea862cc9-c5b3-4c8a-a07b-ece92b9a649a /media/hdd ext4 defaults 0 2' | sudo tee -a /etc/fstab > /dev/null
-  fi
-  sudo mount -a
-fi
 
 # Create user's home directories
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
@@ -88,14 +40,5 @@ for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
 done
 
 # Copy wallpaper to Pictures
-cp /"$DIR"/wallpaper.png "$HOME"/Pictures/
+cp "$UTILS"/wallpaper.png "$HOME"/Pictures/
 
-# set up syncthing
-# copy nvim.desktop to ~/.local/share/applications to make nvim default text editor?
-
-# gtk and qt themes
-# zram?
-# additional kernel?
-# additional fonts e.g. ttf-dejavu, ttf-liberation?
-# set vm.max_map_count to 2147483642?
-# DNS security? (DNSSEC, DoH/DoT, etc.)

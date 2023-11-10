@@ -11,14 +11,14 @@ function user_confirmation {
 }
 export -f user_confirmation
 
-echo "Checking internet connection..."
+echo 'Checking internet connection...'
 TRIES=10
 for i in $(seq $TRIES); do
   ping -W 1 -c 1 archlinux.org &> /dev/null && break
   sleep 1
 done
 if [[ $i -eq $TRIES ]]; then
-  echo "No internet connection. Exiting."
+  echo 'No internet connection. Exiting.'
   exit 1
 fi
 
@@ -30,38 +30,38 @@ select DRIVE in $VALID_DRIVES; do
     break
   fi
 done
-if grep -q "nvme" <<< "$DRIVE"; then
+if grep -q 'nvme' <<< "$DRIVE"; then
   EFI_PARTITION="${DRIVE}p1"
   ROOT_PARTITION="${DRIVE}p2"
 else
   EFI_PARTITION="${DRIVE}1"
   ROOT_PARTITION="${DRIVE}2"
 fi
-ESP="/boot"
+ESP='/boot'
 
-read -rp "Enter username: " USERNAME
+read -rp 'Enter username: ' USERNAME
 
 while true; do
-  echo "Enter password:"
+  echo 'Enter password:'
   read -rs PASSWORD
-  echo "Confirm password:"
+  echo 'Confirm password:'
   read -rs PASSWORD_CONFIRM
   [[ $PASSWORD != "$PASSWORD_CONFIRM" ]] || break
   printf "\nPasswords do not match, try again\n"
 done
 
-read -rp "Laptop? [y/N]: " LAPTOP
+read -rp 'Laptop? [y/N]: ' LAPTOP
 [[ $LAPTOP =~ ^[Yy] ]] && LAPTOP=yes || LAPTOP=no
 
-read -rp "NVIDIA graphics? [y/N]: " NVIDIA
+read -rp 'NVIDIA graphics? [y/N]: ' NVIDIA
 [[ $NVIDIA =~ ^[Yy] ]] && NVIDIA=yes || NVIDIA=no
 
-read -rp "Enter hostname: " HOSTNAME
+read -rp 'Enter hostname: ' HOSTNAME
 
 DEFAULT_SWAP_SIZE=4
 read -rp "Enter swap size in GiB (0 to disable, default $DEFAULT_SWAP_SIZE): " SWAP_SIZE
 if [[ $SWAP_SIZE =~ [^0-9] || $SWAP_SIZE -gt 16 ]]; then
-  echo "Invalid swap size. Exiting."
+  echo 'Invalid swap size. Exiting.'
   exit 1
 fi
 if [[ -z $SWAP_SIZE ]]; then
@@ -83,22 +83,27 @@ EOF
 if [[ -z $PASSWORD ]]; then
   printf "Note: password is empty\n"
 fi
-user_confirmation "Continue with installation?"
+user_confirmation 'Continue with installation?'
 
 scripts/01-installation
 
 # allow sudo without password for installation
 sed -i '/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^# //' /mnt/etc/sudoers
 
-DIR="/install"
-mkdir /mnt$DIR
-mount -o bind,ro scripts /mnt$DIR
+SCRIPTS='/scripts'
+mkdir /mnt$SCRIPTS
+mount -o bind,ro scripts /mnt$SCRIPTS
+UTILS='/utils'
+mkdir /mnt$UTILS
+mount -o bind,ro utils /mnt$UTILS
 
-arch-chroot /mnt $DIR/02-configure-system
-arch-chroot -u "$USERNAME":"$USERNAME" /mnt $DIR/03-user-setup
+arch-chroot /mnt $SCRIPTS/02-configure-system
+arch-chroot -u "$USERNAME":"$USERNAME" /mnt $SCRIPTS/03-user-setup
 
-umount /mnt$DIR
-rmdir /mnt$DIR
+umount /mnt$SCRIPTS
+rmdir /mnt$SCRIPTS
+umount /mnt$UTILS
+rmdir /mnt$UTILS
 
 # reset sudo privileges
 sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /mnt/etc/sudoers
