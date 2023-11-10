@@ -60,17 +60,19 @@ echo "root:$PASSWORD" | chpasswd
 sed -i '/^HOOKS=/s/)/ plymouth)/' /etc/mkinitcpio.conf
 
 # Boot loader
-ESP="/boot"
+sed -i 's/fmask=0022,dmask=0022/fmask=0137,dmask=0027/' /etc/fstab
+umount "$ESP"
+mount "$ESP"
 UUID=$(blkid "$ROOT_PARTITION" --match-tag UUID -o value)
 bootctl install
-printf "default arch.conf\ntimeout 0\n" > $ESP/loader/loader.conf
+printf "default arch.conf\ntimeout 0\n" > "$ESP"/loader/loader.conf
 printf "title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /amd-ucode.img
 initrd  /initramfs-linux.img
-options root=UUID=%s rw quiet splash" "$UUID" > $ESP/loader/entries/arch.conf
+options root=UUID=%s rw quiet splash" "$UUID" > "$ESP"/loader/entries/arch.conf
 if [[ $NVIDIA = "yes" ]]; then
-  echo nvidia_drm.modeset=1 >> $ESP/loader/entries/arch.conf
+  echo nvidia_drm.modeset=1 >> "$ESP"/loader/entries/arch.conf
   sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
   # Enable early kms for plymouth?
 #  sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -135,6 +137,7 @@ fi
 ufw default deny incoming
 ufw default allow outgoing
 #ufw enable
+sed -i 's/^ENABLED=.*/ENABLED=yes/' /etc/ufw/ufw.conf
 systemctl enable ufw.service
 
 # Keyd
@@ -164,7 +167,7 @@ systemctl enable systemd-timesyncd.service
 
 # Configure and enable reflector.timer
 mv /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.backup
-printf -- "--country GB,\n--protocol https\n--completion-percent 100\n--sort rate\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
+printf -- "--country GB,\n--protocol https\n--completion-percent 100\n--latest 10\n--sort rate\n--save /etc/pacman.d/mirrorlist" > etc/xdg/reflector/reflector.conf
 systemctl enable reflector.timer
 
 # Enable paccache.timer

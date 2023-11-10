@@ -31,11 +31,11 @@ mkfs.ext4 "$ROOT_PARTITION"
 
 # Mount the file systems
 mount "$ROOT_PARTITION" /mnt
-mount --mkdir "$EFI_PARTITION" /mnt/boot
+mount --mkdir "$EFI_PARTITION" /mnt"$ESP"
 
 # Select the mirrors
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-reflector --country 'GB,' --protocol https --completion-percent 100 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country 'GB,' --protocol https --completion-percent 100 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Manually initialise pacman keyring if required
 if grep -q 'Active: failed' <<< "$(systemctl status pacman-init.service)"; then
@@ -50,5 +50,4 @@ pacstrap -K /mnt base base-devel linux linux-firmware
 
 # Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
-sed -i 's/fmask=0022,dmask=0022/fmask=0137,dmask=0027/' /etc/fstab
 

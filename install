@@ -37,6 +37,7 @@ else
   EFI_PARTITION="${DRIVE}1"
   ROOT_PARTITION="${DRIVE}2"
 fi
+ESP="/boot"
 
 read -rp "Enter username: " USERNAME
 
@@ -86,12 +87,6 @@ user_confirmation "Continue with installation?"
 
 scripts/01-installation
 
-# daemon-reload to use updated fstab
-#systemctl daemon-reload
-
-# remount boot after fstab modified?
-#mount -o remount "$EFI_PARTITION" /mnt/boot
-
 # allow sudo without password for installation
 sed -i '/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^# //' /mnt/etc/sudoers
 
@@ -109,5 +104,5 @@ rmdir /mnt$DIR
 sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /mnt/etc/sudoers
 sed -i '/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^/# /' /mnt/etc/sudoers
 
-printf "\nInstallation successful!\n"
+printf "\nInstallation successful!\n\n"
 
