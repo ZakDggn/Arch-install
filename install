@@ -83,7 +83,7 @@ Swap size: $SWAP_SIZE GiB
 
 EOF
 if [[ -z $PASSWORD ]]; then
-  printf "Note: password is empty\n"
+  printf "Note: password is empty\n\n"
 fi
 user_confirmation 'Continue with installation?'
 
