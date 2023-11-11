@@ -37,7 +37,6 @@ else
   EFI_PARTITION="${DRIVE}1"
   ROOT_PARTITION="${DRIVE}2"
 fi
-ESP='/boot'
 
 read -rp 'Enter username: ' USERNAME
 
@@ -67,6 +66,9 @@ fi
 if [[ -z $SWAP_SIZE ]]; then
   SWAP_SIZE=$DEFAULT_SWAP_SIZE
 fi
+
+ESP='/boot'
+HDD_MNT='/media/hdd'
 
 cat << EOF
 

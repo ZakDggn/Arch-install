@@ -32,10 +32,10 @@ sudo cp "$UTILS"/dwm.desktop /usr/share/xsessions/dwm.desktop
 
 # Create user's home directories
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
-  if [[ $LAPTOP = "yes" ]]; then
-    mkdir "$HOME"/$d
+  if [[ -d "$HDD_MNT"/$d ]]; then
+    ln -s "$HDD_MNT"/$d "$HOME"/$d
   else
-    ln -s /media/hdd/$d "$HOME"/$d
+    mkdir "$HOME"/$d
   fi
 done
 

@@ -67,7 +67,7 @@ bootctl install
 cp "$UTILS"/loader.conf "$ESP"/loader/loader.conf
 sed "s/uuid/$UUID/" "$UTILS"/arch.conf > "$ESP"/loader/entries/arch.conf
 if [[ $NVIDIA = 'yes' ]]; then
-  echo 'nvidia_drm.modeset=1' >> "$ESP"/loader/entries/arch.conf
+  sed -i '$s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
   sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
   # Enable early kms for plymouth?
   #sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -103,12 +103,13 @@ if [[ $LAPTOP = 'yes' ]]; then
 fi
 
 # Desktop setup
-if [[ $LAPTOP = 'no' ]]; then
-  mkdir -p /media/hdd
-  chown "$USER":"$USER" /media/hdd
-  chmod 700 /media/hdd
-  echo 'UUID=ea862cc9-c5b3-4c8a-a07b-ece92b9a649a /media/hdd ext4 defaults 0 2' >> /etc/fstab
-  mount /media/hdd
+HDD_UUID='ea862cc9-c5b3-4c8a-a07b-ece92b9a649a'
+if grep -q "$HDD_UUID" <<< "$(lsblk -o UUID)"; then
+  mkdir -p "$HDD_MNT"
+  chown "$USER":"$USER" "$HDD_MNT"
+  chmod 700 "$HDD_MNT"
+  echo "UUID=$HDD_UUID "$HDD_MNT" ext4 defaults 0 2" >> /etc/fstab
+  mount "$HDD_MNT"
 fi
 
 # Firewalls (ufw)

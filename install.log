@@ -5,8 +5,8 @@ sda           8:0    1  57.3G  0 disk
 ├─sda1        8:1    1  55.3G  0 part /media
 └─sda2        8:2    1     2G  0 part 
 nvme0n1     259:0    0 238.5G  0 disk 
-├─nvme0n1p1 259:2    0  1000M  0 part 
-└─nvme0n1p2 259:3    0 237.5G  0 part 
+├─nvme0n1p1 259:1    0  1000M  0 part 
+└─nvme0n1p2 259:2    0 237.5G  0 part 
 
 Select installation drive:
 1) /dev/loop0
@@ -34,7 +34,7 @@ mkfs.fat 4.2 (2021-01-31)
 mke2fs 1.47.0 (5-Feb-2023)
 Discarding device blocks:        0/62258432                 done                            
 Creating filesystem with 62258432 4k blocks and 15564800 inodes
-Filesystem UUID: 1e59838b-7142-4601-86ca-ccaa7b0a4052
+Filesystem UUID: 76b63323-f71c-42f9-9bcd-d3449534a9ca
 Superblock backups stored on blocks: 
 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
 	4096000, 7962624, 11239424, 20480000, 23887872
@@ -53,7 +53,7 @@ gpg: migration succeeded
 ==> Generating pacman master key. This may take some time.
 gpg: Generating pacman keyring master key...
 gpg: directory '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d' created
-gpg: revocation certificate stored as '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d/D24C439C92368A1F3572487154E156EAF6FE1D2A.rev'
+gpg: revocation certificate stored as '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d/20125A43D0F16E4090CDC029738320006783F177.rev'
 gpg: Done
 ==> Updating trust database...
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
@@ -73,10 +73,10 @@ resolving dependencies...
 Enter a number (default=1): 
 looking for conflicting packages...
 
-Packages (146) acl-2.3.1-3  archlinux-keyring-20231107-1  argon2-20190702-5  attr-2.5.1-3  audit-3.1.2-1  autoconf-2.71-4  automake-1.16.5-2  bash-5.2.015-5  binutils-2.41-3  bison-3.8.2-6  brotli-1.1.0-1  bzip2-1.0.8-5  ca-certificates-20220905-1  ca-certificates-mozilla-3.94-1  ca-certificates-utils-20220905-1  coreutils-9.4-2  cryptsetup-2.6.1-3  curl-8.4.0-2  db-6.2.32-1  db5.3-5.3.28-4  dbus-1.14.10-1  debugedit-5.0-5  device-mapper-2.03.22-2  diffutils-3.10-1  e2fsprogs-1.47.0-1  expat-2.5.0-1  fakeroot-1.32.2-1  file-5.45-1  filesystem-2023.09.18-1  findutils-4.9.0-3  flex-2.6.4-5  gawk-5.3.0-1  gc-8.2.4-1  gcc-13.2.1-3  gcc-libs-13.2.1-3  gdbm-1.23-2  gettext-0.22.3-1  glib2-2.78.1-1  glibc-2.38-7  gmp-6.3.0-1  gnupg-2.2.41-2  gnutls-3.8.1-2  gpgme-1.23.1-1  grep-3.11-1  groff-1.23.0-5  guile-3.0.9-1  gzip-1.13-2  hwdata-0.376-1  iana-etc-20231018-1  icu-73.2-2  iproute2-6.6.0-2  iptables-1:1.8.9-1  iputils-20221126-2  jansson-2.14-2  json-c-0.17-1  kbd-2.6.3-1  keyutils-1.6.3-2  kmod-31-1  krb5-1.20.1-2  libarchive-3.7.2-1  libassuan-2.5.6-1  libbpf-1.2.2-1  libcap-2.69-1  libcap-ng-0.8.3-2  libelf-0.190-1  libevent-2.1.12-4  libffi-3.4.4-1  libgcrypt-1.10.2-1  libgpg-error-1.47-1  libidn2-2.3.4-3  libisl-0.26-1  libksba-1.6.4-1  libldap-2.6.6-2  libmnl-1.0.5-1  libmpc-1.3.1-1  libnetfilter_conntrack-1.0.9-1  libnfnetlink-1.0.2-1  libnftnl-1.2.6-1  libnghttp2-1.58.0-1  libnl-3.8.0-1  libp11-kit-0.25.2-1  libpcap-1.10.4-1  libpsl-0.21.2-1  libsasl-2.1.28-4  libseccomp-2.5.4-2  libsecret-0.21.1-1  libssh2-1.11.0-1  libsysprof-capture-45.1-1  libtasn1-4.19.0-1  libtirpc-1.3.4-1  libtool-2.4.7+4+g1ec8fa28-6  libunistring-1.1-2  libusb-1.0.26-2  libutempter-1.2.1-4  libverto-0.3.2-4  libxcrypt-4.4.36-1  libxml2-2.11.5-1  licenses-20231011-1  linux-api-headers-6.4-1  linux-firmware-whence-20231030.2b304bfe-1  lz4-1:1.9.4-1  m4-1.4.19-3  make-4.4.1-2  mkinitcpio-36-1  mkinitcpio-busybox-1.36.1-1  mpfr-4.2.1-1  ncurses-6.4_20230520-1  nettle-3.9.1-1  npth-1.6-4  openssl-3.1.4-1  p11-kit-0.25.2-1  pacman-6.0.2-8  pacman-mirrorlist-20231001-1  pam-1.5.3-3  pambase-20230918-1  patch-2.7.6-10  pciutils-3.10.0-1  pcre2-10.42-2  perl-5.38.0-1  pinentry-1.2.1-3  pkgconf-1.8.1-1  popt-1.19-1  procps-ng-4.0.4-2  psmisc-23.6-1  readline-8.2.001-2  sed-4.9-3  shadow-4.14.2-1  sqlite-3.44.0-1  sudo-1.9.15.p1-1  systemd-254.5-1  systemd-libs-254.5-1  systemd-sysvcompat-254.5-1  tar-1.35-2  texinfo-7.1-1  tpm2-tss-4.0.1-1  tzdata-2023c-2  util-linux-2.39.2-2  util-linux-libs-2.39.2-2  which-2.21-6  xz-5.4.5-1  zlib-1:1.3-2  zstd-1.5.5-1  base-3-2  base-devel-1-1  linux-6.6.1.arch1-1  linux-firmware-20231030.2b304bfe-1
+Packages (146) acl-2.3.1-3  archlinux-keyring-20231107-1  argon2-20190702-5  attr-2.5.1-3  audit-3.1.2-1  autoconf-2.71-4  automake-1.16.5-2  bash-5.2.015-5  binutils-2.41-3  bison-3.8.2-6  brotli-1.1.0-1  bzip2-1.0.8-5  ca-certificates-20220905-1  ca-certificates-mozilla-3.94-1  ca-certificates-utils-20220905-1  coreutils-9.4-2  cryptsetup-2.6.1-3  curl-8.4.0-2  db-6.2.32-1  db5.3-5.3.28-4  dbus-1.14.10-1  debugedit-5.0-5  device-mapper-2.03.22-2  diffutils-3.10-1  e2fsprogs-1.47.0-1  expat-2.5.0-1  fakeroot-1.32.2-1  file-5.45-1  filesystem-2023.09.18-1  findutils-4.9.0-3  flex-2.6.4-5  gawk-5.3.0-1  gc-8.2.4-1  gcc-13.2.1-3  gcc-libs-13.2.1-3  gdbm-1.23-2  gettext-0.22.3-1  glib2-2.78.1-1  glibc-2.38-7  gmp-6.3.0-1  gnupg-2.2.41-2  gnutls-3.8.1-2  gpgme-1.23.1-1  grep-3.11-1  groff-1.23.0-5  guile-3.0.9-1  gzip-1.13-2  hwdata-0.376-1  iana-etc-20231018-1  icu-73.2-2  iproute2-6.6.0-2  iptables-1:1.8.9-1  iputils-20221126-2  jansson-2.14-2  json-c-0.17-1  kbd-2.6.3-1  keyutils-1.6.3-2  kmod-31-1  krb5-1.20.1-2  libarchive-3.7.2-1  libassuan-2.5.6-1  libbpf-1.2.2-1  libcap-2.69-1  libcap-ng-0.8.3-2  libelf-0.190-1  libevent-2.1.12-4  libffi-3.4.4-1  libgcrypt-1.10.2-1  libgpg-error-1.47-1  libidn2-2.3.4-3  libisl-0.26-1  libksba-1.6.4-1  libldap-2.6.6-2  libmnl-1.0.5-1  libmpc-1.3.1-1  libnetfilter_conntrack-1.0.9-1  libnfnetlink-1.0.2-1  libnftnl-1.2.6-1  libnghttp2-1.58.0-1  libnl-3.8.0-1  libp11-kit-0.25.2-1  libpcap-1.10.4-1  libpsl-0.21.2-1  libsasl-2.1.28-4  libseccomp-2.5.4-2  libsecret-0.21.1-1  libssh2-1.11.0-1  libsysprof-capture-45.1-1  libtasn1-4.19.0-1  libtirpc-1.3.4-1  libtool-2.4.7+4+g1ec8fa28-6  libunistring-1.1-2  libusb-1.0.26-2  libutempter-1.2.1-4  libverto-0.3.2-4  libxcrypt-4.4.36-1  libxml2-2.11.5-1  licenses-20231011-1  linux-api-headers-6.4-1  linux-firmware-whence-20231030.2b304bfe-1  lz4-1:1.9.4-1  m4-1.4.19-3  make-4.4.1-2  mkinitcpio-36-1  mkinitcpio-busybox-1.36.1-1  mpfr-4.2.1-1  ncurses-6.4_20230520-1  nettle-3.9.1-1  npth-1.6-4  openssl-3.1.4-1  p11-kit-0.25.2-1  pacman-6.0.2-8  pacman-mirrorlist-20231001-1  pam-1.5.3-3  pambase-20230918-1  patch-2.7.6-10  pciutils-3.10.0-1  pcre2-10.42-2  perl-5.38.0-1  pinentry-1.2.1-3  pkgconf-1.8.1-1  popt-1.19-1  procps-ng-4.0.4-2  psmisc-23.6-1  readline-8.2.001-2  sed-4.9-3  shadow-4.14.2-1  sqlite-3.44.0-1  sudo-1.9.15.p2-1  systemd-254.6-1  systemd-libs-254.6-1  systemd-sysvcompat-254.6-1  tar-1.35-2  texinfo-7.1-1  tpm2-tss-4.0.1-1  tzdata-2023c-2  util-linux-2.39.2-2  util-linux-libs-2.39.2-2  which-2.21-6  xz-5.4.5-1  zlib-1:1.3-2  zstd-1.5.5-1  base-3-2  base-devel-1-1  linux-6.6.1.arch1-1  linux-firmware-20231030.2b304bfe-1
 
-Total Download Size:    514.82 MiB
-Total Installed Size:  1238.01 MiB
+Total Download Size:    514.84 MiB
+Total Installed Size:  1238.12 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
@@ -88,7 +88,7 @@ Total Installed Size:  1238.01 MiB
  icu-73.2-2-x86_64 downloading...
  glibc-2.38-7-x86_64 downloading...
  guile-3.0.9-1-x86_64 downloading...
- systemd-254.5-1-x86_64 downloading...
+ systemd-254.6-1-x86_64 downloading...
  binutils-2.41-3-x86_64 downloading...
  openssl-3.1.4-1-x86_64 downloading...
  glib2-2.78.1-1-x86_64 downloading...
@@ -97,7 +97,7 @@ Total Installed Size:  1238.01 MiB
  util-linux-2.39.2-2-x86_64 downloading...
  gnupg-2.2.41-2-x86_64 downloading...
  groff-1.23.0-5-x86_64 downloading...
- sudo-1.9.15.p1-1-x86_64 downloading...
+ sudo-1.9.15.p2-1-x86_64 downloading...
  gettext-0.22.3-1-x86_64 downloading...
  bash-5.2.015-5-x86_64 downloading...
  texinfo-7.1-1-x86_64 downloading...
@@ -116,7 +116,7 @@ Total Installed Size:  1238.01 MiB
  shadow-4.14.2-1-x86_64 downloading...
  archlinux-keyring-20231107-1-any downloading...
  iproute2-6.6.0-2-x86_64 downloading...
- systemd-libs-254.5-1-x86_64 downloading...
+ systemd-libs-254.6-1-x86_64 downloading...
  tpm2-tss-4.0.1-1-x86_64 downloading...
  procps-ng-4.0.4-2-x86_64 downloading...
  pacman-6.0.2-8-x86_64 downloading...
@@ -221,7 +221,7 @@ Total Installed Size:  1238.01 MiB
  ca-certificates-utils-20220905-1-any downloading...
  libutempter-1.2.1-4-x86_64 downloading...
  pacman-mirrorlist-20231001-1-any downloading...
- systemd-sysvcompat-254.5-1-x86_64 downloading...
+ systemd-sysvcompat-254.6-1-x86_64 downloading...
  pambase-20230918-1-any downloading...
  base-3-2-any downloading...
  ca-certificates-20220905-1-any downloading...
@@ -609,11 +609,11 @@ installing linux-firmware...
   -> Running build hook: [consolefont]
 ==> WARNING: consolefont: no font found in configuration
   -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'wd719x'
 ==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'qla1280'
   -> Running build hook: [filesystems]
   -> Running build hook: [fsck]
@@ -634,10 +634,10 @@ warning: mesa will be installed before its libglvnd dependency
 warning: dependency cycle detected:
 warning: libcamera-ipa will be installed before its libcamera dependency
 
-Packages (475) abseil-cpp-20230802.1-1  accountsservice-23.13.9-1  adobe-source-code-pro-fonts-2.042u+1.062i+1.026vf-1  adwaita-cursors-45.0-1  adwaita-icon-theme-45.0-1  alsa-card-profiles-1:0.3.84-1  alsa-lib-1.2.10-2  alsa-topology-conf-1.2.5.1-3  alsa-ucm-conf-1.2.10-2  aom-3.7.0-1  appstream-0.16.3-1  at-spi2-core-2.50.0-1  atkmm-2.28.3-1  avahi-1:0.8+r139+ge5b0bad-1  babl-0.1.106-1  blas-3.11.0-3  bluez-libs-5.70-1  boost-libs-1.83.0-2  box2d-2.4.1-1  bubblewrap-0.8.0-1  c-ares-1.21.0-1  cairo-1.18.0-1  cairomm-1.14.5-1  cantarell-fonts-1:0.303.1-1  cblas-3.11.0-3  clucene-2.3.3.4-14  dav1d-1.3.0-1  dbus-glib-0.112-3  dconf-0.40.0-2  default-cursors-2-1  desktop-file-utils-0.27-1  dnssec-anchors-20190629-3  duktape-2.7.0-6  efivar-38-3  electron-1:25-1  electron24-24.8.8-1  electron25-25.9.4-1  enchant-2.6.2-1  exiv2-0.28.1-1  exo-4.18.0-1  ffmpeg-2:6.0-13  fftw-3.3.10-4  flac-1.4.3-1  fmt-10.1.1-1  fontconfig-2:2.14.2-1  freeglut-3.4.0-1  freetype2-2.13.2-1  fribidi-1.0.13-2  fuse-common-3.16.2-1  fuse2-2.9.9-4  fuse3-3.16.2-1  garcon-4.18.1-1  gcr-4-4.1.0-1  gdk-pixbuf2-2.42.10-2  gegl-0.4.46-2  giflib-5.2.1-2  glib-networking-1:2.78.0-1  glibmm-2.66.6-1  glslang-13.0.0-1  glu-9.0.3-1  gnome-backgrounds-45.0-1  gperftools-2.13-2  gpm-1.20.7.r38.ge82d1a6-5  graphene-1.10.8-1  graphite-1:1.3.14-3  gsettings-desktop-schemas-45.0-1  gsfonts-20200910-3  gsl-2.7.1-3  gsm-1.0.22-1  gssdp-1.6.3-1  gst-plugins-bad-libs-1.22.6-1  gst-plugins-base-libs-1.22.6-1  gstreamer-1.22.6-1  gtk-update-icon-cache-1:4.12.3-2  gtk2-2.24.33-3  gtk4-1:4.12.3-2  gtkmm-1:2.24.5-4  gtkmm3-3.24.8-1  gupnp-1:1.6.6-1  gupnp-igd-1.6.0-1  harfbuzz-8.2.2-1  harfbuzz-icu-8.2.2-1  hicolor-icon-theme-0.17-3  hidapi-0.14.0-2  highway-1.0.7-1  http-parser-2.9.4-1  hunspell-1.7.2-1  hwloc-2.9.1-1  hyphen-2.8.8-5  imath-3.1.9-2  iso-codes-4.15.0-1  jasper-4.0.0-1  jbigkit-2.1-7  json-glib-1.8.0-1  jsoncpp-1.9.5-2  l-smash-2.14.5-3  ladspa-1.17-4  lame-3.100-4  lapack-3.11.0-3  lcms2-2.15-1  ldns-1.8.3-2  lensfun-1:0.3.4-3  less-1:643-1  libabw-0.1.3-3  libadwaita-1:1.4.0-1  libappindicator-gtk3-12.10.0.r298-3  libass-0.17.1-1  libasyncns-1:0.8+r3+g68cd5af-2  libatomic_ops-7.8.0-1  libavc1394-0.5.4-6  libavif-1.0.1-4  libbluray-1.3.4-1  libbs2b-3.1.0-8  libcamera-0.1.0-2  libcamera-ipa-0.1.0-2  libcanberra-1:0.30+r2+gc0620e4-3  libcdio-2.1.0-3  libcdio-paranoia-10.2+2.0.1-3  libcdr-0.1.7-6  libcloudproviders-0.3.5-1  libcolord-1.4.6-1  libconfig-1.7.3-2  libcups-1:2.4.7-2  libdaemon-0.14-5  libdatrie-0.2.13-4  libdbusmenu-glib-16.04.0.r498-2  libdbusmenu-gtk3-16.04.0.r498-2  libde265-1.0.12-1  libdeflate-1.19-1  libdovi-3.2.0-2  libdrm-2.4.117-1  libdvdnav-6.1.1-2  libdvdread-6.1.3-2  libe-book-0.1.3-14  libebur128-1.2.6-1  libedit-20230828_3.1-1  libepoxy-1.5.10-2  libepubgen-0.1.1-4  libetonyek-0.1.10-3  libev-4.33-2  libevdev-1.13.1-1  libexif-0.6.24-2  libexttextcat-3.4.6-1  libfdk-aac-2.0.2-1  libfontenc-1.1.7-1  libfreeaptx-0.1.1-1  libfreehand-0.1.2-4  libgexiv2-0.14.2-1  libgit2-1:1.7.1-1  libglvnd-1.7.0-1  libgtop-2.41.2-1  libgudev-238-1  libheif-1.17.3-1  libical-3.0.17-1  libice-1.1.1-2  libiec61883-1.2.0-7  libinih-57-1  libinput-1.24.0-1  libixion-0.19.0-1  libjpeg-turbo-3.0.1-1  libjxl-0.8.2-2  liblangtag-0.6.4-1  liblc3-1.0.4-1  libldac-2.0.2.3-1  libluv-1.45.0_0-1  libmanette-0.2.6-5  libmm-glib-1.22.0-1  libmng-2.0.3-3  libmodplug-0.8.9.0-5  libmspub-0.1.4-14  libmwaw-0.3.22-1  libmypaint-1.6.1-1  libmysofa-1.3.2-1  libndp-1.8-1  libnewt-0.52.23-2  libnice-0.1.21-2  libnm-1.44.2-3  libnma-1.10.6-2  libnma-common-1.10.6-2  libnotify-0.8.3-1  libnsl-2.0.1-1  libnss_nis-3.2-1  libnumbertext-1.0.11-1  libodfgen-0.1.8-2  libogg-1.3.5-1  libomxil-bellagio-0.9.3-4  libopenmpt-0.7.3-1  liborcus-0.19.1-1  libpagemaker-0.0.4-3  libpciaccess-0.17-1  libpgm-5.3.128-3  libpipeline-1.5.7-1  libpipewire-1:0.3.84-1  libplacebo-5.264.1-4  libpng-1.6.40-2  libproxy-0.5.3-2  libpulse-16.1-6  libqxp-0.0.2-10  libraw-0.21.1-2  libraw1394-2.1.2-3  librevenge-0.0.5-2  librsvg-2:2.57.0-1  libsamplerate-0.2.2-2  libsigc++-2.12.1-1  libsigc++-3.0-3.6.0-1  libsm-1.2.4-1  libsndfile-1.2.2-2  libsodium-1.0.19-2  libsoup-2.74.3-1  libsoup3-3.4.4-1  libsoxr-0.1.3-3  libspiro-1:20221101-2  libssh-0.10.5-1  libstaroffice-0.0.7-2  libstemmer-2.2.0-2  libteam-1.32-1  libtermkey-0.22-2  libthai-0.1.29-3  libtheora-1.1.1-6  libtiff-4.6.0-1  libtommath-1.2.1-1  libunwind-1.7.2-1  libuv-1.47.0-1  libva-2.20.0-1  libvdpau-1.5-2  libvisio-0.1.7-9  libvorbis-1.3.7-3  libvpx-1.13.1-1  libvterm-0.3.3-1  libwacom-2.8.0-1  libwebp-1.3.2-1  libwireplumber-0.4.15-1  libwmf-0.2.13-1  libwnck3-43.0-3  libwpd-0.10.3-4  libwpe-1.14.1-2  libwpg-0.3.4-1  libwps-0.4.14-1  libx11-1.8.7-1  libxau-1.0.11-2  libxcb-1.16-1  libxcomposite-0.4.6-1  libxcursor-1.2.1-3  libxcvt-0.1.2-1  libxdamage-1.1.6-1  libxdg-basedir-1.2.3-2  libxdmcp-1.1.4-2  libxext-1.3.5-1  libxfce4ui-4.18.4-1  libxfce4util-4.18.1-1  libxfixes-6.0.1-1  libxfont2-2.0.6-2  libxft-2.3.8-1  libxi-1.8.1-1  libxinerama-1.1.5-1  libxkbcommon-1.6.0-1  libxkbcommon-x11-1.6.0-1  libxkbfile-1.1.2-1  libxklavier-5.4-5  libxmlb-0.3.14-1  libxmu-1.1.4-1  libxpm-3.5.17-1  libxpresent-1.0.1-1  libxrandr-1.5.4-1  libxrender-0.9.11-1  libxres-1.2.2-1  libxshmfence-1.3.2-1  libxslt-1.1.38-1  libxss-1.2.4-1  libxt-1.3.0-1  libxtst-1.2.4-1  libxv-1.0.12-1  libxxf86vm-1.1.5-1  libyaml-0.2.5-2  libyuv-r2426+464c51a0-1  libzmf-0.0.2-14  lightdm-webkit2-greeter-2.2.5-7  lilv-0.24.20-2  llvm-libs-16.0.6-1  lm_sensors-1:3.6.0.r41.g31d1f125-2  lpsolve-5.5.2.11-2  lua-5.4.6-2  luajit-2.1.1699392533-1  lv2-1.18.10-1  lzo-2.10-5  mailcap-2.1.54-1  mesa-1:23.2.1-2  minizip-1:1.3-2  mobile-broadband-provider-info-20230416-1  mpg123-1.32.3-1  msgpack-c-5.0.0-1  mtdev-1.1.6-2  mujs-1.3.3-1  mypaint-brushes1-1.3.1-1  neon-0.32.5-2  nm-connection-editor-1.34.0-1  nspr-4.35-1  nss-3.94-1  ocl-icd-2.3.2-1  onetbb-2021.10.0-1  onevpl-2023.3.1-1  oniguruma-6.9.9-1  opencore-amr-0.1.6-1  openexr-3.2.1-1  openjpeg2-2.5.0-3  openmpi-4.1.5-5  openpmix-4.2.6-1  openssh-9.5p1-1  opus-1.4-1  orc-0.4.34-1  pahole-1:1.25-4  pango-1:1.51.1-1  pangomm-2.46.3-1  pcre-8.45-4  pcsclite-2.0.0-1  perl-error-0.17029-5  perl-mailtools-2.21-7  perl-timedate-2.33-5  pipewire-1:0.3.84-1  pipewire-audio-1:0.3.84-1  pixman-0.42.2-1  polkit-123-1  poppler-23.10.0-1  poppler-data-0.4.12-1  poppler-glib-23.10.0-1  portaudio-1:19.7.0-2  python-3.11.5-2  python-colorama-0.4.6-2  python-psutil-5.9.6-1  python-shtab-1.6.4-1  python-six-1.16.0-8  python-termcolor-2.3.0-1  raptor-2.0.16-3  rasqal-1:0.9.33-6  rav1e-0.6.6-3  redland-1:1.0.17-8  rnnoise-0.4.1-1  rubberband-3.3.0-1  sbc-2.0-1  sdl2-2.28.5-1  serd-0.32.0-1  shaderc-2023.4-2  shared-mime-info-2.3-1  slang-2.3.3-2  snappy-1.1.10-1  sord-0.16.14-1  sound-theme-freedesktop-0.8-5  soundtouch-2.3.2-1  speex-1.2.1-1  speexdsp-1.2.1-1  spirv-tools-2022.4-1  sratom-0.6.14-1  srt-1.5.3-1  startup-notification-0.12-8  suitesparse-7.3.1-1  svt-av1-1.7.0-1  tdb-1.4.9-1  tracker3-3.6.0-1  tree-sitter-0.20.10-2  uchardet-0.0.8-2  unibilium-2.1.1-1  v4l-utils-1.24.1-2  vid.stab-1.1.1-1  vim-runtime-9.0.2070-1  vmaf-2.3.1-1  vulkan-icd-loader-1.3.269-1  wayland-1.22.0-1  wayland-protocols-1.32-1  webkit2gtk-2.42.1-2  webrtc-audio-processing-1-1.3-2  woff2-1.0.2-4  wpa_supplicant-2:2.10-8  wpebackend-fdo-1.14.2-1  x264-3:0.164.r3108.31e19f9-1  x265-3.5-3  xcb-proto-1.16.0-1  xcb-util-0.4.1-1  xcb-util-cursor-0.1.5-1  xcb-util-image-0.4.1-2  xcb-util-renderutil-0.3.10-1  xcb-util-wm-0.4.2-1  xcb-util-xrm-1.3-2  xdg-dbus-proxy-0.1.5-1  xf86-input-libinput-1.4.0-1  xfce4-panel-4.18.5-1  xfconf-4.18.3-1  xkeyboard-config-2.40-1  xmlsec-1.2.37-1  xorg-fonts-encodings-1.0.7-1  xorg-server-common-21.1.9-1  xorg-setxkbmap-1.3.4-1  xorg-xkbcomp-1.4.6-1  xorg-xmodmap-1.0.11-1  xorg-xprop-1.2.6-1  xorg-xrdb-1.2.2-1  xorg-xset-1.2.5-1  xorgproto-2023.2-1  xvidcore-1.3.7-2  zeromq-4.3.5-2  zimg-3.0.5-1  zita-convolver-4.0.3-3  zxing-cpp-2.1.0-1  alacritty-0.12.3-1  amd-ucode-20231030.2b304bfe-1  bash-completion-2.11-3  bat-0.24.0-1  bitwarden-2023.9.2-1  bluez-5.70-1  bluez-utils-5.70-1  btop-1.2.13-1  dmenu-5.2-1  dosfstools-4.2-3  dunst-1.9.2-1  earlyoom-1.7-1  easyeffects-7.1.3-1  efibootmgr-18-2  exfat-utils-1.4.0-2  firefox-119.0.1-1  gimp-2.10.36-1  git-2.42.1-1  gnome-themes-extra-3.28+r6+g45b1d457-1  gtk3-1:3.24.38-1  htop-3.2.2-1  libreoffice-fresh-7.6.2-3  lightdm-1:1.32.0-4  lightdm-webkit-theme-litarvan-3.2.0-1  linux-headers-6.6.1.arch1-1  lsd-1.0.0-1  lxappearance-gtk3-0.6.3-4  man-db-2.12.0-1  man-pages-6.05.01-2  mpv-1:0.36.0-1  neofetch-7.1.0-2  neovim-0.9.4-2  net-tools-2.10-2  network-manager-applet-1.34.0-1  networkmanager-1.44.2-3  nitrogen-1.6.1-4  noto-fonts-1:23.11.1-1  noto-fonts-cjk-20230817-1  noto-fonts-emoji-20220920-1  noto-fonts-extra-1:23.11.1-1  numlockx-1.2-5  obsidian-1.4.16-1  pacman-contrib-1.9.1-1  pamixer-1.6-2  papirus-icon-theme-20231101-1  pavucontrol-1:5.0+r64+geba9ca6-1  picom-10.2-1  pipewire-jack-1:0.3.84-1  pipewire-pulse-1:0.3.84-1  playerctl-2.4.1-3  plymouth-22.02.122-7  progress-0.17-1  redshift-1.12-8  reflector-2023-1  rofi-1.7.5-2  starship-1.16.0-1  syncthing-1.26.0-1  thunar-4.18.8-1  tldr-3.2.0-1  trash-cli-0.23.2.13.2-2  ttf-jetbrains-mono-2.304-1  ttf-jetbrains-mono-nerd-3.0.2-1  ttf-liberation-2.1.5-1  ufw-0.36.2-2  unclutter-1:1.6-3  unzip-6.0-20  vim-9.0.2070-1  wireplumber-0.4.15-1  xclip-0.13-4  xdg-utils-1.1.3+45+g301a1a4-1  xfce4-screenshooter-1.10.4-1  xorg-server-21.1.9-1  zip-3.0-11
+Packages (475) abseil-cpp-20230802.1-1  accountsservice-23.13.9-1  adobe-source-code-pro-fonts-2.042u+1.062i+1.026vf-1  adwaita-cursors-45.0-1  adwaita-icon-theme-45.0-1  alsa-card-profiles-1:0.3.84-1  alsa-lib-1.2.10-2  alsa-topology-conf-1.2.5.1-3  alsa-ucm-conf-1.2.10-2  aom-3.7.0-1  appstream-0.16.3-1  at-spi2-core-2.50.0-1  atkmm-2.28.3-1  avahi-1:0.8+r139+ge5b0bad-1  babl-0.1.106-1  blas-3.11.0-3  bluez-libs-5.70-1  boost-libs-1.83.0-2  box2d-2.4.1-1  bubblewrap-0.8.0-1  c-ares-1.21.0-1  cairo-1.18.0-1  cairomm-1.14.5-1  cantarell-fonts-1:0.303.1-1  cblas-3.11.0-3  clucene-2.3.3.4-14  dav1d-1.3.0-1  dbus-glib-0.112-3  dconf-0.40.0-2  default-cursors-2-1  desktop-file-utils-0.27-1  dnssec-anchors-20190629-3  duktape-2.7.0-6  efivar-38-3  electron-1:25-1  electron24-24.8.8-1  electron25-25.9.4-1  enchant-2.6.2-1  exiv2-0.28.1-1  exo-4.18.0-1  ffmpeg-2:6.0-13  fftw-3.3.10-4  flac-1.4.3-1  fmt-10.1.1-1  fontconfig-2:2.14.2-1  freeglut-3.4.0-1  freetype2-2.13.2-1  fribidi-1.0.13-2  fuse-common-3.16.2-1  fuse2-2.9.9-4  fuse3-3.16.2-1  garcon-4.18.1-1  gcr-4-4.1.0-1  gdk-pixbuf2-2.42.10-2  gegl-0.4.46-2  giflib-5.2.1-2  glib-networking-1:2.78.0-1  glibmm-2.66.6-1  glslang-13.0.0-1  glu-9.0.3-1  gnome-backgrounds-45.0-1  gperftools-2.13-2  gpm-1.20.7.r38.ge82d1a6-5  graphene-1.10.8-1  graphite-1:1.3.14-3  gsettings-desktop-schemas-45.0-1  gsfonts-20200910-3  gsl-2.7.1-3  gsm-1.0.22-1  gssdp-1.6.3-1  gst-plugins-bad-libs-1.22.6-1  gst-plugins-base-libs-1.22.6-1  gstreamer-1.22.6-1  gtk-update-icon-cache-1:4.12.3-2  gtk2-2.24.33-3  gtk4-1:4.12.3-2  gtkmm-1:2.24.5-4  gtkmm3-3.24.8-1  gupnp-1:1.6.6-1  gupnp-igd-1.6.0-1  harfbuzz-8.2.2-1  harfbuzz-icu-8.2.2-1  hicolor-icon-theme-0.17-3  hidapi-0.14.0-2  highway-1.0.7-1  http-parser-2.9.4-1  hunspell-1.7.2-1  hwloc-2.9.1-1  hyphen-2.8.8-5  imath-3.1.9-2  iso-codes-4.15.0-1  jasper-4.0.0-1  jbigkit-2.1-7  json-glib-1.8.0-1  jsoncpp-1.9.5-2  l-smash-2.14.5-3  ladspa-1.17-4  lame-3.100-4  lapack-3.11.0-3  lcms2-2.15-1  ldns-1.8.3-2  lensfun-1:0.3.4-3  less-1:643-1  libabw-0.1.3-3  libadwaita-1:1.4.0-1  libappindicator-gtk3-12.10.0.r298-3  libass-0.17.1-1  libasyncns-1:0.8+r3+g68cd5af-2  libatomic_ops-7.8.0-1  libavc1394-0.5.4-6  libavif-1.0.1-4  libbluray-1.3.4-1  libbs2b-3.1.0-8  libcamera-0.1.0-2  libcamera-ipa-0.1.0-2  libcanberra-1:0.30+r2+gc0620e4-3  libcdio-2.1.0-3  libcdio-paranoia-10.2+2.0.1-3  libcdr-0.1.7-6  libcloudproviders-0.3.5-1  libcolord-1.4.6-1  libconfig-1.7.3-2  libcups-1:2.4.7-2  libdaemon-0.14-5  libdatrie-0.2.13-4  libdbusmenu-glib-16.04.0.r498-2  libdbusmenu-gtk3-16.04.0.r498-2  libde265-1.0.12-1  libdeflate-1.19-1  libdovi-3.2.0-2  libdrm-2.4.117-1  libdvdnav-6.1.1-2  libdvdread-6.1.3-2  libe-book-0.1.3-14  libebur128-1.2.6-1  libedit-20230828_3.1-1  libepoxy-1.5.10-2  libepubgen-0.1.1-4  libetonyek-0.1.10-3  libev-4.33-2  libevdev-1.13.1-1  libexif-0.6.24-2  libexttextcat-3.4.6-1  libfdk-aac-2.0.2-1  libfontenc-1.1.7-1  libfreeaptx-0.1.1-1  libfreehand-0.1.2-4  libgexiv2-0.14.2-1  libgit2-1:1.7.1-1  libglvnd-1.7.0-1  libgtop-2.41.2-1  libgudev-238-1  libheif-1.17.3-1  libical-3.0.17-1  libice-1.1.1-2  libiec61883-1.2.0-7  libinih-57-1  libinput-1.24.0-1  libixion-0.19.0-1  libjpeg-turbo-3.0.1-1  libjxl-0.8.2-2  liblangtag-0.6.4-1  liblc3-1.0.4-1  libldac-2.0.2.3-1  libluv-1.45.0_0-1  libmanette-0.2.6-5  libmm-glib-1.22.0-1  libmng-2.0.3-3  libmodplug-0.8.9.0-5  libmspub-0.1.4-14  libmwaw-0.3.22-1  libmypaint-1.6.1-1  libmysofa-1.3.2-1  libndp-1.8-1  libnewt-0.52.23-2  libnice-0.1.21-2  libnm-1.44.2-3  libnma-1.10.6-2  libnma-common-1.10.6-2  libnotify-0.8.3-1  libnsl-2.0.1-1  libnss_nis-3.2-1  libnumbertext-1.0.11-1  libodfgen-0.1.8-2  libogg-1.3.5-1  libomxil-bellagio-0.9.3-4  libopenmpt-0.7.3-1  liborcus-0.19.2-1  libpagemaker-0.0.4-3  libpciaccess-0.17-1  libpgm-5.3.128-3  libpipeline-1.5.7-1  libpipewire-1:0.3.84-1  libplacebo-5.264.1-4  libpng-1.6.40-2  libproxy-0.5.3-2  libpulse-16.1-6  libqxp-0.0.2-10  libraw-0.21.1-2  libraw1394-2.1.2-3  librevenge-0.0.5-2  librsvg-2:2.57.0-1  libsamplerate-0.2.2-2  libsigc++-2.12.1-1  libsigc++-3.0-3.6.0-1  libsm-1.2.4-1  libsndfile-1.2.2-2  libsodium-1.0.19-2  libsoup-2.74.3-1  libsoup3-3.4.4-1  libsoxr-0.1.3-3  libspiro-1:20221101-2  libssh-0.10.5-1  libstaroffice-0.0.7-2  libstemmer-2.2.0-2  libteam-1.32-1  libtermkey-0.22-2  libthai-0.1.29-3  libtheora-1.1.1-6  libtiff-4.6.0-1  libtommath-1.2.1-1  libunwind-1.7.2-1  libuv-1.47.0-1  libva-2.20.0-1  libvdpau-1.5-2  libvisio-0.1.7-9  libvorbis-1.3.7-3  libvpx-1.13.1-1  libvterm-0.3.3-1  libwacom-2.8.0-1  libwebp-1.3.2-1  libwireplumber-0.4.15-1  libwmf-0.2.13-1  libwnck3-43.0-3  libwpd-0.10.3-4  libwpe-1.14.1-2  libwpg-0.3.4-1  libwps-0.4.14-1  libx11-1.8.7-1  libxau-1.0.11-2  libxcb-1.16-1  libxcomposite-0.4.6-1  libxcursor-1.2.1-3  libxcvt-0.1.2-1  libxdamage-1.1.6-1  libxdg-basedir-1.2.3-2  libxdmcp-1.1.4-2  libxext-1.3.5-1  libxfce4ui-4.18.4-1  libxfce4util-4.18.1-1  libxfixes-6.0.1-1  libxfont2-2.0.6-2  libxft-2.3.8-1  libxi-1.8.1-1  libxinerama-1.1.5-1  libxkbcommon-1.6.0-1  libxkbcommon-x11-1.6.0-1  libxkbfile-1.1.2-1  libxklavier-5.4-5  libxmlb-0.3.14-1  libxmu-1.1.4-1  libxpm-3.5.17-1  libxpresent-1.0.1-1  libxrandr-1.5.4-1  libxrender-0.9.11-1  libxres-1.2.2-1  libxshmfence-1.3.2-1  libxslt-1.1.38-1  libxss-1.2.4-1  libxt-1.3.0-1  libxtst-1.2.4-1  libxv-1.0.12-1  libxxf86vm-1.1.5-1  libyaml-0.2.5-2  libyuv-r2426+464c51a0-1  libzmf-0.0.2-14  lightdm-webkit2-greeter-2.2.5-7  lilv-0.24.20-2  llvm-libs-16.0.6-1  lm_sensors-1:3.6.0.r41.g31d1f125-2  lpsolve-5.5.2.11-2  lua-5.4.6-2  luajit-2.1.1699392533-1  lv2-1.18.10-1  lzo-2.10-5  mailcap-2.1.54-1  mesa-1:23.2.1-2  minizip-1:1.3-2  mobile-broadband-provider-info-20230416-1  mpg123-1.32.3-1  msgpack-c-5.0.0-1  mtdev-1.1.6-2  mujs-1.3.3-1  mypaint-brushes1-1.3.1-1  neon-0.32.5-2  nm-connection-editor-1.34.0-1  nspr-4.35-1  nss-3.94-1  ocl-icd-2.3.2-1  onetbb-2021.10.0-1  onevpl-2023.3.1-1  oniguruma-6.9.9-1  opencore-amr-0.1.6-1  openexr-3.2.1-1  openjpeg2-2.5.0-3  openmpi-4.1.5-5  openpmix-4.2.6-1  openssh-9.5p1-1  opus-1.4-1  orc-0.4.34-1  pahole-1:1.25-4  pango-1:1.51.1-1  pangomm-2.46.3-1  pcre-8.45-4  pcsclite-2.0.0-1  perl-error-0.17029-5  perl-mailtools-2.21-7  perl-timedate-2.33-5  pipewire-1:0.3.84-1  pipewire-audio-1:0.3.84-1  pixman-0.42.2-1  polkit-123-1  poppler-23.10.0-1  poppler-data-0.4.12-1  poppler-glib-23.10.0-1  portaudio-1:19.7.0-2  python-3.11.5-2  python-colorama-0.4.6-2  python-psutil-5.9.6-1  python-shtab-1.6.4-1  python-six-1.16.0-8  python-termcolor-2.3.0-1  raptor-2.0.16-3  rasqal-1:0.9.33-6  rav1e-0.6.6-3  redland-1:1.0.17-8  rnnoise-0.4.1-1  rubberband-3.3.0-1  sbc-2.0-1  sdl2-2.28.5-1  serd-0.32.0-1  shaderc-2023.4-2  shared-mime-info-2.3-1  slang-2.3.3-2  snappy-1.1.10-1  sord-0.16.14-1  sound-theme-freedesktop-0.8-5  soundtouch-2.3.2-1  speex-1.2.1-1  speexdsp-1.2.1-1  spirv-tools-2022.4-1  sratom-0.6.14-1  srt-1.5.3-1  startup-notification-0.12-8  suitesparse-7.3.1-1  svt-av1-1.7.0-1  tdb-1.4.9-1  tracker3-3.6.0-1  tree-sitter-0.20.10-2  uchardet-0.0.8-2  unibilium-2.1.1-1  v4l-utils-1.24.1-2  vid.stab-1.1.1-1  vim-runtime-9.0.2070-1  vmaf-2.3.1-1  vulkan-icd-loader-1.3.269-1  wayland-1.22.0-1  wayland-protocols-1.32-1  webkit2gtk-2.42.2-1  webrtc-audio-processing-1-1.3-2  woff2-1.0.2-4  wpa_supplicant-2:2.10-8  wpebackend-fdo-1.14.2-1  x264-3:0.164.r3108.31e19f9-1  x265-3.5-3  xcb-proto-1.16.0-1  xcb-util-0.4.1-1  xcb-util-cursor-0.1.5-1  xcb-util-image-0.4.1-2  xcb-util-renderutil-0.3.10-1  xcb-util-wm-0.4.2-1  xcb-util-xrm-1.3-2  xdg-dbus-proxy-0.1.5-1  xf86-input-libinput-1.4.0-1  xfce4-panel-4.18.5-1  xfconf-4.18.3-1  xkeyboard-config-2.40-1  xmlsec-1.2.37-1  xorg-fonts-encodings-1.0.7-1  xorg-server-common-21.1.9-1  xorg-setxkbmap-1.3.4-1  xorg-xkbcomp-1.4.6-1  xorg-xmodmap-1.0.11-1  xorg-xprop-1.2.6-1  xorg-xrdb-1.2.2-1  xorg-xset-1.2.5-1  xorgproto-2023.2-1  xvidcore-1.3.7-2  zeromq-4.3.5-2  zimg-3.0.5-1  zita-convolver-4.0.3-3  zxing-cpp-2.1.0-1  alacritty-0.12.3-1  amd-ucode-20231030.2b304bfe-1  bash-completion-2.11-3  bat-0.24.0-1  bitwarden-2023.9.2-1  bluez-5.70-1  bluez-utils-5.70-1  btop-1.2.13-1  dmenu-5.2-1  dosfstools-4.2-3  dunst-1.9.2-1  earlyoom-1.7-1  easyeffects-7.1.3-1  efibootmgr-18-2  exfat-utils-1.4.0-2  firefox-119.0.1-1  gimp-2.10.36-1  git-2.42.1-1  gnome-themes-extra-3.28+r6+g45b1d457-1  gtk3-1:3.24.38-1  htop-3.2.2-1  libreoffice-fresh-7.6.2-3  lightdm-1:1.32.0-4  lightdm-webkit-theme-litarvan-3.2.0-1  linux-headers-6.6.1.arch1-1  lsd-1.0.0-1  lxappearance-gtk3-0.6.3-4  man-db-2.12.0-1  man-pages-6.05.01-2  mpv-1:0.36.0-1  neofetch-7.1.0-2  neovim-0.9.4-2  net-tools-2.10-2  network-manager-applet-1.34.0-1  networkmanager-1.44.2-3  nitrogen-1.6.1-4  noto-fonts-1:23.11.1-1  noto-fonts-cjk-20230817-1  noto-fonts-emoji-20220920-1  noto-fonts-extra-1:23.11.1-1  numlockx-1.2-5  obsidian-1.4.16-1  pacman-contrib-1.9.1-1  pamixer-1.6-2  papirus-icon-theme-20231101-1  pavucontrol-1:5.0+r64+geba9ca6-1  picom-10.2-1  pipewire-jack-1:0.3.84-1  pipewire-pulse-1:0.3.84-1  playerctl-2.4.1-3  plymouth-22.02.122-7  progress-0.17-1  redshift-1.12-8  reflector-2023-1  rofi-1.7.5-2  starship-1.16.0-1  syncthing-1.26.0-1  thunar-4.18.8-1  tldr-3.2.0-1  trash-cli-0.23.2.13.2-2  ttf-jetbrains-mono-2.304-1  ttf-jetbrains-mono-nerd-3.0.2-1  ttf-liberation-2.1.5-1  ufw-0.36.2-2  unclutter-1:1.6-3  unzip-6.0-20  vim-9.0.2070-1  wireplumber-0.4.15-1  xclip-0.13-4  xdg-utils-1.1.3+45+g301a1a4-1  xfce4-screenshooter-1.10.4-1  xorg-server-21.1.9-1  zip-3.0-11
 
-Total Download Size:   1123.82 MiB
-Total Installed Size:  4308.42 MiB
+Total Download Size:   1123.87 MiB
+Total Installed Size:  4308.96 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
@@ -650,7 +650,7 @@ Total Installed Size:  4308.42 MiB
  llvm-libs-16.0.6-1-x86_64 downloading...
  gnome-backgrounds-45.0-1-any downloading...
  noto-fonts-1:23.11.1-1-any downloading...
- webkit2gtk-2.42.1-2-x86_64 downloading...
+ webkit2gtk-2.42.2-1-x86_64 downloading...
  linux-headers-6.6.1.arch1-1-x86_64 downloading...
  papirus-icon-theme-20231101-1-any downloading...
  suitesparse-7.3.1-1-x86_64 downloading...
@@ -751,7 +751,7 @@ Total Installed Size:  4308.42 MiB
  libgit2-1:1.7.1-1-x86_64 downloading...
  openpmix-4.2.6-1-x86_64 downloading...
  lightdm-webkit2-greeter-2.2.5-7-x86_64 downloading...
- liborcus-0.19.1-1-x86_64 downloading...
+ liborcus-0.19.2-1-x86_64 downloading...
  slang-2.3.3-2-x86_64 downloading...
  ttf-jetbrains-mono-2.304-1-any downloading...
  nm-connection-editor-1.34.0-1-x86_64 downloading...
@@ -2102,11 +2102,11 @@ Creating user 'polkitd' (PolicyKit daemon) with UID 102 and GID 102.
   -> Running build hook: [consolefont]
 ==> WARNING: consolefont: no font found in configuration
   -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'wd719x'
 ==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'qla1280'
   -> Running build hook: [filesystems]
   -> Running build hook: [fsck]
@@ -2307,11 +2307,11 @@ Optional dependencies for zenity
   -> Running build hook: [consolefont]
 ==> WARNING: consolefont: no font found in configuration
   -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'wd719x'
 ==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'qla1280'
   -> Running build hook: [filesystems]
   -> Running build hook: [fsck]
@@ -2375,7 +2375,7 @@ installing tlp-rdw...
   Skipped: Running in chroot.
 (3/3) Arming ConditionNeedsUpdate...
 Cloning into 'yay'...
-==> Making package: yay 12.1.3-1 (Thu Nov  9 21:01:02 2023)
+==> Making package: yay 12.1.3-1 (Fri Nov 10 23:47:48 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Installing missing dependencies...
@@ -2404,7 +2404,7 @@ installing go...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  449k  100  449k    0     0  1038k      0 --:--:-- --:--:-- --:--:-- 1038k
+100  449k  100  449k    0     0   818k      0 --:--:-- --:--:-- --:--:--  818k
 ==> Validating source files with sha256sums...
     yay-12.1.3.tar.gz ... Passed
 ==> Extracting sources...
@@ -2416,16 +2416,16 @@ go: downloading github.com/Jguer/go-alpm/v2 v2.2.1
 go: downloading github.com/Jguer/votar v1.0.0
 go: downloading github.com/Morganamilo/go-srcinfo v1.0.0
 go: downloading github.com/deckarep/golang-set/v2 v2.3.0
-go: downloading github.com/leonelquinteros/gotext v1.5.2
 go: downloading github.com/pkg/errors v0.9.1
+go: downloading github.com/leonelquinteros/gotext v1.5.2
 go: downloading golang.org/x/sys v0.10.0
 go: downloading github.com/Morganamilo/go-pacmanconf v0.0.0-20210502114700-cff030e927a5
 go: downloading github.com/adrg/strutil v0.3.0
 go: downloading github.com/hashicorp/go-multierror v1.1.1
 go: downloading golang.org/x/term v0.10.0
 go: downloading golang.org/x/text v0.11.0
-go: downloading github.com/mitchellh/mapstructure v1.5.0
 go: downloading github.com/itchyny/gojq v0.12.13
+go: downloading github.com/mitchellh/mapstructure v1.5.0
 go: downloading github.com/ohler55/ojg v1.19.1
 go: downloading github.com/hashicorp/errwrap v1.1.0
 go: downloading github.com/itchyny/timefmt-go v0.1.5
@@ -2474,7 +2474,7 @@ done
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: yay 12.1.3-1 (Thu Nov  9 21:01:49 2023)
+==> Finished making: yay 12.1.3-1 (Fri Nov 10 23:48:26 2023)
 ==> Removing installed dependencies...
 checking dependencies...
 
@@ -2510,125 +2510,125 @@ Optional dependencies for yay
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
 ==> Cleaning up...
-AUR Explicit (7): xidlehook-0.10.0-1, bluetuith-bin-0.1.9-2, keyd-2.4.3-3, i3lock-fancy-git-r161.7217cb5-1, ncpamixer-1.3.7-1, spotify-adblock-git-1:1.0.2.r0.g9ba383b-2, spotify-1:1.2.22.982-3
+AUR Explicit (7): spotify-adblock-git-1:1.0.2.r0.g9ba383b-2, keyd-2.4.3-3, i3lock-fancy-git-r161.7217cb5-1, xidlehook-0.10.0-1, ncpamixer-1.3.7-1, bluetuith-bin-0.1.9-2, spotify-1:1.2.22.982-3
 Sync Make Dependency (2): cmake-3.27.7-2, rust-1:1.73.0-1
-Sync Dependency (4): i3lock-2.14.1-1, imagemagick-7.1.1.21-1, libayatana-appindicator-0.5.93-1, libcurl-gnutls-8.4.0-2
-:: [1m(1/7) Downloaded PKGBUILD: spotify-adblock-git[0m
-:: [1m(2/7) Downloaded PKGBUILD: ncpamixer[0m
-:: [1m(3/7) Downloaded PKGBUILD: i3lock-fancy-git[0m
+Sync Dependency (4): i3lock-2.14.1-1, imagemagick-7.1.1.21-1, libcurl-gnutls-8.4.0-2, libayatana-appindicator-0.5.93-1
+:: [1m(1/7) Downloaded PKGBUILD: ncpamixer[0m
+:: [1m(2/7) Downloaded PKGBUILD: spotify-adblock-git[0m
+:: [1m(3/7) Downloaded PKGBUILD: xidlehook[0m
 :: [1m(4/7) Downloaded PKGBUILD: bluetuith-bin[0m
-:: [1m(5/7) Downloaded PKGBUILD: xidlehook[0m
+:: [1m(5/7) Downloaded PKGBUILD: i3lock-fancy-git[0m
 :: [1m(6/7) Downloaded PKGBUILD: keyd[0m
 :: [1m(7/7) Downloaded PKGBUILD: spotify[0m
-  7 bluetuith-bin                            (Build Files Exist)
-  6 keyd                                     (Build Files Exist)
-  5 i3lock-fancy-git                         (Build Files Exist)
+  7 spotify                                  (Build Files Exist)
+  6 i3lock-fancy-git                         (Build Files Exist)
+  5 xidlehook                                (Build Files Exist)
   4 ncpamixer                                (Build Files Exist)
-  3 spotify-adblock-git                      (Build Files Exist)
-  2 xidlehook                                (Build Files Exist)
-  1 spotify                                  (Build Files Exist)
+  3 bluetuith-bin                            (Build Files Exist)
+  2 spotify-adblock-git                      (Build Files Exist)
+  1 keyd                                     (Build Files Exist)
 ==> Packages to cleanBuild?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-  7 xidlehook                                (Build Files Exist)
-  6 spotify                                  (Build Files Exist)
-  5 bluetuith-bin                            (Build Files Exist)
-  4 keyd                                     (Build Files Exist)
-  3 i3lock-fancy-git                         (Build Files Exist)
+  7 spotify-adblock-git                      (Build Files Exist)
+  6 keyd                                     (Build Files Exist)
+  5 spotify                                  (Build Files Exist)
+  4 i3lock-fancy-git                         (Build Files Exist)
+  3 xidlehook                                (Build Files Exist)
   2 ncpamixer                                (Build Files Exist)
-  1 spotify-adblock-git                      (Build Files Exist)
+  1 bluetuith-bin                            (Build Files Exist)
 ==> Diffs to show?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-==> Making package: spotify 1:1.2.22.982-3 (Thu Nov  9 21:01:54 2023)
-==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Thu Nov  9 21:01:54 2023)
-==> Retrieving sources...
+==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Fri Nov 10 23:48:30 2023)
 ==> Retrieving sources...
   -> Cloning spotify-adblock git repo...
 Cloning into bare repository '/home/zakdggn/.cache/yay/spotify-adblock-git/spotify-adblock'...
+==> Making package: spotify 1:1.2.22.982-3 (Fri Nov 10 23:48:30 2023)
+==> Retrieving sources...
   -> Downloading spotify-1.2.22.982-g794acc0a-x86_64.deb...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  5  118M    5 6799k    0     0  23.6M      0  0:00:05 --:--:--  0:00:05 23.6M  -> Found spotify-adblock.desktop
-==> Making package: xidlehook 0.10.0-1 (Thu Nov  9 21:01:55 2023)
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  5  118M    5 6135k    0     0  12.0M      0  0:00:09 --:--:--  0:00:09 12.0M==> Making package: keyd 2.4.3-3 (Fri Nov 10 23:48:31 2023)
+==> Retrieving sources...
+  -> Cloning keyd git repo...
+Cloning into bare repository '/home/zakdggn/.cache/yay/keyd/keyd'...
+  -> Found spotify-adblock.desktop
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha512sums...
-    spotify-adblock ... ==> Retrieving sources...
-Skipped
-    spotify-adblock.desktop ...   -> Downloading xidlehook-0.10.0.tar.gz...
-Passed
+    spotify-adblock ... Skipped
+    spotify-adblock.desktop ... Passed
+ 19  118M   19 23.7M    0     0  15.8M      0  0:00:07  0:00:01  0:00:06 15.8M 32  118M   32 38.9M    0     0  15.5M      0  0:00:07  0:00:02  0:00:05 15.5M==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    keyd ... Skipped
+==> Making package: i3lock-fancy-git r161.7217cb5-1 (Fri Nov 10 23:48:33 2023)
+==> Retrieving sources...
+  -> Cloning i3lock-fancy git repo...
+Cloning into bare repository '/home/zakdggn/.cache/yay/i3lock-fancy-git/i3lock-fancy'...
+==> Making package: bluetuith-bin 0.1.9-2 (Fri Nov 10 23:48:33 2023)
+==> Retrieving sources...
+  -> Downloading bluetuith_0.1.9_Linux_x86_64.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 47  118M   47 56.2M    0     0  44.1M      0  0:00:02  0:00:01  0:00:01 44.1M100  1360    0  1360    0     0   2458      0 --:--:-- --:--:-- --:--:--  2459100 47465    0 47465    0     0  82364      0 --:--:-- --:--:-- --:--:-- 82261
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 46  118M   46 55.3M    0     0  15.8M      0  0:00:07  0:00:03  0:00:04 15.8M  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0==> Making package: xidlehook 0.10.0-1 (Fri Nov 10 23:48:35 2023)
+==> Retrieving sources...
+  -> Downloading xidlehook-0.10.0.tar.gz...
+ 61  118M   61 72.6M    0     0  16.1M      0  0:00:07  0:00:04  0:00:03 16.1M  7 3500k    7  270k    0     0   181k      0  0:00:19  0:00:01  0:00:18  271k  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 47465    0 47465    0     0  93127      0 --:--:-- --:--:-- --:--:-- 93251
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha256sums...
     xidlehook-0.10.0.tar.gz ... Passed
- 89  118M   89  106M    0     0  46.7M      0  0:00:02  0:00:02 --:--:-- 46.7M100  118M  100  118M    0     0  46.9M      0  0:00:02  0:00:02 --:--:-- 46.9M
+ 79  118M   79 94.2M    0     0  17.1M      0  0:00:06  0:00:05  0:00:01 17.6M 32 3500k   32 1145k    0     0   452k      0  0:00:07  0:00:02  0:00:05  562k==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with md5sums...
+    i3lock-fancy ... Skipped
+ 98  118M   98  117M    0     0  18.0M      0  0:00:06  0:00:06 --:--:-- 18.6M 55 3500k   55 1940k    0     0   555k      0  0:00:06  0:00:03  0:00:03  647k100  118M  100  118M    0     0  18.1M      0  0:00:06  0:00:06 --:--:-- 19.6M
   -> Found spotify.sh
   -> Found spotify.protocol
   -> Found LICENSE
   -> Downloading spotify-1.2.22.982-3-Release...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2447  100  2447    0     0  35618      0 --:--:-- --:--:-- --:--:-- 37646
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2447  100  2447    0     0  25338      0 --:--:-- --:--:-- --:--:-- 25489
   -> Downloading spotify-1.2.22.982-3-Release.sig...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   833  100   833    0     0  14731      0 --:--:-- --:--:-- --:--:-- 14875
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   833  100   833    0     0  16789      0 --:--:-- --:--:-- --:--:-- 17000
   -> Downloading spotify-1.2.22.982-3-x86_64-Packages...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1265  100  1265    0     0  22280      0 --:--:-- --:--:-- --:--:-- 22589
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1265  100  1265    0     0  19459      0 --:--:-- --:--:-- --:--:-- 19765
+100 3500k  100 3500k    0     0   900k      0  0:00:03  0:00:03 --:--:-- 1031k
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha512sums...
-    spotify-1.2.22.982-g794acc0a-x86_64.deb ... Passed
+    spotify-1.2.22.982-g794acc0a-x86_64.deb ... ==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source_x86_64 files with sha256sums...
+    bluetuith_0.1.9_Linux_x86_64.tar.gz ... Passed
+Passed
     spotify.sh ... Passed
     spotify.protocol ... Passed
     LICENSE ... Passed
     spotify-1.2.22.982-3-Release ... Skipped
     spotify-1.2.22.982-3-Release.sig ... Skipped
     spotify-1.2.22.982-3-x86_64-Packages ... Skipped
-==> Making package: ncpamixer 1.3.7-1 (Thu Nov  9 21:01:58 2023)
+==> Making package: ncpamixer 1.3.7-1 (Fri Nov 10 23:48:38 2023)
 ==> Retrieving sources...
   -> Downloading ncpamixer-1.3.7.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-==> Making package: keyd 2.4.3-3 (Thu Nov  9 21:01:59 2023)
-==> Retrieving sources...
-  -> Cloning keyd git repo...
-Cloning into bare repository '/home/zakdggn/.cache/yay/keyd/keyd'...
-100 24614    0 24614    0     0  38620      0 --:--:-- --:--:-- --:--:-- 38620
+100 24614    0 24614    0     0  33483      0 --:--:-- --:--:-- --:--:-- 33483
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha256sums...
     ncpamixer-1.3.7.tar.gz ... Passed
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha256sums...
-    keyd ... Skipped
-==> Making package: i3lock-fancy-git r161.7217cb5-1 (Thu Nov  9 21:02:00 2023)
-==> Retrieving sources...
-  -> Cloning i3lock-fancy git repo...
-Cloning into bare repository '/home/zakdggn/.cache/yay/i3lock-fancy-git/i3lock-fancy'...
-==> Making package: bluetuith-bin 0.1.9-2 (Thu Nov  9 21:02:01 2023)
-==> Retrieving sources...
-  -> Downloading bluetuith_0.1.9_Linux_x86_64.tar.gz...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with md5sums...
-    i3lock-fancy ... Skipped
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 3500k  100 3500k    0     0  4113k      0 --:--:-- --:--:-- --:--:-- 4113k
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source_x86_64 files with sha256sums...
-    bluetuith_0.1.9_Linux_x86_64.tar.gz ... Passed
-:: [1m(1/7) Parsing SRCINFO: bluetuith-bin[0m
-:: [1m(2/7) Parsing SRCINFO: keyd[0m
-:: [1m(3/7) Parsing SRCINFO: i3lock-fancy-git[0m
+:: [1m(1/7) Parsing SRCINFO: spotify[0m
+:: [1m(2/7) Parsing SRCINFO: i3lock-fancy-git[0m
+:: [1m(3/7) Parsing SRCINFO: xidlehook[0m
 :: [1m(4/7) Parsing SRCINFO: ncpamixer[0m
-:: [1m(5/7) Parsing SRCINFO: spotify-adblock-git[0m
-:: [1m(6/7) Parsing SRCINFO: xidlehook[0m
-:: [1m(7/7) Parsing SRCINFO: spotify[0m
+:: [1m(5/7) Parsing SRCINFO: bluetuith-bin[0m
+:: [1m(6/7) Parsing SRCINFO: spotify-adblock-git[0m
+:: [1m(7/7) Parsing SRCINFO: keyd[0m
 gpg: directory '/home/zakdggn/.gnupg' created
 gpg: keybox '/home/zakdggn/.gnupg/pubring.kbx' created
 gpg: /home/zakdggn/.gnupg/trustdb.gpg: trustdb created
@@ -2660,10 +2660,10 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
+installing libcurl-gnutls...
 installing ayatana-ido...
 installing libayatana-indicator...
 installing libayatana-appindicator...
-installing libcurl-gnutls...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
 resolving dependencies...
@@ -2709,6 +2709,10 @@ Optional dependencies for imagemagick
     openjpeg2: JPEG2000 support [installed]
     djvulibre: DJVU support
     pango: Text rendering [installed]
+installing rust...
+Optional dependencies for rust
+    gdb: rust-gdb script
+    lldb: rust-lldb script
 installing rhash...
 installing cppdap...
 installing cmake...
@@ -2717,17 +2721,13 @@ Optional dependencies for cmake
     ninja: for ninja generator
     qt6-base: cmake-gui
 installing i3lock...
-installing rust...
-Optional dependencies for rust
-    gdb: rust-gdb script
-    lldb: rust-lldb script
 :: Running post-transaction hooks...
 (1/5) Arming ConditionNeedsUpdate...
 (2/5) Updating the MIME type database...
 (3/5) Warn about old perl modules
 (4/5) Updating icon theme caches...
 (5/5) Updating the desktop file MIME type cache...
-==> Making package: spotify 1:1.2.22.982-3 (Thu Nov  9 21:02:16 2023)
+==> Making package: spotify 1:1.2.22.982-3 (Fri Nov 10 23:48:50 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -2755,7 +2755,7 @@ Optional dependencies for rust
 spotify-1.2.22.982-3-x86_64-Packages: OK
 spotify-1.2.22.982-g794acc0a-x86_64.deb: OK
 ==> Sources are ready.
-==> Making package: spotify 1:1.2.22.982-3 (Thu Nov  9 21:02:21 2023)
+==> Making package: spotify 1:1.2.22.982-3 (Fri Nov 10 23:48:54 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -2773,7 +2773,7 @@ spotify-1.2.22.982-g794acc0a-x86_64.deb: OK
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: spotify 1:1.2.22.982-3 (Thu Nov  9 21:02:31 2023)
+==> Finished making: spotify 1:1.2.22.982-3 (Fri Nov 10 23:49:01 2023)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
@@ -2799,26 +2799,173 @@ Optional dependencies for spotify
 (1/3) Arming ConditionNeedsUpdate...
 (2/3) Updating icon theme caches...
 (3/3) Updating the desktop file MIME type cache...
-==> Making package: i3lock-fancy-git r161.7217cb5-1 (Thu Nov  9 21:02:35 2023)
+==> Making package: xidlehook 0.10.0-1 (Fri Nov 10 23:49:03 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
-  -> Updating i3lock-fancy git repo...
-==> Validating source files with md5sums...
-    i3lock-fancy ... Skipped
+  -> Found xidlehook-0.10.0.tar.gz
+==> Validating source files with sha256sums...
+    xidlehook-0.10.0.tar.gz ... Passed
 ==> Removing existing $srcdir/ directory...
 ==> Extracting sources...
-  -> Creating working copy of i3lock-fancy git repo...
-Cloning into 'i3lock-fancy'...
-done.
-==> Starting pkgver()...
-==> Updated version: i3lock-fancy-git r193.55f5c30-1
+  -> Extracting xidlehook-0.10.0.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: i3lock-fancy-git r193.55f5c30-1 (Thu Nov  9 21:02:40 2023)
+==> Making package: xidlehook 0.10.0-1 (Fri Nov 10 23:49:07 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
-==> Starting pkgver()...
+==> Starting build()...
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded atty v0.2.14
+  Downloaded futures-executor v0.3.13
+  Downloaded once_cell v1.7.2
+  Downloaded proc-macro-hack v0.5.19
+  Downloaded quick-error v1.2.3
+  Downloaded proc-macro-nested v0.1.7
+  Downloaded tokio-macros v0.2.6
+  Downloaded pin-project-lite v0.2.5
+  Downloaded void v1.0.2
+  Downloaded proc-macro-error-attr v1.0.4
+  Downloaded cfg-if v1.0.0
+  Downloaded cfg-if v0.1.10
+  Downloaded mio-uds v0.6.8
+  Downloaded memchr v2.3.4
+  Downloaded pkg-config v0.3.19
+  Downloaded net2 v0.2.37
+  Downloaded unicode-xid v0.2.1
+  Downloaded pin-utils v0.1.0
+  Downloaded ansi_term v0.11.0
+  Downloaded lazy_static v1.4.0
+  Downloaded pin-project-lite v0.1.12
+  Downloaded vec_map v0.8.2
+  Downloaded futures-macro v0.3.13
+  Downloaded quote v1.0.9
+  Downloaded proc-macro-error v1.0.4
+  Downloaded num-derive v0.3.3
+  Downloaded bitflags v1.2.1
+  Downloaded env_logger v0.7.1
+  Downloaded futures-channel v0.3.13
+  Downloaded log v0.4.14
+  Downloaded version_check v0.9.2
+  Downloaded ryu v1.0.5
+  Downloaded structopt v0.3.21
+  Downloaded num-traits v0.2.14
+  Downloaded heck v0.3.2
+  Downloaded serde_derive v1.0.123
+  Downloaded bytes v0.5.6
+  Downloaded x11 v2.18.2
+  Downloaded futures v0.3.13
+  Downloaded proc-macro2 v1.0.24
+  Downloaded itoa v0.4.7
+  Downloaded futures-core v0.3.13
+  Downloaded serde v1.0.123
+  Downloaded fnv v1.0.7
+  Downloaded humantime v1.3.0
+  Downloaded signal-hook-registry v1.3.0
+  Downloaded termcolor v1.1.2
+  Downloaded futures-task v0.3.13
+  Downloaded autocfg v1.0.1
+  Downloaded textwrap v0.11.0
+  Downloaded strsim v0.8.0
+  Downloaded unicode-width v0.1.8
+  Downloaded unicode-segmentation v1.7.1
+  Downloaded structopt-derive v0.4.14
+  Downloaded slab v0.4.2
+  Downloaded libpulse-sys v1.18.0
+  Downloaded futures-sink v0.3.13
+  Downloaded futures-io v0.3.13
+  Downloaded iovec v0.1.4
+  Downloaded mio v0.6.23
+  Downloaded aho-corasick v0.7.15
+  Downloaded libpulse-binding v2.23.0
+  Downloaded serde_json v1.0.64
+  Downloaded futures-util v0.3.13
+  Downloaded clap v2.33.3
+  Downloaded syn v1.0.60
+  Downloaded regex-syntax v0.6.22
+  Downloaded regex v1.4.3
+  Downloaded tokio v0.2.25
+  Downloaded libc v0.2.87
+  Downloaded nix v0.15.0
+  Downloaded thread_local v1.1.3
+  Downloaded xcb v0.9.0
+   Compiling libc v0.2.87
+   Compiling proc-macro2 v1.0.24
+   Compiling unicode-xid v0.2.1
+   Compiling syn v1.0.60
+   Compiling memchr v2.3.4
+   Compiling version_check v0.9.2
+   Compiling pkg-config v0.3.19
+   Compiling quote v1.0.9
+   Compiling log v0.4.14
+   Compiling cfg-if v1.0.0
+   Compiling bitflags v1.2.1
+   Compiling slab v0.4.2
+   Compiling proc-macro-error-attr v1.0.4
+   Compiling futures-core v0.3.13
+   Compiling proc-macro-hack v0.5.19
+   Compiling autocfg v1.0.1
+   Compiling cfg-if v0.1.10
+   Compiling proc-macro-error v1.0.4
+   Compiling num-traits v0.2.14
+   Compiling proc-macro-nested v0.1.7
+   Compiling net2 v0.2.37
+   Compiling iovec v0.1.4
+   Compiling atty v0.2.14
+   Compiling x11 v2.18.2
+   Compiling libpulse-sys v1.18.0
+   Compiling futures-sink v0.3.13
+   Compiling serde_derive v1.0.123
+   Compiling unicode-segmentation v1.7.1
+   Compiling unicode-width v0.1.8
+   Compiling textwrap v0.11.0
+   Compiling futures-channel v0.3.13
+   Compiling heck v0.3.2
+   Compiling xcb v0.9.0
+   Compiling mio v0.6.23
+   Compiling vec_map v0.8.2
+   Compiling futures-io v0.3.13
+   Compiling futures-task v0.3.13
+   Compiling strsim v0.8.0
+   Compiling pin-project-lite v0.2.5
+   Compiling pin-utils v0.1.0
+   Compiling nix v0.15.0
+   Compiling lazy_static v1.4.0
+   Compiling ansi_term v0.11.0
+   Compiling once_cell v1.7.2
+   Compiling ryu v1.0.5
+   Compiling serde v1.0.123
+   Compiling futures-macro v0.3.13
+   Compiling num-derive v0.3.3
+   Compiling structopt-derive v0.4.14
+   Compiling tokio-macros v0.2.6
+   Compiling futures-util v0.3.13
+   Compiling thread_local v1.1.3
+   Compiling clap v2.33.3
+   Compiling mio-uds v0.6.8
+   Compiling signal-hook-registry v1.3.0
+   Compiling aho-corasick v0.7.15
+   Compiling void v1.0.2
+   Compiling serde_json v1.0.64
+   Compiling quick-error v1.2.3
+   Compiling bytes v0.5.6
+   Compiling pin-project-lite v0.1.12
+   Compiling regex-syntax v0.6.22
+   Compiling fnv v1.0.7
+   Compiling tokio v0.2.25
+   Compiling regex v1.4.3
+   Compiling humantime v1.3.0
+   Compiling structopt v0.3.21
+   Compiling futures-executor v0.3.13
+   Compiling libpulse-binding v2.23.0
+   Compiling itoa v0.4.7
+   Compiling termcolor v1.1.2
+   Compiling env_logger v0.7.1
+   Compiling xidlehook-core v0.3.0 (/home/zakdggn/.cache/yay/xidlehook/src/xidlehook-0.10.0/xidlehook-core)
+   Compiling futures v0.3.13
+   Compiling xidlehook v0.10.0 (/home/zakdggn/.cache/yay/xidlehook/src/xidlehook-0.10.0/xidlehook-daemon)
+    Finished release [optimized] target(s) in 1m 17s
 ==> Entering fakeroot environment...
 ==> Starting package()...
 ==> Tidying install...
@@ -2828,15 +2975,17 @@ done.
   -> Stripping unneeded symbols from binaries and libraries...
   -> Compressing man and info pages...
 ==> Checking for packaging issues...
-==> Creating package "i3lock-fancy-git"...
+==> WARNING: Package contains reference to $srcdir
+usr/bin/xidlehook
+==> Creating package "xidlehook"...
   -> Generating .PKGINFO file...
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: i3lock-fancy-git r193.55f5c30-1 (Thu Nov  9 21:02:43 2023)
+==> Finished making: xidlehook 0.10.0-1 (Fri Nov 10 23:50:27 2023)
 ==> Cleaning up...
-==> Making package: ncpamixer 1.3.7-1 (Thu Nov  9 21:02:48 2023)
+==> Making package: ncpamixer 1.3.7-1 (Fri Nov 10 23:50:30 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -2847,7 +2996,7 @@ done.
 ==> Extracting sources...
   -> Extracting ncpamixer-1.3.7.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: ncpamixer 1.3.7-1 (Thu Nov  9 21:02:59 2023)
+==> Making package: ncpamixer 1.3.7-1 (Fri Nov 10 23:50:37 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -2882,14 +3031,14 @@ Call Stack (most recent call first):
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
 -- Got version 
--- Configuring done (4.1s)
+-- Configuring done (3.5s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/zakdggn/.cache/yay/ncpamixer/src/ncpamixer-1.3.7
 [ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pulsemixer.cpp.o
 [ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pa_card.cpp.o
+[ 15%] Building CXX object CMakeFiles/ncpamixer.dir/pa_object.cpp.o
 [ 21%] Building CXX object CMakeFiles/ncpamixer.dir/pa_sink.cpp.o
-[ 21%] Building CXX object CMakeFiles/ncpamixer.dir/pa_object.cpp.o
-[ 31%] Building CXX object CMakeFiles/ncpamixer.dir/pa_input.cpp.o
+[ 26%] Building CXX object CMakeFiles/ncpamixer.dir/pa_input.cpp.o
 [ 31%] Building CXX object CMakeFiles/ncpamixer.dir/pa_source.cpp.o
 [ 36%] Building CXX object CMakeFiles/ncpamixer.dir/pa_source_output.cpp.o
 [ 42%] Building CXX object CMakeFiles/ncpamixer.dir/pa.cpp.o
@@ -2924,278 +3073,9 @@ Install the project...
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: ncpamixer 1.3.7-1 (Thu Nov  9 21:03:18 2023)
+==> Finished making: ncpamixer 1.3.7-1 (Fri Nov 10 23:50:50 2023)
 ==> Cleaning up...
-==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Thu Nov  9 21:03:20 2023)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Updating spotify-adblock git repo...
-  -> Found spotify-adblock.desktop
-==> Validating source files with sha512sums...
-    spotify-adblock ... Skipped
-    spotify-adblock.desktop ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Creating working copy of spotify-adblock git repo...
-Cloning into 'spotify-adblock'...
-done.
-==> Starting pkgver()...
-==> Updated version: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1
-==> Sources are ready.
-==> Making package: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Thu Nov  9 21:03:24 2023)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting pkgver()...
-==> Starting build()...
-# cargo build --profile release
-cargo build --release
-    Updating crates.io index
- Downloading crates ...
-  Downloaded serde_spanned v0.6.3
-  Downloaded serde_regex v1.1.0
-  Downloaded toml_datetime v0.6.3
-  Downloaded lazy_static v1.4.0
-  Downloaded equivalent v1.0.1
-  Downloaded toml v0.7.6
-  Downloaded toml_edit v0.19.14
-  Downloaded serde_derive v1.0.174
-  Downloaded libc v0.2.147
-  Downloaded regex v1.9.1
-  Downloaded regex-syntax v0.7.4
-  Downloaded regex-automata v0.3.3
-  Downloaded aho-corasick v1.0.2
-  Downloaded serde v1.0.174
-  Downloaded winnow v0.5.0
-  Downloaded indexmap v2.0.0
-  Downloaded memchr v2.5.0
-  Downloaded hashbrown v0.14.0
-   Compiling serde v1.0.174
-   Compiling memchr v2.5.0
-   Compiling serde_derive v1.0.174
-   Compiling hashbrown v0.14.0
-   Compiling equivalent v1.0.1
-   Compiling regex-syntax v0.7.4
-   Compiling indexmap v2.0.0
-   Compiling aho-corasick v1.0.2
-   Compiling winnow v0.5.0
-   Compiling regex-automata v0.3.3
-   Compiling serde_spanned v0.6.3
-   Compiling toml_datetime v0.6.3
-   Compiling libc v0.2.147
-   Compiling toml_edit v0.19.14
-   Compiling lazy_static v1.4.0
-   Compiling regex v1.9.1
-   Compiling toml v0.7.6
-   Compiling serde_regex v1.1.0
-   Compiling spotify-adblock v1.0.2 (/home/zakdggn/.cache/yay/spotify-adblock-git/src/spotify-adblock)
-    Finished release [optimized] target(s) in 1m 08s
-==> Entering fakeroot environment...
-==> Starting package()...
-install -D --mode=644 --strip target/release/libspotifyadblock.so /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/usr/lib/spotify-adblock.so 
-install -D --mode=644 config.toml /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/etc/spotify-adblock/config.toml 
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "spotify-adblock-git"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Thu Nov  9 21:04:35 2023)
-==> Cleaning up...
-==> Making package: xidlehook 0.10.0-1 (Thu Nov  9 21:04:38 2023)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found xidlehook-0.10.0.tar.gz
-==> Validating source files with sha256sums...
-    xidlehook-0.10.0.tar.gz ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Extracting xidlehook-0.10.0.tar.gz with bsdtar
-==> Sources are ready.
-==> Making package: xidlehook 0.10.0-1 (Thu Nov  9 21:04:43 2023)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting build()...
-    Updating crates.io index
- Downloading crates ...
-  Downloaded heck v0.3.2
-  Downloaded void v1.0.2
-  Downloaded atty v0.2.14
-  Downloaded proc-macro-hack v0.5.19
-  Downloaded tokio-macros v0.2.6
-  Downloaded futures-sink v0.3.13
-  Downloaded strsim v0.8.0
-  Downloaded mio-uds v0.6.8
-  Downloaded futures-channel v0.3.13
-  Downloaded libpulse-binding v2.23.0
-  Downloaded clap v2.33.3
-  Downloaded regex-syntax v0.6.22
-  Downloaded regex v1.4.3
-  Downloaded libc v0.2.87
-  Downloaded tokio v0.2.25
-  Downloaded log v0.4.14
-  Downloaded syn v1.0.60
-  Downloaded nix v0.15.0
-  Downloaded serde_json v1.0.64
-  Downloaded aho-corasick v0.7.15
-  Downloaded futures-util v0.3.13
-  Downloaded structopt v0.3.21
-  Downloaded xcb v0.9.0
-  Downloaded unicode-segmentation v1.7.1
-  Downloaded serde v1.0.123
-  Downloaded x11 v2.18.2
-  Downloaded ryu v1.0.5
-  Downloaded mio v0.6.23
-  Downloaded serde_derive v1.0.123
-  Downloaded bytes v0.5.6
-  Downloaded textwrap v0.11.0
-  Downloaded quote v1.0.9
-  Downloaded proc-macro2 v1.0.24
-  Downloaded proc-macro-error v1.0.4
-  Downloaded libpulse-sys v1.18.0
-  Downloaded futures v0.3.13
-  Downloaded num-derive v0.3.3
-  Downloaded env_logger v0.7.1
-  Downloaded version_check v0.9.2
-  Downloaded thread_local v1.1.3
-  Downloaded structopt-derive v0.4.14
-  Downloaded vec_map v0.8.2
-  Downloaded unicode-width v0.1.8
-  Downloaded pin-project-lite v0.2.5
-  Downloaded once_cell v1.7.2
-  Downloaded iovec v0.1.4
-  Downloaded humantime v1.3.0
-  Downloaded futures-task v0.3.13
-  Downloaded memchr v2.3.4
-  Downloaded autocfg v1.0.1
-  Downloaded ansi_term v0.11.0
-  Downloaded fnv v1.0.7
-  Downloaded unicode-xid v0.2.1
-  Downloaded bitflags v1.2.1
-  Downloaded slab v0.4.2
-  Downloaded futures-core v0.3.13
-  Downloaded termcolor v1.1.2
-  Downloaded futures-io v0.3.13
-  Downloaded futures-executor v0.3.13
-  Downloaded itoa v0.4.7
-  Downloaded cfg-if v0.1.10
-  Downloaded futures-macro v0.3.13
-  Downloaded quick-error v1.2.3
-  Downloaded pin-project-lite v0.1.12
-  Downloaded net2 v0.2.37
-  Downloaded pin-utils v0.1.0
-  Downloaded proc-macro-nested v0.1.7
-  Downloaded pkg-config v0.3.19
-  Downloaded proc-macro-error-attr v1.0.4
-  Downloaded num-traits v0.2.14
-  Downloaded signal-hook-registry v1.3.0
-  Downloaded cfg-if v1.0.0
-   Compiling libc v0.2.87
-   Compiling proc-macro2 v1.0.24
-   Compiling unicode-xid v0.2.1
-   Compiling syn v1.0.60
-   Compiling memchr v2.3.4
-   Compiling version_check v0.9.2
-   Compiling pkg-config v0.3.19
-   Compiling quote v1.0.9
-   Compiling log v0.4.14
-   Compiling bitflags v1.2.1
-   Compiling cfg-if v1.0.0
-   Compiling slab v0.4.2
-   Compiling proc-macro-error-attr v1.0.4
-   Compiling futures-core v0.3.13
-   Compiling cfg-if v0.1.10
-   Compiling autocfg v1.0.1
-   Compiling proc-macro-hack v0.5.19
-   Compiling num-traits v0.2.14
-   Compiling proc-macro-error v1.0.4
-   Compiling proc-macro-nested v0.1.7
-   Compiling net2 v0.2.37
-   Compiling atty v0.2.14
-   Compiling iovec v0.1.4
-   Compiling libpulse-sys v1.18.0
-   Compiling x11 v2.18.2
-   Compiling unicode-segmentation v1.7.1
-   Compiling serde_derive v1.0.123
-   Compiling futures-sink v0.3.13
-   Compiling unicode-width v0.1.8
-   Compiling textwrap v0.11.0
-   Compiling heck v0.3.2
-   Compiling futures-channel v0.3.13
-   Compiling mio v0.6.23
-   Compiling xcb v0.9.0
-   Compiling once_cell v1.7.2
-   Compiling strsim v0.8.0
-   Compiling futures-task v0.3.13
-   Compiling serde v1.0.123
-   Compiling lazy_static v1.4.0
-   Compiling pin-project-lite v0.2.5
-   Compiling futures-macro v0.3.13
-   Compiling num-derive v0.3.3
-   Compiling ryu v1.0.5
-   Compiling futures-io v0.3.13
-   Compiling pin-utils v0.1.0
-   Compiling vec_map v0.8.2
-   Compiling ansi_term v0.11.0
-   Compiling nix v0.15.0
-   Compiling clap v2.33.3
-   Compiling structopt-derive v0.4.14
-   Compiling futures-util v0.3.13
-   Compiling tokio-macros v0.2.6
-   Compiling thread_local v1.1.3
-   Compiling mio-uds v0.6.8
-   Compiling signal-hook-registry v1.3.0
-   Compiling aho-corasick v0.7.15
-   Compiling quick-error v1.2.3
-   Compiling void v1.0.2
-   Compiling bytes v0.5.6
-   Compiling regex-syntax v0.6.22
-   Compiling pin-project-lite v0.1.12
-   Compiling fnv v1.0.7
-   Compiling serde_json v1.0.64
-   Compiling tokio v0.2.25
-   Compiling regex v1.4.3
-   Compiling humantime v1.3.0
-   Compiling futures-executor v0.3.13
-   Compiling structopt v0.3.21
-   Compiling libpulse-binding v2.23.0
-   Compiling termcolor v1.1.2
-   Compiling itoa v0.4.7
-   Compiling env_logger v0.7.1
-   Compiling xidlehook-core v0.3.0 (/home/zakdggn/.cache/yay/xidlehook/src/xidlehook-0.10.0/xidlehook-core)
-   Compiling futures v0.3.13
-   Compiling xidlehook v0.10.0 (/home/zakdggn/.cache/yay/xidlehook/src/xidlehook-0.10.0/xidlehook-daemon)
-    Finished release [optimized] target(s) in 2m 38s
-==> Entering fakeroot environment...
-==> Starting package()...
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> WARNING: Package contains reference to $srcdir
-usr/bin/xidlehook
-==> Creating package "xidlehook"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: xidlehook 0.10.0-1 (Thu Nov  9 21:07:26 2023)
-==> Cleaning up...
-==> Making package: bluetuith-bin 0.1.9-2 (Thu Nov  9 21:07:32 2023)
+==> Making package: bluetuith-bin 0.1.9-2 (Fri Nov 10 23:50:54 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -3206,7 +3086,7 @@ usr/bin/xidlehook
 ==> Extracting sources...
   -> Extracting bluetuith_0.1.9_Linux_x86_64.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: bluetuith-bin 0.1.9-2 (Thu Nov  9 21:07:42 2023)
+==> Making package: bluetuith-bin 0.1.9-2 (Fri Nov 10 23:51:02 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -3225,9 +3105,92 @@ usr/bin/xidlehook
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: bluetuith-bin 0.1.9-2 (Thu Nov  9 21:07:49 2023)
+==> Finished making: bluetuith-bin 0.1.9-2 (Fri Nov 10 23:51:07 2023)
 ==> Cleaning up...
-==> Making package: keyd 2.4.3-3 (Thu Nov  9 21:07:51 2023)
+==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Fri Nov 10 23:51:09 2023)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating spotify-adblock git repo...
+  -> Found spotify-adblock.desktop
+==> Validating source files with sha512sums...
+    spotify-adblock ... Skipped
+    spotify-adblock.desktop ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of spotify-adblock git repo...
+Cloning into 'spotify-adblock'...
+done.
+==> Starting pkgver()...
+==> Updated version: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1
+==> Sources are ready.
+==> Making package: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Fri Nov 10 23:51:12 2023)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Starting build()...
+# cargo build --profile release
+cargo build --release
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded equivalent v1.0.1
+  Downloaded toml_datetime v0.6.3
+  Downloaded serde_regex v1.1.0
+  Downloaded serde_spanned v0.6.3
+  Downloaded toml v0.7.6
+  Downloaded indexmap v2.0.0
+  Downloaded memchr v2.5.0
+  Downloaded toml_edit v0.19.14
+  Downloaded winnow v0.5.0
+  Downloaded aho-corasick v1.0.2
+  Downloaded hashbrown v0.14.0
+  Downloaded serde v1.0.174
+  Downloaded regex v1.9.1
+  Downloaded regex-syntax v0.7.4
+  Downloaded serde_derive v1.0.174
+  Downloaded regex-automata v0.3.3
+  Downloaded libc v0.2.147
+   Compiling serde v1.0.174
+   Compiling memchr v2.5.0
+   Compiling serde_derive v1.0.174
+   Compiling equivalent v1.0.1
+   Compiling regex-syntax v0.7.4
+   Compiling hashbrown v0.14.0
+   Compiling aho-corasick v1.0.2
+   Compiling indexmap v2.0.0
+   Compiling libc v0.2.147
+   Compiling regex-automata v0.3.3
+   Compiling serde_spanned v0.6.3
+   Compiling toml_datetime v0.6.3
+   Compiling winnow v0.5.0
+   Compiling regex v1.9.1
+   Compiling lazy_static v1.4.0
+   Compiling serde_regex v1.1.0
+   Compiling toml_edit v0.19.14
+   Compiling toml v0.7.6
+   Compiling spotify-adblock v1.0.2 (/home/zakdggn/.cache/yay/spotify-adblock-git/src/spotify-adblock)
+    Finished release [optimized] target(s) in 52.02s
+==> Entering fakeroot environment...
+==> Starting package()...
+install -D --mode=644 --strip target/release/libspotifyadblock.so /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/usr/lib/spotify-adblock.so 
+install -D --mode=644 config.toml /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/etc/spotify-adblock/config.toml 
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "spotify-adblock-git"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Fri Nov 10 23:52:06 2023)
+==> Cleaning up...
+==> Making package: keyd 2.4.3-3 (Fri Nov 10 23:52:08 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -3241,7 +3204,7 @@ Cloning into 'keyd'...
 done.
 Switched to a new branch 'makepkg'
 ==> Sources are ready.
-==> Making package: keyd 2.4.3-3 (Thu Nov  9 21:07:56 2023)
+==> Making package: keyd 2.4.3-3 (Fri Nov 10 23:52:12 2023)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -3280,7 +3243,44 @@ install -m644 data/keyd.compose /home/zakdggn/.cache/yay/keyd/pkg/keyd/usr/share
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: keyd 2.4.3-3 (Thu Nov  9 21:08:05 2023)
+==> Finished making: keyd 2.4.3-3 (Fri Nov 10 23:52:17 2023)
+==> Cleaning up...
+==> Making package: i3lock-fancy-git r161.7217cb5-1 (Fri Nov 10 23:52:19 2023)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating i3lock-fancy git repo...
+==> Validating source files with md5sums...
+    i3lock-fancy ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of i3lock-fancy git repo...
+Cloning into 'i3lock-fancy'...
+done.
+==> Starting pkgver()...
+==> Updated version: i3lock-fancy-git r193.55f5c30-1
+==> Sources are ready.
+==> Making package: i3lock-fancy-git r193.55f5c30-1 (Fri Nov 10 23:52:23 2023)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Entering fakeroot environment...
+==> Starting package()...
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "i3lock-fancy-git"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: i3lock-fancy-git r193.55f5c30-1 (Fri Nov 10 23:52:25 2023)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
@@ -3297,23 +3297,23 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
+installing xidlehook...
+installing ncpamixer...
+installing bluetuith-bin...
+Optional dependencies for bluetuith-bin
+    networkmanager: For PANU networking [installed]
+    modemmanager: For DUN networking
+    pulseaudio: For switching device audio profiles [installed]
+installing spotify-adblock-git...
+installing keyd...
+Optional dependencies for keyd
+    python3: for keyd-application-mapper [installed]
 installing i3lock-fancy-git...
 Optional dependencies for i3lock-fancy-git
     wmctrl: minimize windows before locking
     scrot: alternative screenshot creator
     maim: alternative screenshot creator
     gnome-screenshot: alternative screenshot creator
-installing ncpamixer...
-installing spotify-adblock-git...
-installing xidlehook...
-installing bluetuith-bin...
-Optional dependencies for bluetuith-bin
-    networkmanager: For PANU networking [installed]
-    modemmanager: For DUN networking
-    pulseaudio: For switching device audio profiles [installed]
-installing keyd...
-Optional dependencies for keyd
-    python3: for keyd-application-mapper [installed]
 :: Running post-transaction hooks...
 (1/4) Creating system user accounts...
 Creating group 'keyd' with GID 969.
@@ -3339,10 +3339,10 @@ Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX6
 Random seed file /boot/loader/random-seed successfully written (32 bytes).
 Created EFI boot entry "Linux Boot Manager".
 Created symlink /etc/systemd/system/sysinit.target.wants/systemd-boot-update.service → /usr/lib/systemd/system/systemd-boot-update.service.
-591396864 bytes (591 MB, 564 MiB) copied, 1 s, 591 MB/s1135607808 bytes (1.1 GB, 1.1 GiB) copied, 2 s, 567 MB/s1666187264 bytes (1.7 GB, 1.6 GiB) copied, 3 s, 555 MB/s2165309440 bytes (2.2 GB, 2.0 GiB) copied, 4 s, 541 MB/s2707423232 bytes (2.7 GB, 2.5 GiB) copied, 5 s, 541 MB/s3232759808 bytes (3.2 GB, 3.0 GiB) copied, 6 s, 539 MB/s3773825024 bytes (3.8 GB, 3.5 GiB) copied, 7 s, 539 MB/s
+840957952 bytes (841 MB, 802 MiB) copied, 1 s, 841 MB/s1629487104 bytes (1.6 GB, 1.5 GiB) copied, 2 s, 814 MB/s2421161984 bytes (2.4 GB, 2.3 GiB) copied, 3 s, 807 MB/s3190816768 bytes (3.2 GB, 3.0 GiB) copied, 4 s, 797 MB/s3964665856 bytes (4.0 GB, 3.7 GiB) copied, 5 s, 793 MB/s
 4096+0 records in
 4096+0 records out
-4294967296 bytes (4.3 GB, 4.0 GiB) copied, 7.96692 s, 539 MB/s
+4294967296 bytes (4.3 GB, 4.0 GiB) copied, 5.458 s, 787 MB/s
 Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
 no label, UUID=00000000-0000-0000-0000-000000000000
 Created symlink /etc/systemd/system/multi-user.target.wants/tlp.service → /usr/lib/systemd/system/tlp.service.
@@ -3362,10 +3362,12 @@ Created symlink /etc/systemd/system/timers.target.wants/reflector.timer → /usr
 Created symlink /etc/systemd/system/timers.target.wants/paccache.timer → /usr/lib/systemd/system/paccache.timer.
 updating: xpui.js (deflated 74%)
 Success
+Configuration file /etc/systemd/system/suspend@.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+Created symlink /etc/systemd/system/sleep.target.wants/suspend@zakdggn.service → /etc/systemd/system/suspend@.service.
+Configuration file /etc/systemd/system/resume@.service is marked executable. Please remove executable permission bits. Proceeding anyway.
+Created symlink /etc/systemd/system/suspend.target.wants/resume@zakdggn.service → /etc/systemd/system/resume@.service.
 Created symlink /root/.config/systemd/user/default.target.wants/pipewire-pulse.service → /usr/lib/systemd/user/pipewire-pulse.service.
 Created symlink /root/.config/systemd/user/sockets.target.wants/pipewire-pulse.socket → /usr/lib/systemd/user/pipewire-pulse.socket.
-Created symlink /etc/systemd/system/sleep.target.wants/suspend@zakdggn.service → /etc/systemd/system/suspend@.service.
-Created symlink /etc/systemd/system/suspend.target.wants/resume@zakdggn.service → /etc/systemd/system/resume@.service.
 Cloning into bare repository '/home/zakdggn/.dotfiles'...
 Cloning into '/home/zakdggn/dwm'...
 Cloning into '/home/zakdggn/dwmblocks-async'...
