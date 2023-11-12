@@ -15,14 +15,17 @@ config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 $config config status.showUntrackedFiles no
 mv .bashrc .bashrc.backup
 $config checkout
+$config remote set-url origin git@github.com:ZakDggn/dotfiles
 
 # Install dwm
 git clone https://github.com/ZakDggn/dwm "$HOME"/dwm
 git clone https://github.com/ZakDggn/dwmblocks-async "$HOME"/dwmblocks-async
 cd "$HOME"/dwm
 sudo make install
+git remote set-url origin git@github.com:ZakDggn/dwm
 cd "$HOME"/dwmblocks-async
 sudo make install
+git remote set-url origin git@github.com:ZakDggn/dwmblocks-async
 cd "$HOME"
 sudo mkdir -p /usr/share/xsessions
 sudo cp "$UTILS"/dwm.desktop /usr/share/xsessions/dwm.desktop
