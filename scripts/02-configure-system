@@ -106,7 +106,7 @@ fi
 
 # Desktop setup
 HDD_UUID='ea862cc9-c5b3-4c8a-a07b-ece92b9a649a'
-if grep -q "$HDD_UUID" <<< "$(lsblk -o UUID)"; then
+if grep -q "$HDD_UUID" <<< "$(ls /dev/disk/by-uuid)"; then
   mkdir -p "$HDD_MNT"
   chown "$USER":"$USER" "$HDD_MNT"
   chmod 700 "$HDD_MNT"
@@ -166,10 +166,10 @@ printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=alacritty\n' >> /etc/environment
 cp "$UTILS"/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
 
 # Create systemd sleep hook to lock when suspending
-sudo cp "$UTILS"/suspend@.service /etc/systemd/system/suspend@.service
-sudo systemctl enable suspend@"$USERNAME".service
+cp "$UTILS"/suspend@.service /etc/systemd/system/suspend@.service
+systemctl enable suspend@"$USERNAME".service
 
 # Create systemd resume hook to turn the display on when resuming from suspend
 cp "$UTILS"/resume@.service /etc/systemd/system/resume@.service
-sudo systemctl enable resume@"$USERNAME".service
+systemctl enable resume@"$USERNAME".service
 

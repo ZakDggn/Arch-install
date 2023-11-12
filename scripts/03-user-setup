@@ -12,7 +12,6 @@ sudo systemctl --user enable pipewire-pulse.service
 # Bare clone dotfiles repo and set up config alias
 git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-echo "alias config='git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME'" >> "$HOME"/.bashrc
 $config config status.showUntrackedFiles no
 mv .bashrc .bashrc.backup
 $config checkout
@@ -27,8 +26,6 @@ sudo make install
 cd "$HOME"
 sudo mkdir -p /usr/share/xsessions
 sudo cp "$UTILS"/dwm.desktop /usr/share/xsessions/dwm.desktop
-# also add symlink to make dwm default?
-#sudo ln -s /usr/share/xsessions/dwm.desktop /usr/share/xsessions/default.desktop
 
 # Create user's home directories
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
