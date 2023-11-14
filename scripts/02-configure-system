@@ -155,9 +155,9 @@ sed -i 's/#HandlePowerKey=.*/HandlePowerKey=suspend/' /etc/systemd/logind.conf
 # Disable mouse acceleration
 cp "$UTILS"/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# Set default editor to neovim and terminal to alacritty
+# Set default editor to neovim and terminal to kitty
 sed -i '/VISUAL=/d;/EDITOR=/d;/TERMINAL=/d' /etc/environment
-printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=alacritty\n' >> /etc/environment
+printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=kitty\n' >> /etc/environment
 
 # Spotify remove banner
 "$SCRIPTS"/spotify-remove-banner
