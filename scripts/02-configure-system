@@ -71,10 +71,10 @@ sed "s/uuid/$UUID/" "$UTILS"/arch.conf > "$ESP"/loader/entries/arch.conf
 if [[ $NVIDIA = 'yes' ]]; then
   sed -i '$s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
   sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
-  # Enable early kms for plymouth?
-  #sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
-  #mkdir -p /etc/pacman.d/hooks
-  #cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
+  # Enable early KMS
+  sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+  mkdir -p /etc/pacman.d/hooks
+  cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
   mkinitcpio -P
 fi
 systemctl enable systemd-boot-update.service

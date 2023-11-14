@@ -23,8 +23,8 @@ gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig
 pacman-key -v archlinux-x86_64.iso.sig
 
 # Prepare an installation medium
-user_confirmation "Flash to USB now?"
+user_confirmation 'Flash to USB now?'
 lsblk
-read -rp "Enter drive to flash iso onto: " DRIVE
+read -rp 'Enter drive to flash iso onto: ' DRIVE
 user_confirmation "Flash iso onto $DRIVE?"
 sudo dd bs=4M if=archlinux-x86_64.iso of="$DRIVE" conv=fsync oflag=direct status=progress

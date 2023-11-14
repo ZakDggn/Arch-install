@@ -15,10 +15,6 @@ if [[ $(cat /sys/firmware/efi/fw_platform_size) -ne 64 ]]; then
   exit 1
 fi
 
-# Update the system clock
-#timedatectl
-#user_confirmation "Confirm system clock is accurate?"
-
 # Partition the disks
 sgdisk -Z "${DRIVE}"
 sgdisk -o "${DRIVE}"

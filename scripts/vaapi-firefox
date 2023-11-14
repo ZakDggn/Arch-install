@@ -13,13 +13,13 @@ function user_confirmation {
 # AMD
 sudo pacman -S --needed libva-mesa-driver libva-utils
 
-echo "Verify output of vainfo:"
+echo 'Verify output of vainfo:'
 vainfo
 
-echo "Verify with mpv --hwdec=vaapi video_filename"
-echo "Set media.ffmpeg.vaapi.enabled to true in about:config"
-user_confirmation "Verify usage in Firefox?" 
-MOZ_LOG="FFmpegVideo:5" firefox 2>&1 | tee firefox.log | grep --color=always -A 1 'VA-API' | less -R
+echo 'Verify with mpv --hwdec=vaapi video_filename'
+echo 'Set media.ffmpeg.vaapi.enabled to true in about:config'
+user_confirmation 'Verify usage in Firefox?'
+MOZ_LOG='FFmpegVideo:5' firefox 2>&1 | tee firefox.log | grep --color=always -A 1 'VA-API' | less -R
 
 
 # NVIDIA

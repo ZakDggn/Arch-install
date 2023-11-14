@@ -24,7 +24,7 @@ fi
 
 VALID_DRIVES=$(lsblk -pn | grep -o '^/dev/\S*')
 lsblk
-printf "\nSelect installation drive:\n"
+printf '\nSelect installation drive:\n'
 select DRIVE in $VALID_DRIVES; do
   if [[ -n "$DRIVE" ]]; then
     break
@@ -46,7 +46,7 @@ while true; do
   echo 'Confirm password:'
   read -rs PASSWORD_CONFIRM
   [[ $PASSWORD != "$PASSWORD_CONFIRM" ]] || break
-  printf "\nPasswords do not match, try again\n"
+  printf '\nPasswords do not match, try again\n'
 done
 
 read -rp 'Laptop? [y/N]: ' LAPTOP
@@ -83,7 +83,7 @@ Swap size: $SWAP_SIZE GiB
 
 EOF
 if [[ -z $PASSWORD ]]; then
-  printf "Note: password is empty\n\n"
+  printf 'Note: password is empty\n\n'
 fi
 user_confirmation 'Continue with installation?'
 
@@ -111,5 +111,5 @@ rmdir /mnt$UTILS
 sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //' /mnt/etc/sudoers
 sed -i '/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL$/s/^/# /' /mnt/etc/sudoers
 
-printf "\nInstallation successful!\n\n"
+printf '\nInstallation successful!\n\n'
 
