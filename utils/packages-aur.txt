@@ -1,3 +1,4 @@
+adwaita-qt5-git
 bluetuith-bin
 i3lock-fancy-git
 keyd

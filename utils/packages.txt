@@ -52,6 +52,7 @@ pipewire-pulse
 playerctl
 plymouth
 progress
+qt5ct
 redshift
 reflector
 rofi

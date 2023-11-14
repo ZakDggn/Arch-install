@@ -110,7 +110,7 @@ if grep -q "$HDD_UUID" <<< "$(ls /dev/disk/by-uuid)"; then
   mkdir -p "$HDD_MNT"
   chown "$USER":"$USER" "$HDD_MNT"
   chmod 700 "$HDD_MNT"
-  echo "UUID=$HDD_UUID "$HDD_MNT" ext4 defaults 0 2" >> /etc/fstab
+  echo "UUID=$HDD_UUID $HDD_MNT ext4 defaults 0 2" >> /etc/fstab
   mount "$HDD_MNT"
 fi
 
@@ -156,8 +156,8 @@ sed -i 's/#HandlePowerKey=.*/HandlePowerKey=suspend/' /etc/systemd/logind.conf
 cp "$UTILS"/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # Set default editor to neovim and terminal to kitty
-sed -i '/VISUAL=/d;/EDITOR=/d;/TERMINAL=/d' /etc/environment
-printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=kitty\n' >> /etc/environment
+mv /etc/environment /etc/environment.backup
+cp "$UTILS"/environment /etc/environment
 
 # Spotify remove banner
 "$SCRIPTS"/spotify-remove-banner
