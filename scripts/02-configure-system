@@ -6,10 +6,11 @@ set -eufo pipefail
 useradd -mG wheel "$USERNAME"
 echo "$USERNAME:$PASSWORD" | chpasswd
 
-# Enable parallel downloads, multilib and color in pacman
+# Enable color, verbose package lists, parallel downloads and multilib repository in pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i '/^#\[multilib\]$/{s/^#//;n;s/^#//}' /etc/pacman.conf
-sed -i 's/^#Color/Color/' /etc/pacman.conf
 
 # Install packages
 pacman -S --needed --noconfirm - < "$UTILS"/packages.txt

@@ -31,7 +31,7 @@ mount --mkdir "$EFI_PARTITION" /mnt"$ESP"
 
 # Select the mirrors
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-reflector --country 'GB,' --protocol https --completion-percent 100 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+xargs reflector < utils/reflector.conf
 
 # Manually initialise pacman keyring if required
 if grep -q 'Active: failed' <<< "$(systemctl status pacman-init.service)"; then
@@ -41,7 +41,6 @@ fi
 # Install essential packages
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i '/^#\[multilib\]$/{s/^#//;n;s/^#//}' /etc/pacman.conf
-sed -i 's/^#Color/Color/' /etc/pacman.conf
 pacstrap -K /mnt base base-devel linux linux-firmware
 
 # Fstab

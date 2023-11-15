@@ -1,16 +1,16 @@
 #!/bin/bash
 
-set -e
+set -eufo pipefail
 
 function user_confirmation {
   local CONFIRMED
   read -rp "$1 [Y/n]: " CONFIRMED
-  if ! [[ $CONFIRMED =~ ^[Yy]|^\s*$ ]]; then
+  if [[ $CONFIRMED =~ ^[Nn] ]]; then
     exit 1
   fi
 }
 
-# Acquire and installation image (download iso and signature)
+# Download iso and signature
 if ! [[ -f archlinux-x86_64.iso ]]; then
   curl --remote-name https://www.mirrorservice.org/sites/ftp.archlinux.org/iso/latest/archlinux-x86_64.iso
 fi
@@ -19,12 +19,28 @@ if ! [[ -f archlinux-x86_64.iso.sig ]]; then
 fi
 
 # Verify signature
-gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig
-pacman-key -v archlinux-x86_64.iso.sig
+if command -v pacman-key > /dev/null; then
+  pacman-key -v archlinux-x86_64.iso.sig
+else
+  gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig
+fi
 
-# Prepare an installation medium
+# Flash to USB
 user_confirmation 'Flash to USB now?'
+UNMOUNTED_PARTITIONS=$(lsblk -nro PATH,MOUNTPOINT | awk '$1~/(sd.|nvme.*p)[[:digit:]]/ && $2 == ""')
+UNPARTITIONED_DRIVES=$(tail +3 /proc/partitions | awk '{print "/dev/"$NF}' | sed '/sd/s/[0-9]//;/nvme/s/p[0-9]//' | uniq -u)
+VALID_DRIVES="$UNMOUNTED_PARTITIONS $UNPARTITIONED_DRIVES"
+if [[ $VALID_DRIVES =~ ^[[:space:]]*$ ]]; then
+  printf '\nNo valid drives found. Unmount or insert USB.'
+  exit 1
+fi
 lsblk
-read -rp 'Enter drive to flash iso onto: ' DRIVE
+printf '\nSelect drive to flash iso onto:\n'
+select DRIVE in $VALID_DRIVES; do
+  if [[ -n "$DRIVE" ]]; then
+    break
+  fi
+done
+
 user_confirmation "Flash iso onto $DRIVE?"
 sudo dd bs=4M if=archlinux-x86_64.iso of="$DRIVE" conv=fsync oflag=direct status=progress

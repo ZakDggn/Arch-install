@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -euo pipefail -o allexport
+set -eufo pipefail -o allexport
 
 function user_confirmation {
   local CONFIRMED
   read -rp "$1 [Y/n]: " CONFIRMED
-  if ! [[ $CONFIRMED =~ ^[Yy]|^\s*$ ]]; then
+  if [[ $CONFIRMED =~ ^[Nn] ]]; then
     exit 1
   fi
 }
