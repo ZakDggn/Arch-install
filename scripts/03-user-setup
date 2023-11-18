@@ -6,8 +6,11 @@ USER=$USERNAME
 HOME=/home/$USERNAME
 cd "$HOME"
 
-# Enable pipewire-pulse.service
+# Enable pipewire-pulse service
 sudo systemctl --user enable pipewire-pulse.service
+
+# Enable syncthing service
+sudo systemctl --user enable syncthing.service
 
 # Bare clone dotfiles repo and set up config alias
 git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles

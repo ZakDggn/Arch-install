@@ -1,0 +1,14 @@
+#!/bin/bash
+
+run_as_user="sudo -u zakdggn DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
+
+grep -q 'HOME' <<< "$CONNECTION_ID" && home='true' || home='false'
+syncthing_status="$($run_as_user systemctl --user status syncthing)"
+grep -q 'Active: active' <<< "$syncthing_status" && enabled='true' || enabled='false'
+
+if [[ $home = 'true' ]] && [[ $enabled = 'false' ]]; then
+    $run_as_user systemctl --user start syncthing
+elif [[ $home = 'false' ]] && [[ $enabled = 'true' ]]; then
+    $run_as_user systemctl --user stop syncthing
+fi
+
