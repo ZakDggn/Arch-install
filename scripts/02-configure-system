@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eufo pipefail
+set -euo pipefail
 
 # Users and groups
 useradd -mG wheel "$USERNAME"
@@ -126,8 +126,9 @@ ufw allow syncthing
 cp "$UTILS"/manage-syncthing /etc/NetworkManager/dispatcher.d/pre-up.d/manage-syncthing
 
 # Keyd
-cp "$UTILS"/keyd.conf /etc/keyd/keyd.conf
+cp "$UTILS"/keyd/* /etc/keyd/
 systemctl enable keyd.service
+usermod -aG keyd "$USERNAME"
 
 # Lightdm
 systemctl enable lightdm.service

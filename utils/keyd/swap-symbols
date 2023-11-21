@@ -1,0 +1,19 @@
+[shift]
+2 = S-'
+' = S-2
+
+[control+shift]
+2 = C-S-2
+' = C-S-'
+
+[alt+shift]
+2 = A-S-2
+' = A-S-'
+
+[meta+shift]
+2 = M-S-2
+' = M-S-'
+
+[altgr+shift]
+2 = G-S-2
+' = G-S-'
