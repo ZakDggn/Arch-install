@@ -62,13 +62,13 @@ echo "root:$PASSWORD" | chpasswd
 sed -i '/^HOOKS=/s/)/ plymouth)/' /etc/mkinitcpio.conf
 
 # Boot loader
-sed -i 's/fmask=0022,dmask=0022/fmask=0137,dmask=0027/' /etc/fstab
-umount "$ESP"
-mount "$ESP"
 UUID=$(blkid "$ROOT_PARTITION" --match-tag UUID -o value)
 bootctl install
 cp "$UTILS"/loader.conf "$ESP"/loader/loader.conf
 sed "s/uuid/$UUID/" "$UTILS"/arch.conf > "$ESP"/loader/entries/arch.conf
+systemctl enable systemd-boot-update.service
+
+# Nvidia setup
 if [[ $NVIDIA = 'yes' ]]; then
   sed -i '$s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
   sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
@@ -78,7 +78,6 @@ if [[ $NVIDIA = 'yes' ]]; then
   cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
   mkinitcpio -P
 fi
-systemctl enable systemd-boot-update.service
 
 # Create swapfile
 if [[ $SWAP_SIZE -ne 0 ]]; then
