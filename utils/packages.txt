@@ -62,13 +62,14 @@ thunar
 tldr
 trash-cli
 ttf-jetbrains-mono
-ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-nerd-fonts-symbols
 ufw
 unclutter
 unzip
 vim
 wireplumber
+wmname
 xclip
 xdg-utils
 xfce4-screenshooter
