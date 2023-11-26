@@ -122,8 +122,8 @@ sed -i 's/^ENABLED=.*/ENABLED=yes/' /etc/ufw/ufw.conf
 systemctl enable ufw.service
 
 # Syncthing
-ufw allow syncthing
-cp "$UTILS"/manage-syncthing /etc/NetworkManager/dispatcher.d/pre-up.d/manage-syncthing
+#ufw allow syncthing
+sed "s/username/$USERNAME/" "$UTILS"/manage-syncthing > /etc/NetworkManager/dispatcher.d/pre-up.d/manage-syncthing
 
 # Keyd
 cp "$UTILS"/keyd/* /etc/keyd/
