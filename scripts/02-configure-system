@@ -70,7 +70,7 @@ systemctl enable systemd-boot-update.service
 
 # Nvidia setup
 if [[ $NVIDIA = 'yes' ]]; then
-  sed -i '$s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
+  sed -i '/^options/s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
   sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
   # Enable early KMS
   sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
