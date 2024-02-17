@@ -76,6 +76,10 @@ if [[ $NVIDIA = 'yes' ]]; then
   sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
   mkdir -p /etc/pacman.d/hooks
   cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
+  # Preserve video memory after suspend
+  cp "$UTILS"/nvidia-power-management.conf /etc/modprobe.d/nvidia-power-management.conf
+  systemctl enable nvidia-suspend.service
+  systemctl enable nvidia-resume.service
   mkinitcpio -P
 fi
 

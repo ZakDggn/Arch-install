@@ -27,6 +27,7 @@ lightdm-webkit-theme-litarvan
 linux-headers
 lsd
 lxappearance-gtk3
+lxsession-gtk3
 man-db
 man-pages
 mpv
@@ -56,6 +57,7 @@ qt5ct
 redshift
 reflector
 rofi
+sccache
 starship
 syncthing
 thunar
