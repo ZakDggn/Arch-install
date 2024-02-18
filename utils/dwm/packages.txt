@@ -1,0 +1,16 @@
+dmenu
+feh
+kitty
+lightdm
+lightdm-webkit-theme-litarvan
+lxappearance-gtk3
+nitrogen
+numlockx
+picom
+redshift
+rofi
+unclutter
+wmname
+xclip
+xfce4-screenshooter
+xorg-server

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SCREENSHOTS_DIR=~/Pictures/Screenshots/
+
+sway

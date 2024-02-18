@@ -1,0 +1,14 @@
+foot
+gammastep
+nwg-look
+sddm
+sway
+swaybg
+swayidle
+swayimg
+swaylock
+waybar
+wl-clipboard
+wmenu
+wofi
+xorg-xwayland

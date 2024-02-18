@@ -1,0 +1,4 @@
+grimshot
+rofi-lbonn-wayland-git
+wayland-pipewire-idle-inhibit
+wlogout

@@ -100,9 +100,6 @@ if [[ $LAPTOP = 'yes' ]]; then
   systemctl mask systemd-rfkill.socket
   systemctl enable NetworkManager-dispatcher.service
 
-  # Touchpad
-  cp "$UTILS"/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-
   # Add user to video group and allow to change the brightness
   usermod -aG video "$USERNAME"
   cp "$UTILS"/backlight.rules /etc/udev/rules.d/backlight.rules
@@ -126,7 +123,7 @@ systemctl enable ufw.service
 
 # Syncthing
 #ufw allow syncthing
-sed "s/username/$USERNAME/" "$UTILS"/manage-syncthing > /etc/NetworkManager/dispatcher.d/pre-up.d/manage-syncthing
+sed "s/USERNAME/$USERNAME/" "$UTILS"/manage-syncthing > /etc/NetworkManager/dispatcher.d/pre-up.d/manage-syncthing
 
 # Keyd
 cp "$UTILS"/keyd/* /etc/keyd/
@@ -161,24 +158,46 @@ cp "$UTILS"/nobeep.conf /etc/modprobe.d/nobeep.conf
 # Power button suspends
 sed -i 's/#HandlePowerKey=.*/HandlePowerKey=suspend/' /etc/systemd/logind.conf
 
-# Disable mouse acceleration
-cp "$UTILS"/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-
-# Set default editor to neovim and terminal to kitty
-mv /etc/environment /etc/environment.backup
-cp "$UTILS"/environment /etc/environment
-
 # Spotify remove banner
 "$SCRIPTS"/spotify-remove-banner
 
-# Set X11 keymap
-cp "$UTILS"/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+# dwm setup
+if [[ $WM = 'dwm' ]]; then
+    # Install packages
+    pacman -S --needed --noconfirm - < "$UTILS"/dwm/packages.txt
+    sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/dwm/packages-aur.txt
 
-# Create systemd sleep hook to lock when suspending
-cp "$UTILS"/suspend@.service /etc/systemd/system/suspend@.service
-systemctl enable suspend@"$USERNAME".service
+    mv /etc/environment /etc/environment.backup
+    cp "$UTILS"/dwm/environment /etc/environment
 
-# Create systemd resume hook to turn the display on when resuming from suspend
-cp "$UTILS"/resume@.service /etc/systemd/system/resume@.service
-systemctl enable resume@"$USERNAME".service
+    # Set keymap
+    cp "$UTILS"/dwm/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+
+    # Create systemd sleep hook to lock when suspending
+    cp "$UTILS"/dwm/suspend@.service /etc/systemd/system/suspend@.service
+    systemctl enable suspend@"$USERNAME".service
+
+    # Create systemd resume hook to turn the display on when resuming from suspend
+    cp "$UTILS"/dwm/resume@.service /etc/systemd/system/resume@.service
+    systemctl enable resume@"$USERNAME".service
+
+    # Disable mouse acceleration
+    cp "$UTILS"/dwm/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+
+    # Touchpad
+    if [[ $LAPTOP = 'yes' ]]; then
+        cp "$UTILS"/dwm/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+    fi
+
+# Sway setup
+elif [[ $WM = 'Sway' ]]; then
+    # Install packages
+    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
+    sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/sway/packages-aur.txt
+
+    mv /etc/environment /etc/environment.backup
+    cp "$UTILS"/sway/environment /etc/environment
+
+    # TODO
+fi
 

@@ -20,18 +20,6 @@ mv .bashrc .bashrc.backup
 $config checkout
 $config remote set-url origin git@github.com:ZakDggn/dotfiles
 
-# Install dwm
-git clone https://github.com/ZakDggn/dwm "$HOME"/dwm
-git clone https://github.com/ZakDggn/dwmblocks-async "$HOME"/dwmblocks-async
-cd "$HOME"/dwm
-sudo make install
-git remote set-url origin git@github.com:ZakDggn/dwm
-cd "$HOME"/dwmblocks-async
-sudo make install
-git remote set-url origin git@github.com:ZakDggn/dwmblocks-async
-cd "$HOME"
-sudo mkdir -p /usr/share/xsessions
-sudo cp "$UTILS"/dwm.desktop /usr/share/xsessions/dwm.desktop
 
 # Create user's home directories
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
@@ -45,3 +33,25 @@ done
 # Copy wallpaper to Pictures
 cp "$UTILS"/wallpaper.png "$HOME"/Pictures/
 
+# Install dwm
+if [[ $WM = 'dwm' ]]; then
+    git clone https://github.com/ZakDggn/dwm "$HOME"/dwm
+    git clone https://github.com/ZakDggn/dwmblocks-async "$HOME"/dwmblocks-async
+    cd "$HOME"/dwm
+    sudo make install
+    git remote set-url origin git@github.com:ZakDggn/dwm
+    cd "$HOME"/dwmblocks-async
+    sudo make install
+    git remote set-url origin git@github.com:ZakDggn/dwmblocks-async
+    cd "$HOME"
+    sudo mkdir -p /usr/share/xsessions
+    sudo cp "$UTILS"/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
+fi
+
+# Install Sway
+if [[ $WM = 'Sway' ]]; then
+    # Create screenshots directory for grimshot
+    mkdir "$HOME"/Pictures/Screenshots
+
+    # TODO
+fi

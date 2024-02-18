@@ -1,0 +1,4 @@
+VISUAL=nvim
+EDITOR=nvim
+TERMINAL=foot
+MOZ_USE_XINPUT2=1
