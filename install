@@ -68,7 +68,7 @@ if [[ -z $SWAP_SIZE ]]; then
 fi
 
 printf '\nSelect window manager:\n'
-select WM in "Sway dwm"; do
+select WM in Sway dwm; do
   if [[ -n "$WM" ]]; then
     break
   fi

@@ -1,7 +1,7 @@
 foot
 gammastep
 nwg-look
-sddm
+polkit
 sway
 swaybg
 swayidle
@@ -10,5 +10,6 @@ swaylock
 waybar
 wl-clipboard
 wmenu
-wofi
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 xorg-xwayland

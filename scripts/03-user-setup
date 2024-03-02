@@ -52,6 +52,4 @@ fi
 if [[ $WM = 'Sway' ]]; then
     # Create screenshots directory for grimshot
     mkdir "$HOME"/Pictures/Screenshots
-
-    # TODO
 fi

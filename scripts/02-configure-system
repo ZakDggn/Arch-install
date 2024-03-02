@@ -198,6 +198,10 @@ elif [[ $WM = 'Sway' ]]; then
     mv /etc/environment /etc/environment.backup
     cp "$UTILS"/sway/environment /etc/environment
 
-    # TODO
+    if [[ $NVIDIA = 'yes' ]]; then
+        cp "$UTILS"/sway/start-sway-nvidia /usr/local/bin/start-sway
+    else
+        cp "$UTILS"/sway/start-sway /usr/local/bin/start-sway
+    fi
 fi
 
