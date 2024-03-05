@@ -7,12 +7,12 @@ localectl set-keymap uk
 
 # Verify the boot mode
 if ! [ -f /sys/firmware/efi/fw_platform_size ]; then
-  echo 'System is not booted in UEFI mode'
-  exit 1
+    echo 'System is not booted in UEFI mode'
+    exit 1
 fi
 if [[ $(cat /sys/firmware/efi/fw_platform_size) -ne 64 ]]; then
-  echo 'System is booted into 32-bit UEFI mode'
-  exit 1
+    echo 'System is booted into 32-bit UEFI mode'
+    exit 1
 fi
 
 # Partition the disks
@@ -35,7 +35,7 @@ xargs reflector < utils/reflector.conf
 
 # Manually initialise pacman keyring if required
 if grep -q 'Active: failed' <<< "$(systemctl status pacman-init.service)"; then
-  pacman-key --init
+    pacman-key --init
 fi
 
 # Install essential packages

@@ -3,11 +3,11 @@
 set -eufo pipefail
 
 function user_confirmation {
-  local CONFIRMED
-  read -rp "$1 [Y/n]: " CONFIRMED
-  if [[ $CONFIRMED =~ ^[Nn] ]]; then
-    exit 1
-  fi
+    local CONFIRMED
+    read -rp "$1 [Y/n]: " CONFIRMED
+    if [[ $CONFIRMED =~ ^[Nn] ]]; then
+        exit 1
+    fi
 }
 
 # AMD

@@ -16,16 +16,19 @@ sed -i '/^#\[multilib\]$/{s/^#//;n;s/^#//}' /etc/pacman.conf
 pacman -S --needed --noconfirm - < "$UTILS"/packages.txt
 pacman -S --needed --noconfirm --asdeps - < "$UTILS"/packages-deps.txt
 if [[ $LAPTOP = 'yes' ]]; then
-  pacman -S --needed --noconfirm - < "$UTILS"/packages-laptop.txt
+    pacman -S --needed --noconfirm - < "$UTILS"/packages-laptop.txt
 fi
 if [[ $NVIDIA = 'yes' ]]; then
-  pacman -S --needed --noconfirm nvidia
+    pacman -S --needed --noconfirm nvidia
 else
-  pacman -S --needed --noconfirm mesa xf86-video-amdgpu libva-mesa-driver
+    pacman -S --needed --noconfirm mesa xf86-video-amdgpu libva-mesa-driver
 fi
 
 # Enable parallel compilation in makepkg.conf
 sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf
+
+# Disable debug option in makepkg.conf
+sed -i '/^OPTIONS=/s/debug/!debug/' /etc/makepkg.conf
 
 # Install yay
 git clone https://aur.archlinux.org/yay.git
@@ -70,17 +73,17 @@ systemctl enable systemd-boot-update.service
 
 # Nvidia setup
 if [[ $NVIDIA = 'yes' ]]; then
-  sed -i '/^options/s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
-  sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
-  # Enable early KMS
-  sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
-  mkdir -p /etc/pacman.d/hooks
-  cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
-  # Preserve video memory after suspend
-  cp "$UTILS"/nvidia-power-management.conf /etc/modprobe.d/nvidia-power-management.conf
-  systemctl enable nvidia-suspend.service
-  systemctl enable nvidia-resume.service
-  mkinitcpio -P
+    sed -i '/^options/s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
+    sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
+    # Enable early KMS
+    sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+    mkdir -p /etc/pacman.d/hooks
+    cp "$UTILS"/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
+    # Preserve video memory after suspend
+    cp "$UTILS"/nvidia-power-management.conf /etc/modprobe.d/nvidia-power-management.conf
+    systemctl enable nvidia-suspend.service
+    systemctl enable nvidia-resume.service
+    mkinitcpio -P
 fi
 
 # Create swapfile
@@ -94,25 +97,25 @@ fi
 
 # Laptop setup
 if [[ $LAPTOP = 'yes' ]]; then
-  # Enable tlp
-  systemctl enable tlp.service
-  systemctl mask systemd-rfkill.service
-  systemctl mask systemd-rfkill.socket
-  systemctl enable NetworkManager-dispatcher.service
+    # Enable tlp
+    systemctl enable tlp.service
+    systemctl mask systemd-rfkill.service
+    systemctl mask systemd-rfkill.socket
+    systemctl enable NetworkManager-dispatcher.service
 
-  # Add user to video group and allow to change the brightness
-  usermod -aG video "$USERNAME"
-  cp "$UTILS"/backlight.rules /etc/udev/rules.d/backlight.rules
+    # Add user to video group and allow to change the brightness
+    usermod -aG video "$USERNAME"
+    cp "$UTILS"/backlight.rules /etc/udev/rules.d/backlight.rules
 fi
 
 # Desktop setup
 HDD_UUID='ea862cc9-c5b3-4c8a-a07b-ece92b9a649a'
 if grep -q "$HDD_UUID" <<< "$(ls /dev/disk/by-uuid)"; then
-  mkdir -p "$HDD_MNT"
-  chown "$USER":"$USER" "$HDD_MNT"
-  chmod 700 "$HDD_MNT"
-  echo "UUID=$HDD_UUID $HDD_MNT ext4 defaults 0 2" >> /etc/fstab
-  mount "$HDD_MNT"
+    mkdir -p "$HDD_MNT"
+    chown "$USER":"$USER" "$HDD_MNT"
+    chmod 700 "$HDD_MNT"
+    echo "UUID=$HDD_UUID $HDD_MNT ext4 defaults 0 2" >> /etc/fstab
+    mount "$HDD_MNT"
 fi
 
 # Firewalls (ufw)
@@ -129,13 +132,6 @@ sed "s/USERNAME/$USERNAME/" "$UTILS"/manage-syncthing > /etc/NetworkManager/disp
 cp "$UTILS"/keyd/* /etc/keyd/
 systemctl enable keyd.service
 usermod -aG keyd "$USERNAME"
-
-# Lightdm
-systemctl enable lightdm.service
-sed -i 's/^#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
-sed -i 's/#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
-sed -i '/^webkit_theme/s/=.*/= litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
-cp "$UTILS"/wallpaper.png /usr/share/backgrounds/
 
 # Enable automtic trim
 systemctl enable fstrim.timer
@@ -169,6 +165,13 @@ if [[ $WM = 'dwm' ]]; then
 
     mv /etc/environment /etc/environment.backup
     cp "$UTILS"/dwm/environment /etc/environment
+
+    # Lightdm
+    systemctl enable lightdm.service
+    sed -i 's/^#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+    sed -i 's/#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
+    sed -i '/^webkit_theme/s/=.*/= litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
+    cp "$UTILS"/wallpaper.png /usr/share/backgrounds/
 
     # Set keymap
     cp "$UTILS"/dwm/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf

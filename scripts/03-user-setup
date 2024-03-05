@@ -20,14 +20,13 @@ mv .bashrc .bashrc.backup
 $config checkout
 $config remote set-url origin git@github.com:ZakDggn/dotfiles
 
-
 # Create user's home directories
 for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
-  if [[ -d "$HDD_MNT"/$d ]]; then
-    ln -s "$HDD_MNT"/$d "$HOME"/$d
-  else
-    mkdir "$HOME"/$d
-  fi
+    if [[ -d "$HDD_MNT"/$d ]]; then
+        ln -s "$HDD_MNT"/$d "$HOME"/$d
+    else
+        mkdir "$HOME"/$d
+    fi
 done
 
 # Copy wallpaper to Pictures
@@ -48,8 +47,11 @@ if [[ $WM = 'dwm' ]]; then
     sudo cp "$UTILS"/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
 fi
 
-# Install Sway
+# Sway setup
 if [[ $WM = 'Sway' ]]; then
     # Create screenshots directory for grimshot
     mkdir "$HOME"/Pictures/Screenshots
+
+    # Switch dotfiles branch to sway
+    $config switch sway
 fi

@@ -7,6 +7,7 @@ swaybg
 swayidle
 swayimg
 swaylock
+ttf-roboto-mono
 waybar
 wl-clipboard
 wmenu
