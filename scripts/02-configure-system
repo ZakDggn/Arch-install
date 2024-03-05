@@ -31,12 +31,12 @@ sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf
 sed -i '/^OPTIONS=/s/debug/!debug/' /etc/makepkg.conf
 
 # Install yay
-git clone https://aur.archlinux.org/yay.git
-chown -R "$USERNAME":"$USERNAME" yay
-cd yay
+git clone https://aur.archlinux.org/yay-bin.git
+chown -R "$USERNAME":"$USERNAME" yay-bin
+cd yay-bin
 sudo -u "$USERNAME" makepkg -sirc --noconfirm
 cd ..
-rm -rf yay
+rm -rf yay-bin
 
 # Install AUR packages
 sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/packages-aur.txt

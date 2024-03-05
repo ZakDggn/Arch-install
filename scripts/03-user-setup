@@ -53,5 +53,6 @@ if [[ $WM = 'Sway' ]]; then
     mkdir "$HOME"/Pictures/Screenshots
 
     # Switch dotfiles branch to sway
+    mv .bash_profile .bash_profile.backup
     $config switch sway
 fi

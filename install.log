@@ -39,7 +39,7 @@ mkfs.fat 4.2 (2021-01-31)
 mke2fs 1.47.0 (5-Feb-2023)
 Discarding device blocks:        0/62258432                 done                            
 Creating filesystem with 62258432 4k blocks and 15564800 inodes
-Filesystem UUID: ffd93af0-a159-4ead-b77c-250c61282bc3
+Filesystem UUID: 288a83ee-7d09-41fd-8d4b-cc0405b55b50
 Superblock backups stored on blocks: 
 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
 	4096000, 7962624, 11239424, 20480000, 23887872
@@ -49,7 +49,6 @@ Writing inode tables:    0/1900         done
 Creating journal (262144 blocks): done
 Writing superblocks and filesystem accounting information:    0/1900         done
 
-[2024-03-03 23:15:48] WARNING: failed to rate http(s) download (https://mirror.rackspace.com/archlinux/extra/os/x86_64/extra.db): Download timed out after 5 second(s).
 ==> Creating install root at /mnt
 gpg: /mnt/etc/pacman.d/gnupg/trustdb.gpg: trustdb created
 gpg: no ultimately trusted keys found
@@ -59,7 +58,7 @@ gpg: migration succeeded
 ==> Generating pacman master key. This may take some time.
 gpg: Generating pacman keyring master key...
 gpg: directory '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d' created
-gpg: revocation certificate stored as '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d/24B21FABA14A0000159E8230E53D82D10554AA3C.rev'
+gpg: revocation certificate stored as '/mnt/etc/pacman.d/gnupg/openpgp-revocs.d/8A8919105F090C88AA937C67A7ECCE8AF6076ADD.rev'
 gpg: Done
 ==> Updating trust database...
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
@@ -84,10 +83,10 @@ Enter a number (default=1):
 Enter a number (default=1): 
 looking for conflicting packages...
 
-Packages (148) acl-2.3.2-1  archlinux-keyring-20240208-1  argon2-20190702-5  attr-2.5.2-1  audit-4.0-1  autoconf-2.72-1  automake-1.16.5-2  bash-5.2.026-2  binutils-2.42-2  bison-3.8.2-6  brotli-1.1.0-1  bzip2-1.0.8-5  ca-certificates-20220905-1  ca-certificates-mozilla-3.98-1  ca-certificates-utils-20220905-1  coreutils-9.4-3  cryptsetup-2.7.0-1  curl-8.6.0-3  db5.3-5.3.28-4  dbus-1.14.10-2  dbus-broker-35-2  dbus-broker-units-35-2  debugedit-5.0-5  device-mapper-2.03.23-1  diffutils-3.10-1  e2fsprogs-1.47.0-1  expat-2.6.1-1  fakeroot-1.33-2  file-5.45-1  filesystem-2024.01.19-1  findutils-4.9.0-3  flex-2.6.4-5  gawk-5.3.0-1  gc-8.2.6-1  gcc-13.2.1-5  gcc-libs-13.2.1-5  gdbm-1.23-2  gettext-0.22.4-1  glib2-2.78.4-1  glibc-2.39-1  gmp-6.3.0-1  gnupg-2.4.4-1  gnutls-3.8.3-1  gpgme-1.23.2-1  grep-3.11-1  groff-1.23.0-5  guile-3.0.9-1  gzip-1.13-2  hwdata-0.379-1  iana-etc-20231228-1  icu-74.2-1  iproute2-6.7.0-1  iptables-1:1.8.10-1  iputils-20240117-1  jansson-2.14-2  json-c-0.17-1  kbd-2.6.4-1  keyutils-1.6.3-2  kmod-31-1  krb5-1.21.2-2  libarchive-3.7.2-1  libassuan-2.5.6-1  libbpf-1.3.0-1  libcap-2.69-3  libcap-ng-0.8.4-1  libelf-0.191-1  libevent-2.1.12-4  libffi-3.4.6-1  libgcrypt-1.10.3-1  libgpg-error-1.48-1  libidn2-2.3.7-1  libisl-0.26-1  libksba-1.6.6-1  libldap-2.6.6-2  libmnl-1.0.5-1  libmpc-1.3.1-1  libnetfilter_conntrack-1.0.9-1  libnfnetlink-1.0.2-1  libnftnl-1.2.6-1  libnghttp2-1.60.0-1  libnghttp3-1.2.0-1  libnl-3.9.0-1  libp11-kit-0.25.3-1  libpcap-1.10.4-1  libpsl-0.21.2-1  libsasl-2.1.28-4  libseccomp-2.5.5-2  libsecret-0.21.4-1  libssh2-1.11.0-1  libsysprof-capture-45.2-1  libtasn1-4.19.0-1  libtirpc-1.3.4-1  libtool-2.4.7+4+g1ec8fa28-7  libunistring-1.1-2  libusb-1.0.27-1  libutempter-1.2.1-4  libverto-0.3.2-4  libxcrypt-4.4.36-1  libxml2-2.12.5-1  licenses-20240206-1  linux-api-headers-6.7-1  linux-firmware-whence-20240220.97b693d2-1  lz4-1:1.9.4-2  m4-1.4.19-3  make-4.4.1-2  mkinitcpio-37.3-1  mkinitcpio-busybox-1.36.1-1  mpfr-4.2.1-2  ncurses-6.4_20230520-1  nettle-3.9.1-1  npth-1.7-1  openssl-3.2.1-1  p11-kit-0.25.3-1  pacman-6.0.2-9  pacman-mirrorlist-20231001-1  pam-1.6.0-4  pambase-20230918-1  patch-2.7.6-10  pciutils-3.11.1-1  pcre2-10.42-2  perl-5.38.2-1  pinentry-1.2.1-3  pkgconf-2.1.0-2  popt-1.19-1  procps-ng-4.0.4-2  psmisc-23.6-1  readline-8.2.010-1  sed-4.9-3  shadow-4.14.6-1  sqlite-3.45.1-1  sudo-1.9.15.p5-1  systemd-255.4-1  systemd-libs-255.4-1  systemd-sysvcompat-255.4-1  tar-1.35-2  texinfo-7.1-2  tpm2-tss-4.0.1-1  tzdata-2024a-1  util-linux-2.39.3-2  util-linux-libs-2.39.3-2  which-2.21-6  xz-5.6.0-1  zlib-1:1.3.1-1  zstd-1.5.5-1  base-3-2  base-devel-1-1  linux-6.7.8.arch1-1  linux-firmware-20240220.97b693d2-1
+Packages (148) acl-2.3.2-1  archlinux-keyring-20240208-1  argon2-20190702-5  attr-2.5.2-1  audit-4.0-1  autoconf-2.72-1  automake-1.16.5-2  bash-5.2.026-2  binutils-2.42-2  bison-3.8.2-6  brotli-1.1.0-1  bzip2-1.0.8-5  ca-certificates-20220905-1  ca-certificates-mozilla-3.98-1  ca-certificates-utils-20220905-1  coreutils-9.4-3  cryptsetup-2.7.0-3  curl-8.6.0-3  db5.3-5.3.28-4  dbus-1.14.10-2  dbus-broker-35-2  dbus-broker-units-35-2  debugedit-5.0-5  device-mapper-2.03.23-3  diffutils-3.10-1  e2fsprogs-1.47.0-1  expat-2.6.1-1  fakeroot-1.33-2  file-5.45-1  filesystem-2024.01.19-1  findutils-4.9.0-3  flex-2.6.4-5  gawk-5.3.0-1  gc-8.2.6-1  gcc-13.2.1-5  gcc-libs-13.2.1-5  gdbm-1.23-2  gettext-0.22.4-1  glib2-2.78.4-1  glibc-2.39-1  gmp-6.3.0-1  gnupg-2.4.4-1  gnutls-3.8.3-1  gpgme-1.23.2-1  grep-3.11-1  groff-1.23.0-5  guile-3.0.9-1  gzip-1.13-2  hwdata-0.379-1  iana-etc-20231228-1  icu-74.2-1  iproute2-6.7.0-1  iptables-1:1.8.10-1  iputils-20240117-1  jansson-2.14-2  json-c-0.17-1  kbd-2.6.4-1  keyutils-1.6.3-2  kmod-31-1  krb5-1.21.2-2  libarchive-3.7.2-1  libassuan-2.5.6-1  libbpf-1.3.0-1  libcap-2.69-3  libcap-ng-0.8.4-1  libelf-0.191-1  libevent-2.1.12-4  libffi-3.4.6-1  libgcrypt-1.10.3-1  libgpg-error-1.48-1  libidn2-2.3.7-1  libisl-0.26-1  libksba-1.6.6-1  libldap-2.6.6-2  libmnl-1.0.5-1  libmpc-1.3.1-1  libnetfilter_conntrack-1.0.9-1  libnfnetlink-1.0.2-1  libnftnl-1.2.6-1  libnghttp2-1.60.0-1  libnghttp3-1.2.0-1  libnl-3.9.0-1  libp11-kit-0.25.3-1  libpcap-1.10.4-1  libpsl-0.21.2-1  libsasl-2.1.28-4  libseccomp-2.5.5-2  libsecret-0.21.4-1  libssh2-1.11.0-1  libsysprof-capture-45.2-1  libtasn1-4.19.0-1  libtirpc-1.3.4-1  libtool-2.4.7+4+g1ec8fa28-7  libunistring-1.1-2  libusb-1.0.27-1  libutempter-1.2.1-4  libverto-0.3.2-4  libxcrypt-4.4.36-1  libxml2-2.12.5-1  licenses-20240206-1  linux-api-headers-6.7-1  linux-firmware-whence-20240220.97b693d2-1  lz4-1:1.9.4-2  m4-1.4.19-3  make-4.4.1-2  mkinitcpio-38-4  mkinitcpio-busybox-1.36.1-1  mpfr-4.2.1-2  ncurses-6.4_20230520-1  nettle-3.9.1-1  npth-1.7-1  openssl-3.2.1-1  p11-kit-0.25.3-1  pacman-6.0.2-9  pacman-mirrorlist-20231001-1  pam-1.6.0-4  pambase-20230918-1  patch-2.7.6-10  pciutils-3.11.1-1  pcre2-10.42-2  perl-5.38.2-1  pinentry-1.2.1-3  pkgconf-2.1.0-2  popt-1.19-1  procps-ng-4.0.4-2  psmisc-23.6-1  readline-8.2.010-1  sed-4.9-3  shadow-4.14.6-1  sqlite-3.45.1-1  sudo-1.9.15.p5-1  systemd-255.4-2  systemd-libs-255.4-2  systemd-sysvcompat-255.4-2  tar-1.35-2  texinfo-7.1-2  tpm2-tss-4.0.1-1  tzdata-2024a-1  util-linux-2.39.3-2  util-linux-libs-2.39.3-2  which-2.21-6  xz-5.6.0-1  zlib-1:1.3.1-1  zstd-1.5.5-1  base-3-2  base-devel-1-1  linux-6.7.8.arch1-1  linux-firmware-20240220.97b693d2-1
 
 Total Download Size:    571.94 MiB
-Total Installed Size:  1271.97 MiB
+Total Installed Size:  1271.93 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
@@ -99,7 +98,7 @@ Total Installed Size:  1271.97 MiB
  icu-74.2-1-x86_64 downloading...
  glibc-2.39-1-x86_64 downloading...
  guile-3.0.9-1-x86_64 downloading...
- systemd-255.4-1-x86_64 downloading...
+ systemd-255.4-2-x86_64 downloading...
  binutils-2.42-2-x86_64 downloading...
  openssl-3.2.1-1-x86_64 downloading...
  glib2-2.78.4-1-x86_64 downloading...
@@ -125,7 +124,7 @@ Total Installed Size:  1271.97 MiB
  ncurses-6.4_20230520-1-x86_64 downloading...
  shadow-4.14.6-1-x86_64 downloading...
  iproute2-6.7.0-1-x86_64 downloading...
- systemd-libs-255.4-1-x86_64 downloading...
+ systemd-libs-255.4-2-x86_64 downloading...
  curl-8.6.0-3-x86_64 downloading...
  tpm2-tss-4.0.1-1-x86_64 downloading...
  procps-ng-4.0.4-2-x86_64 downloading...
@@ -135,7 +134,7 @@ Total Installed Size:  1271.97 MiB
  libxml2-2.12.5-1-x86_64 downloading...
  tar-1.35-2-x86_64 downloading...
  bison-3.8.2-6-x86_64 downloading...
- cryptsetup-2.7.0-1-x86_64 downloading...
+ cryptsetup-2.7.0-3-x86_64 downloading...
  libcap-2.69-3-x86_64 downloading...
  libunistring-1.1-2-x86_64 downloading...
  xz-5.6.0-1-x86_64 downloading...
@@ -168,8 +167,8 @@ Total Installed Size:  1271.97 MiB
  flex-2.6.4-5-x86_64 downloading...
  dbus-1.14.10-2-x86_64 downloading...
  libpcap-1.10.4-1-x86_64 downloading...
- device-mapper-2.03.23-1-x86_64 downloading...
  libldap-2.6.6-2-x86_64 downloading...
+ device-mapper-2.03.23-3-x86_64 downloading...
  mkinitcpio-busybox-1.36.1-1-x86_64 downloading...
  libevent-2.1.12-4-x86_64 downloading...
  gdbm-1.23-2-x86_64 downloading...
@@ -213,9 +212,9 @@ Total Installed Size:  1271.97 MiB
  libnftnl-1.2.6-1-x86_64 downloading...
  attr-2.5.2-1-x86_64 downloading...
  pkgconf-2.1.0-2-x86_64 downloading...
+ mkinitcpio-38-4-any downloading...
  bzip2-1.0.8-5-x86_64 downloading...
  json-c-0.17-1-x86_64 downloading...
- mkinitcpio-37.3-1-any downloading...
  jansson-2.14-2-x86_64 downloading...
  libnetfilter_conntrack-1.0.9-1-x86_64 downloading...
  libsysprof-capture-45.2-1-x86_64 downloading...
@@ -233,7 +232,7 @@ Total Installed Size:  1271.97 MiB
  ca-certificates-utils-20220905-1-any downloading...
  libutempter-1.2.1-4-x86_64 downloading...
  pacman-mirrorlist-20231001-1-any downloading...
- systemd-sysvcompat-255.4-1-x86_64 downloading...
+ systemd-sysvcompat-255.4-2-x86_64 downloading...
  pambase-20230918-1-any downloading...
  dbus-broker-units-35-2-x86_64 downloading...
  base-3-2-any downloading...
@@ -595,11 +594,12 @@ installing linux-firmware...
 (12/15) Updating linux initcpios...
 ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
 ==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux.img --microcode /boot/*-ucode.img
+  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux.img
 ==> Starting build: '6.7.8-arch1-1'
   -> Running build hook: [base]
   -> Running build hook: [udev]
   -> Running build hook: [autodetect]
+  -> Running build hook: [microcode]
   -> Running build hook: [modconf]
   -> Running build hook: [kms]
   -> Running build hook: [keyboard]
@@ -612,13 +612,14 @@ installing linux-firmware...
   -> Running build hook: [fsck]
 ==> Generating module dependencies
 ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux.img'
-==> Image generation successful
+==> Initcpio image generation successful
 ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
 ==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux-fallback.img -S autodetect --microcode /boot/*-ucode.img
+  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux-fallback.img -S autodetect
 ==> Starting build: '6.7.8-arch1-1'
   -> Running build hook: [base]
   -> Running build hook: [udev]
+  -> Running build hook: [microcode]
   -> Running build hook: [modconf]
   -> Running build hook: [kms]
 ==> WARNING: Possibly missing firmware for module: 'ast'
@@ -628,17 +629,17 @@ installing linux-firmware...
   -> Running build hook: [consolefont]
 ==> WARNING: consolefont: no font found in configuration
   -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'wd719x'
 ==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
 ==> WARNING: Possibly missing firmware for module: 'qla1280'
+==> WARNING: Possibly missing firmware for module: 'wd719x'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'bfa'
   -> Running build hook: [filesystems]
   -> Running build hook: [fsck]
 ==> Generating module dependencies
 ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux-fallback.img'
-==> Image generation successful
+==> Initcpio image generation successful
 (13/15) Reloading system bus configuration...
   Skipped: Running in chroot.
 (14/15) Warn about old perl modules
@@ -686,8 +687,8 @@ extra/desktop-file-utils              0.27-1                     0.20 MiB       
 extra/double-conversion               3.3.0-1                    0.18 MiB       0.06 MiB
 extra/duktape                         2.7.0-6                    0.79 MiB       0.17 MiB
 core/efivar                           39-1                       0.53 MiB       0.14 MiB
-extra/electron27                      27.3.4-2                 213.31 MiB      62.54 MiB
-extra/electron28                      28.2.5-1                 223.95 MiB      65.77 MiB
+extra/electron27                      27.3.4-3                 213.31 MiB      62.54 MiB
+extra/electron28                      28.2.5-4                 226.20 MiB      66.44 MiB
 extra/exiv2                           0.28.2-1                   7.61 MiB       1.78 MiB
 extra/exo                             4.18.0-1                   2.19 MiB       0.31 MiB
 extra/ffmpeg                          2:6.1.1-6                 38.36 MiB      11.47 MiB
@@ -1096,17 +1097,17 @@ extra/wireplumber                     0.4.17-1                   0.87 MiB       
 extra/xdg-utils                       1.2.1-1                    0.30 MiB       0.06 MiB
 extra/zip                             3.0-11                     0.55 MiB       0.17 MiB
 
-Total Download Size:   1080.37 MiB
-Total Installed Size:  4091.41 MiB
+Total Download Size:   1081.04 MiB
+Total Installed Size:  4093.66 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
  noto-fonts-cjk-20230817-1-any downloading...
  libreoffice-fresh-24.2.0-2-x86_64 downloading...
  firefox-123.0-1-x86_64 downloading...
- electron28-28.2.5-1-x86_64 downloading...
+ electron28-28.2.5-4-x86_64 downloading...
  noto-fonts-extra-1:24.3.1-1-any downloading...
- electron27-27.3.4-2-x86_64 downloading...
+ electron27-27.3.4-3-x86_64 downloading...
  llvm-libs-16.0.6-1-x86_64 downloading...
  noto-fonts-1:24.3.1-1-any downloading...
  linux-headers-6.7.8.arch1-1-x86_64 downloading...
@@ -2458,11 +2459,12 @@ Creating user 'polkitd' (User for polkitd) with UID 102 and GID 102.
 (12/25) Updating linux initcpios...
 ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
 ==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux.img --microcode /boot/amd-ucode.img
+  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux.img
 ==> Starting build: '6.7.8-arch1-1'
   -> Running build hook: [base]
   -> Running build hook: [udev]
   -> Running build hook: [autodetect]
+  -> Running build hook: [microcode]
   -> Running build hook: [modconf]
   -> Running build hook: [kms]
   -> Running build hook: [keyboard]
@@ -2475,13 +2477,15 @@ Creating user 'polkitd' (User for polkitd) with UID 102 and GID 102.
   -> Running build hook: [fsck]
 ==> Generating module dependencies
 ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux.img'
-==> Image generation successful
+  -> Early uncompressed CPIO image generation successful
+==> Initcpio image generation successful
 ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
 ==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux-fallback.img -S autodetect --microcode /boot/amd-ucode.img
+  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux-fallback.img -S autodetect
 ==> Starting build: '6.7.8-arch1-1'
   -> Running build hook: [base]
   -> Running build hook: [udev]
+  -> Running build hook: [microcode]
   -> Running build hook: [modconf]
   -> Running build hook: [kms]
 ==> WARNING: Possibly missing firmware for module: 'ast'
@@ -2491,17 +2495,18 @@ Creating user 'polkitd' (User for polkitd) with UID 102 and GID 102.
   -> Running build hook: [consolefont]
 ==> WARNING: consolefont: no font found in configuration
   -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'wd719x'
 ==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
 ==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
 ==> WARNING: Possibly missing firmware for module: 'qla1280'
+==> WARNING: Possibly missing firmware for module: 'wd719x'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'bfa'
   -> Running build hook: [filesystems]
   -> Running build hook: [fsck]
 ==> Generating module dependencies
 ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux-fallback.img'
-==> Image generation successful
+  -> Early uncompressed CPIO image generation successful
+==> Initcpio image generation successful
 (13/25) Updating the appstream cache...
 ✔ Metadata cache was updated successfully.
 (14/25) Reloading system bus configuration...
@@ -2538,7 +2543,7 @@ extra/libgirepository                1.78.1-1       1.55 MiB       0.15 MiB
 extra/libmfx                         23.2.2-2       0.28 MiB       0.06 MiB
 extra/libmtp                         1.1.21-1       4.93 MiB       0.57 MiB
 extra/libnvme                        1.8-1          1.36 MiB       0.25 MiB
-core/mdadm                           4.3-1          0.92 MiB       0.39 MiB
+core/mdadm                           4.3-2          0.92 MiB       0.39 MiB
 extra/parted                         3.6-1          2.42 MiB       0.53 MiB
 extra/taglib                         2.0-1          1.90 MiB       0.42 MiB
 extra/udisks2                        2.10.1-4      14.57 MiB       1.00 MiB
@@ -2568,7 +2573,7 @@ Total Installed Size:  76.55 MiB
  libmtp-1.1.21-1-x86_64 downloading...
  parted-3.6-1-x86_64 downloading...
  taglib-2.0-1-x86_64 downloading...
- mdadm-4.3-1-x86_64 downloading...
+ mdadm-4.3-2-x86_64 downloading...
  python-gobject-3.46.0-1-x86_64 downloading...
  libnvme-1.8-1-x86_64 downloading...
  libblockdev-3.1.0-2-x86_64 downloading...
@@ -2699,72 +2704,25 @@ Optional dependencies for tumbler
     freetype2: font thumbnails [installed]
 installing zenity...
 :: Running post-transaction hooks...
-( 1/15) Reloading system manager configuration...
+( 1/14) Reloading system manager configuration...
   Skipped: Running in chroot.
-( 2/15) Reloading user manager configuration...
+( 2/14) Reloading user manager configuration...
   Skipped: Running in chroot.
-( 3/15) Updating udev hardware database...
-( 4/15) Creating temporary files...
-( 5/15) Reloading device manager configuration...
+( 3/14) Updating udev hardware database...
+( 4/14) Creating temporary files...
+( 5/14) Reloading device manager configuration...
   Skipped: Running in chroot.
-( 6/15) Arming ConditionNeedsUpdate...
-( 7/15) Updating the MIME type database...
-( 8/15) Updating linux initcpios...
-==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
-==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux.img --microcode /boot/amd-ucode.img
-==> Starting build: '6.7.8-arch1-1'
-  -> Running build hook: [base]
-  -> Running build hook: [udev]
-  -> Running build hook: [autodetect]
-  -> Running build hook: [modconf]
-  -> Running build hook: [kms]
-  -> Running build hook: [keyboard]
-==> WARNING: Possibly missing firmware for module: 'xhci_pci'
-  -> Running build hook: [keymap]
-  -> Running build hook: [consolefont]
-==> WARNING: consolefont: no font found in configuration
-  -> Running build hook: [block]
-  -> Running build hook: [filesystems]
-  -> Running build hook: [fsck]
-==> Generating module dependencies
-==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux.img'
-==> Image generation successful
-==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
-==> Using default configuration file: '/etc/mkinitcpio.conf'
-  -> -k /boot/vmlinuz-linux -g /boot/initramfs-linux-fallback.img -S autodetect --microcode /boot/amd-ucode.img
-==> Starting build: '6.7.8-arch1-1'
-  -> Running build hook: [base]
-  -> Running build hook: [udev]
-  -> Running build hook: [modconf]
-  -> Running build hook: [kms]
-==> WARNING: Possibly missing firmware for module: 'ast'
-  -> Running build hook: [keyboard]
-==> WARNING: Possibly missing firmware for module: 'xhci_pci'
-  -> Running build hook: [keymap]
-  -> Running build hook: [consolefont]
-==> WARNING: consolefont: no font found in configuration
-  -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'wd719x'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'bfa'
-==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'qla1280'
-  -> Running build hook: [filesystems]
-  -> Running build hook: [fsck]
-==> Generating module dependencies
-==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux-fallback.img'
-==> Image generation successful
-( 9/15) Reloading system bus configuration...
+( 6/14) Arming ConditionNeedsUpdate...
+( 7/14) Updating the MIME type database...
+( 8/14) Reloading system bus configuration...
   Skipped: Running in chroot.
-(10/15) Updating GIO module cache...
-(11/15) Compiling GSettings XML schema files...
-(12/15) Updating icon theme caches...
-(13/15) Reloading GVFS config...
+( 9/14) Updating GIO module cache...
+(10/14) Compiling GSettings XML schema files...
+(11/14) Updating icon theme caches...
+(12/14) Reloading GVFS config...
 killall: /proc lacks process entries (not mounted ?)
-(14/15) Updating the info directory file...
-(15/15) Updating the desktop file MIME type cache...
+(13/14) Updating the info directory file...
+(14/14) Updating the desktop file MIME type cache...
 resolving dependencies...
 looking for conflicting packages...
 
@@ -2846,140 +2804,46 @@ installing xf86-video-amdgpu...
 installing libva-mesa-driver...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
-Cloning into 'yay'...
-==> Making package: yay 12.3.0-1 (Sun Mar  3 23:22:34 2024)
+Cloning into 'yay-bin'...
+==> Making package: yay-bin 12.3.0-1 (Tue Mar  5 00:54:49 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
-==> Installing missing dependencies...
-resolving dependencies...
-looking for conflicting packages...
-
-Package (1)  New Version  Net Change  Download Size
-
-extra/go     2:1.22.0-1   209.53 MiB      38.69 MiB
-
-Total Download Size:    38.69 MiB
-Total Installed Size:  209.53 MiB
-
-:: Proceed with installation? [Y/n] 
-:: Retrieving packages...
- go-2:1.22.0-1-x86_64 downloading...
-checking keyring...
-checking package integrity...
-loading package files...
-checking for file conflicts...
-checking available disk space...
-:: Processing package changes...
-installing go...
-:: Running post-transaction hooks...
-(1/1) Arming ConditionNeedsUpdate...
 ==> Retrieving sources...
-  -> Downloading yay-12.3.0.tar.gz...
+  -> Downloading yay_12.3.0_x86_64.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  445k  100  445k    0     0   531k      0 --:--:-- --:--:-- --:--:--  531k
-==> Validating source files with sha256sums...
-    yay-12.3.0.tar.gz ... Passed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 3631k    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 3631k  100 3631k    0     0  2450k      0  0:00:01  0:00:01 --:--:-- 8292k
+==> Validating source_x86_64 files with sha256sums...
+    yay_12.3.0_x86_64.tar.gz ... Passed
 ==> Extracting sources...
-  -> Extracting yay-12.3.0.tar.gz with bsdtar
-==> Starting build()...
-go build -trimpath -mod=readonly -modcacherw  -ldflags '-X "main.yayVersion=12.3.0" -X "main.localePath=/usr/share/locale/" -linkmode=external' -buildmode=pie -o yay
-go: downloading github.com/Jguer/aur v1.2.3
-go: downloading github.com/Jguer/go-alpm/v2 v2.2.1
-go: downloading github.com/Jguer/votar v1.0.0
-go: downloading github.com/Morganamilo/go-srcinfo v1.0.0
-go: downloading github.com/deckarep/golang-set/v2 v2.6.0
-go: downloading github.com/leonelquinteros/gotext v1.5.2
-go: downloading github.com/pkg/errors v0.9.1
-go: downloading golang.org/x/sys v0.17.0
-go: downloading github.com/Morganamilo/go-pacmanconf v0.0.0-20210502114700-cff030e927a5
-go: downloading github.com/adrg/strutil v0.3.1
-go: downloading github.com/hashicorp/go-multierror v1.1.1
-go: downloading golang.org/x/term v0.17.0
-go: downloading golang.org/x/text v0.14.0
-go: downloading github.com/itchyny/gojq v0.12.14
-go: downloading github.com/mitchellh/mapstructure v1.5.0
-go: downloading github.com/ohler55/ojg v1.21.2
-go: downloading github.com/hashicorp/errwrap v1.1.0
-go: downloading github.com/itchyny/timefmt-go v0.1.5
+  -> Extracting yay_12.3.0_x86_64.tar.gz with bsdtar
 ==> Entering fakeroot environment...
 ==> Starting package()...
-msgfmt po/ca.po -o po/ca.mo
-msgfmt po/cs.po -o po/cs.mo
-msgfmt po/de.po -o po/de.mo
-msgfmt po/en.po -o po/en.mo
-msgfmt po/es.po -o po/es.mo
-msgfmt po/eu.po -o po/eu.mo
-msgfmt po/fr_FR.po -o po/fr_FR.mo
-msgfmt po/he.po -o po/he.mo
-msgfmt po/id.po -o po/id.mo
-msgfmt po/it_IT.po -o po/it_IT.mo
-msgfmt po/ja.po -o po/ja.mo
-msgfmt po/ko.po -o po/ko.mo
-msgfmt po/pl_PL.po -o po/pl_PL.mo
-msgfmt po/pt_BR.po -o po/pt_BR.mo
-msgfmt po/pt.po -o po/pt.mo
-msgfmt po/ru_RU.po -o po/ru_RU.mo
-msgfmt po/ru.po -o po/ru.mo
-msgfmt po/sv.po -o po/sv.mo
-msgfmt po/tr.po -o po/tr.mo
-msgfmt po/uk.po -o po/uk.mo
-msgfmt po/zh_CN.po -o po/zh_CN.mo
-msgfmt po/zh_TW.po -o po/zh_TW.mo
-install -Dm755 yay /yay/pkg/yay/usr/bin/yay
-install -Dm644 doc/yay.8 /yay/pkg/yay/usr/share/man/man8/yay.8
-install -Dm644 completions/bash /yay/pkg/yay/usr/share/bash-completion/completions/yay
-install -Dm644 completions/zsh /yay/pkg/yay/usr/share/zsh/site-functions/_yay
-install -Dm644 completions/fish /yay/pkg/yay/usr/share/fish/vendor_completions.d/yay.fish
-for lang in ca cs de en es eu fr_FR he id it_IT ja ko pl_PL pt_BR pt ru_RU ru sv tr uk zh_CN zh_TW; do \
-	install -Dm644 po/${lang}.mo /yay/pkg/yay/usr/share/locale/$lang/LC_MESSAGES/yay.mo; \
-done
 ==> Tidying install...
   -> Removing libtool files...
   -> Purging unwanted files...
   -> Removing static library files...
   -> Stripping unneeded symbols from binaries and libraries...
-debugedit: ./usr/bin/yay: DWARF version 0 unhandled
   -> Compressing man and info pages...
 ==> Checking for packaging issues...
-==> Creating package "yay"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "yay-debug"...
+==> Creating package "yay-bin"...
   -> Generating .PKGINFO file...
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: yay 12.3.0-1 (Sun Mar  3 23:23:33 2024)
-==> Removing installed dependencies...
-checking dependencies...
-
-Package (1)  Old Version  Net Change 
-
-go           2:1.22.0-1   -209.53 MiB
-
-Total Removed Size:  209.53 MiB
-
-:: Do you want to remove these packages? [Y/n] 
-:: Processing package changes...
-removing go...
-:: Running post-transaction hooks...
-(1/1) Arming ConditionNeedsUpdate...
-==> Installing package yay with pacman -U...
+==> Finished making: yay-bin 12.3.0-1 (Tue Mar  5 00:54:58 2024)
+==> Installing package yay-bin with pacman -U...
 loading packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (2)  New Version  Net Change
+Package (1)  New Version  Net Change
 
-yay          12.3.0-1       9.34 MiB
-yay-debug    12.3.0-1       3.43 MiB
+yay-bin      12.3.0-1       9.10 MiB
 
-Total Installed Size:  12.76 MiB
+Total Installed Size:  9.10 MiB
 
 :: Proceed with installation? [Y/n] 
 checking keyring...
@@ -2988,57 +2852,36 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
-installing yay...
-Optional dependencies for yay
+installing yay-bin...
+Optional dependencies for yay-bin
     sudo: privilege elevation [installed]
     doas: privilege elevation
-installing yay-debug...
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
 ==> Cleaning up...
-Sync Dependency (3): bluez-obex-5.72-2, libcurl-gnutls-8.6.0-3, libayatana-appindicator-0.5.93-1
+AUR Explicit (4): spotify-adblock-git-1:1.0.2.r0.g9ba383b-2, bluetuith-bin-0.2.1-3, ncpamixer-1.3.7-1, spotify-1:1.2.31.1205-2
+Sync Dependency (3): bluez-obex-5.72-2, libayatana-appindicator-0.5.93-1, libcurl-gnutls-8.6.0-3
 Sync Explicit (1): keyd-2.4.3-4
-Sync Make Dependency (4): cmake-3.28.3-1, qt6-base-6.6.2-4, rust-1:1.76.0-1, qt5-x11extras-5.15.12-1
-AUR Explicit (5): ncpamixer-1.3.7-1, adwaita-qt5-git-1.4.1.r17.g417df19-1, bluetuith-bin-0.2.1-3, spotify-adblock-git-1:1.0.2.r0.g9ba383b-2, spotify-1:1.2.31.1205-2
-:: [1m(1/5) Downloaded PKGBUILD: spotify-adblock-git[0m
-:: [1m(2/5) Downloaded PKGBUILD: ncpamixer[0m
-:: [1m(3/5) Downloaded PKGBUILD: adwaita-qt-git[0m
-:: [1m(4/5) Downloaded PKGBUILD: bluetuith-bin[0m
-:: [1m(5/5) Downloaded PKGBUILD: spotify[0m
-  5 bluetuith-bin                            (Build Files Exist)
-  4 spotify-adblock-git                      (Build Files Exist)
-  3 ncpamixer                                (Build Files Exist)
-  2 spotify                                  (Build Files Exist)
-  1 adwaita-qt-git                           (Build Files Exist)
+Sync Make Dependency (2): cmake-3.28.3-1, rust-1:1.76.0-1
+:: [1m(1/4) Downloaded PKGBUILD: ncpamixer[0m
+:: [1m(2/4) Downloaded PKGBUILD: spotify-adblock-git[0m
+:: [1m(3/4) Downloaded PKGBUILD: bluetuith-bin[0m
+:: [1m(4/4) Downloaded PKGBUILD: spotify[0m
+  4 spotify                                  (Build Files Exist)
+  3 spotify-adblock-git                      (Build Files Exist)
+  2 bluetuith-bin                            (Build Files Exist)
+  1 ncpamixer                                (Build Files Exist)
 ==> Packages to cleanBuild?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-  5 ncpamixer                                (Build Files Exist)
-  4 spotify                                  (Build Files Exist)
-  3 adwaita-qt-git                           (Build Files Exist)
-  2 bluetuith-bin                            (Build Files Exist)
-  1 spotify-adblock-git                      (Build Files Exist)
+  4 spotify-adblock-git                      (Build Files Exist)
+  3 bluetuith-bin                            (Build Files Exist)
+  2 ncpamixer                                (Build Files Exist)
+  1 spotify                                  (Build Files Exist)
 ==> Diffs to show?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-==> Making package: adwaita-qt-git 1.4.1.r17.g417df19-1 (Sun Mar  3 23:23:40 2024)
-==> Retrieving sources...
-  -> Cloning adwaita-qt git repo...
-Cloning into bare repository '/home/zakdggn/.cache/yay/adwaita-qt-git/adwaita-qt'...
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha512sums...
-    adwaita-qt ... Skipped
-==> Making package: bluetuith-bin 0.2.1-3 (Sun Mar  3 23:23:46 2024)
-==> Retrieving sources...
-  -> Downloading bluetuith_0.2.1_Linux_x86_64.tar.gz...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 3500k  100 3500k    0     0  4739k      0 --:--:-- --:--:-- --:--:-- 4739k
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source_x86_64 files with sha256sums...
-    bluetuith_0.2.1_Linux_x86_64.tar.gz ... Passed
-==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Sun Mar  3 23:23:49 2024)
+==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Tue Mar  5 00:55:00 2024)
 ==> Retrieving sources...
   -> Cloning spotify-adblock git repo...
 Cloning into bare repository '/home/zakdggn/.cache/yay/spotify-adblock-git/spotify-adblock'...
@@ -3047,37 +2890,47 @@ Cloning into bare repository '/home/zakdggn/.cache/yay/spotify-adblock-git/spoti
 ==> Validating source files with sha512sums...
     spotify-adblock ... Skipped
     spotify-adblock.desktop ... Passed
-==> Making package: ncpamixer 1.3.7-1 (Sun Mar  3 23:23:54 2024)
+==> Making package: bluetuith-bin 0.2.1-3 (Tue Mar  5 00:55:04 2024)
+==> Retrieving sources...
+  -> Downloading bluetuith_0.2.1_Linux_x86_64.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 36 3500k   36 1282k    0     0  1084k      0  0:00:03  0:00:01  0:00:02 1084k100 3500k  100 3500k    0     0  2528k      0  0:00:01  0:00:01 --:--:-- 10.7M
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source_x86_64 files with sha256sums...
+    bluetuith_0.2.1_Linux_x86_64.tar.gz ... Passed
+==> Making package: ncpamixer 1.3.7-1 (Tue Mar  5 00:55:10 2024)
 ==> Retrieving sources...
   -> Downloading ncpamixer-1.3.7.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 14530    0 14530    0     0  17331      0 --:--:-- --:--:-- --:--:-- 17331100 24614    0 24614    0     0  28782      0 --:--:-- --:--:-- --:--:--  615k
+100 14530    0 14530    0     0  19920      0 --:--:-- --:--:-- --:--:-- 19920100 24614    0 24614    0     0  32694      0 --:--:-- --:--:-- --:--:--  428k
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha256sums...
     ncpamixer-1.3.7.tar.gz ... Passed
-==> Making package: spotify 1:1.2.31.1205-2 (Sun Mar  3 23:23:57 2024)
+==> Making package: spotify 1:1.2.31.1205-2 (Tue Mar  5 00:55:12 2024)
 ==> Retrieving sources...
   -> Downloading spotify-1.2.31.1205-g4d59ad7c-x86_64.deb...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 37  128M   37 48.5M    0     0  50.9M      0  0:00:02 --:--:--  0:00:02 50.9M 83  128M   83  107M    0     0  54.7M      0  0:00:02  0:00:01  0:00:01 54.7M100  128M  100  128M    0     0  55.7M      0  0:00:02  0:00:02 --:--:-- 55.7M
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  6  128M    6 9057k    0     0  11.3M      0  0:00:11 --:--:--  0:00:11 11.3M 16  128M   16 20.7M    0     0  11.6M      0  0:00:11  0:00:01  0:00:10 11.6M 28  128M   28 37.3M    0     0  13.4M      0  0:00:09  0:00:02  0:00:07 13.4M 41  128M   41 53.0M    0     0  14.0M      0  0:00:09  0:00:03  0:00:06 14.0M 53  128M   53 69.5M    0     0  14.5M      0  0:00:08  0:00:04  0:00:04 14.5M 66  128M   66 85.4M    0     0  14.7M      0  0:00:08  0:00:05  0:00:03 15.3M 79  128M   79  102M    0     0  15.0M      0  0:00:08  0:00:06  0:00:02 16.2M 91  128M   91  117M    0     0  15.1M      0  0:00:08  0:00:07  0:00:01 16.0M100  128M  100  128M    0     0  15.2M      0  0:00:08  0:00:08 --:--:-- 16.2M
   -> Found spotify.sh
   -> Found spotify.protocol
   -> Found LICENSE
   -> Downloading spotify-1.2.31.1205-2-Release...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2447  100  2447    0     0  70642      0 --:--:-- --:--:-- --:--:-- 71970
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2447  100  2447    0     0  79917      0 --:--:-- --:--:-- --:--:-- 81566
   -> Downloading spotify-1.2.31.1205-2-Release.sig...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   833  100   833    0     0  19592      0 --:--:-- --:--:-- --:--:-- 19833
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   833  100   833    0     0  25433      0 --:--:-- --:--:-- --:--:-- 26031
   -> Downloading spotify-1.2.31.1205-2-x86_64-Packages...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1253  100  1253    0     0  36637      0 --:--:-- --:--:-- --:--:-- 37969
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1253  100  1253    0     0  29967      0 --:--:-- --:--:-- --:--:-- 30560
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha512sums...
     spotify-1.2.31.1205-g4d59ad7c-x86_64.deb ... Passed
@@ -3087,11 +2940,10 @@ Cloning into bare repository '/home/zakdggn/.cache/yay/spotify-adblock-git/spoti
     spotify-1.2.31.1205-2-Release ... Skipped
     spotify-1.2.31.1205-2-Release.sig ... Skipped
     spotify-1.2.31.1205-2-x86_64-Packages ... Skipped
-:: [1m(1/5) Parsing SRCINFO: adwaita-qt-git[0m
-:: [1m(2/5) Parsing SRCINFO: bluetuith-bin[0m
-:: [1m(3/5) Parsing SRCINFO: spotify-adblock-git[0m
-:: [1m(4/5) Parsing SRCINFO: ncpamixer[0m
-:: [1m(5/5) Parsing SRCINFO: spotify[0m
+:: [1m(1/4) Parsing SRCINFO: spotify-adblock-git[0m
+:: [1m(2/4) Parsing SRCINFO: bluetuith-bin[0m
+:: [1m(3/4) Parsing SRCINFO: ncpamixer[0m
+:: [1m(4/4) Parsing SRCINFO: spotify[0m
 gpg: directory '/home/zakdggn/.gnupg' created
 gpg: /home/zakdggn/.gnupg/trustdb.gpg: trustdb created
 gpg: error reading key: No public key
@@ -3136,74 +2988,45 @@ installing libcurl-gnutls...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (12)            New Version  Net Change  Download Size
+Package (6)       New Version  Net Change  Download Size
 
-extra/cppdap            1.58.0-1       1.62 MiB       0.33 MiB
-extra/libb2             0.98.1-2       0.12 MiB       0.04 MiB
-extra/libical           3.0.17-2       7.14 MiB       0.60 MiB
-extra/qt6-translations  6.6.2-1       13.00 MiB       1.70 MiB
-extra/rhash             1.4.4-1        0.32 MiB       0.17 MiB
-extra/vulkan-headers    1:1.3.276-1   25.56 MiB       1.18 MiB
-extra/xcb-util-cursor   0.1.5-1        0.03 MiB       0.01 MiB
-extra/bluez-obex        5.72-2         0.85 MiB       0.28 MiB
-extra/cmake             3.28.3-1      72.06 MiB      11.28 MiB
-extra/qt5-x11extras     5.15.12-1      0.04 MiB       0.01 MiB
-extra/qt6-base          6.6.2-4       55.12 MiB      13.50 MiB
-extra/rust              1:1.76.0-1   262.90 MiB      60.88 MiB
+extra/cppdap      1.58.0-1       1.62 MiB       0.33 MiB
+extra/libical     3.0.17-2       7.14 MiB       0.60 MiB
+extra/rhash       1.4.4-1        0.32 MiB       0.17 MiB
+extra/bluez-obex  5.72-2         0.85 MiB       0.28 MiB
+extra/cmake       3.28.3-1      72.06 MiB      11.28 MiB
+extra/rust        1:1.76.0-1   262.90 MiB      60.88 MiB
 
-Total Download Size:    89.98 MiB
-Total Installed Size:  438.75 MiB
+Total Download Size:    73.53 MiB
+Total Installed Size:  344.88 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
  rust-1:1.76.0-1-x86_64 downloading...
- qt6-base-6.6.2-4-x86_64 downloading...
  cmake-3.28.3-1-x86_64 downloading...
- qt6-translations-6.6.2-1-any downloading...
- vulkan-headers-1:1.3.276-1-any downloading...
  libical-3.0.17-2-x86_64 downloading...
  cppdap-1.58.0-1-x86_64 downloading...
  bluez-obex-5.72-2-x86_64 downloading...
  rhash-1.4.4-1-x86_64 downloading...
- libb2-0.98.1-2-x86_64 downloading...
- qt5-x11extras-5.15.12-1-x86_64 downloading...
- xcb-util-cursor-0.1.5-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
+installing libical...
+installing bluez-obex...
+installing rust...
+Optional dependencies for rust
+    gdb: rust-gdb script
+    lldb: rust-lldb script
 installing rhash...
 installing cppdap...
 installing cmake...
 Optional dependencies for cmake
     make: for unix Makefile generator [installed]
     ninja: for ninja generator
-    qt6-base: cmake-gui [pending]
-installing libb2...
-installing vulkan-headers...
-installing xcb-util-cursor...
-installing qt6-translations...
-installing qt6-base...
-Optional dependencies for qt6-base
-    freetds: MS SQL driver
-    gdk-pixbuf2: GTK platform plugin [installed]
-    gtk3: GTK platform plugin [installed]
-    libfbclient: Firebird/iBase driver
-    mariadb-libs: MariaDB driver
-    pango: GTK platform plugin [installed]
-    perl: for syncqt [installed]
-    postgresql-libs: PostgreSQL driver
-    qt6-wayland: to run Qt6 applications in a Wayland session
-    unixodbc: ODBC driver
-installing rust...
-Optional dependencies for rust
-    gdb: rust-gdb script
-    lldb: rust-lldb script
-installing libical...
-installing bluez-obex...
-installing qt5-x11extras...
+    qt6-base: cmake-gui
 :: Running post-transaction hooks...
 (1/5) Reloading user manager configuration...
   Skipped: Running in chroot.
@@ -3211,7 +3034,7 @@ installing qt5-x11extras...
 (3/5) Updating the MIME type database...
 (4/5) Updating icon theme caches...
 (5/5) Updating the desktop file MIME type cache...
-==> Making package: spotify 1:1.2.31.1205-2 (Sun Mar  3 23:24:11 2024)
+==> Making package: spotify 1:1.2.31.1205-2 (Tue Mar  5 00:55:31 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -3239,7 +3062,7 @@ installing qt5-x11extras...
 spotify-1.2.31.1205-2-x86_64-Packages: OK
 spotify-1.2.31.1205-g4d59ad7c-x86_64.deb: OK
 ==> Sources are ready.
-==> Making package: spotify 1:1.2.31.1205-2 (Sun Mar  3 23:24:16 2024)
+==> Making package: spotify 1:1.2.31.1205-2 (Tue Mar  5 00:55:35 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -3257,7 +3080,7 @@ spotify-1.2.31.1205-g4d59ad7c-x86_64.deb: OK
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: spotify 1:1.2.31.1205-2 (Sun Mar  3 23:26:46 2024)
+==> Finished making: spotify 1:1.2.31.1205-2 (Tue Mar  5 00:57:09 2024)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
@@ -3313,7 +3136,123 @@ Creating group 'keyd' with GID 971.
 (2/3) Reloading system manager configuration...
   Skipped: Running in chroot.
 (3/3) Arming ConditionNeedsUpdate...
-==> Making package: ncpamixer 1.3.7-1 (Sun Mar  3 23:26:53 2024)
+==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Tue Mar  5 00:57:12 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating spotify-adblock git repo...
+  -> Found spotify-adblock.desktop
+==> Validating source files with sha512sums...
+    spotify-adblock ... Skipped
+    spotify-adblock.desktop ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of spotify-adblock git repo...
+Cloning into 'spotify-adblock'...
+done.
+==> Starting pkgver()...
+==> Updated version: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1
+==> Sources are ready.
+==> Making package: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Tue Mar  5 00:57:15 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Starting build()...
+# cargo build --profile release
+cargo build --release
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded equivalent v1.0.1
+  Downloaded serde_regex v1.1.0
+  Downloaded toml_edit v0.19.14
+  Downloaded lazy_static v1.4.0
+  Downloaded toml_datetime v0.6.3
+  Downloaded serde_spanned v0.6.3
+  Downloaded toml v0.7.6
+  Downloaded indexmap v2.0.0
+  Downloaded memchr v2.5.0
+  Downloaded serde v1.0.174
+  Downloaded hashbrown v0.14.0
+  Downloaded winnow v0.5.0
+  Downloaded aho-corasick v1.0.2
+  Downloaded regex v1.9.1
+  Downloaded regex-syntax v0.7.4
+  Downloaded serde_derive v1.0.174
+  Downloaded regex-automata v0.3.3
+  Downloaded libc v0.2.147
+   Compiling serde v1.0.174
+   Compiling serde_derive v1.0.174
+   Compiling memchr v2.5.0
+   Compiling hashbrown v0.14.0
+   Compiling regex-syntax v0.7.4
+   Compiling equivalent v1.0.1
+   Compiling aho-corasick v1.0.2
+   Compiling indexmap v2.0.0
+   Compiling libc v0.2.147
+   Compiling winnow v0.5.0
+   Compiling toml_datetime v0.6.3
+   Compiling serde_spanned v0.6.3
+   Compiling regex-automata v0.3.3
+   Compiling toml_edit v0.19.14
+   Compiling lazy_static v1.4.0
+   Compiling toml v0.7.6
+   Compiling regex v1.9.1
+   Compiling serde_regex v1.1.0
+   Compiling spotify-adblock v1.0.2 (/home/zakdggn/.cache/yay/spotify-adblock-git/src/spotify-adblock)
+    Finished release [optimized] target(s) in 52.98s
+==> Entering fakeroot environment...
+==> Starting package()...
+install -D --mode=644 --strip target/release/libspotifyadblock.so /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/usr/lib/spotify-adblock.so 
+install -D --mode=644 config.toml /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/etc/spotify-adblock/config.toml 
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "spotify-adblock-git"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Tue Mar  5 00:58:11 2024)
+==> Cleaning up...
+==> Making package: bluetuith-bin 0.2.1-3 (Tue Mar  5 00:58:14 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found bluetuith_0.2.1_Linux_x86_64.tar.gz
+==> Validating source_x86_64 files with sha256sums...
+    bluetuith_0.2.1_Linux_x86_64.tar.gz ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Extracting bluetuith_0.2.1_Linux_x86_64.tar.gz with bsdtar
+==> Sources are ready.
+==> Making package: bluetuith-bin 0.2.1-3 (Tue Mar  5 00:58:23 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Entering fakeroot environment...
+==> Starting package()...
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "bluetuith-bin"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: bluetuith-bin 0.2.1-3 (Tue Mar  5 00:58:30 2024)
+==> Cleaning up...
+==> Making package: ncpamixer 1.3.7-1 (Tue Mar  5 00:58:33 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -3324,7 +3263,7 @@ Creating group 'keyd' with GID 971.
 ==> Extracting sources...
   -> Extracting ncpamixer-1.3.7.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: ncpamixer 1.3.7-1 (Sun Mar  3 23:27:02 2024)
+==> Making package: ncpamixer 1.3.7-1 (Tue Mar  5 00:58:40 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -3359,13 +3298,13 @@ Call Stack (most recent call first):
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
 -- Got version 
--- Configuring done (4.3s)
+-- Configuring done (3.3s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/zakdggn/.cache/yay/ncpamixer/src/ncpamixer-1.3.7
-[ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pa_object.cpp.o
-[ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pa_sink.cpp.o
-[ 15%] Building CXX object CMakeFiles/ncpamixer.dir/pulsemixer.cpp.o
-[ 21%] Building CXX object CMakeFiles/ncpamixer.dir/pa_card.cpp.o
+[ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pa_card.cpp.o
+[ 10%] Building CXX object CMakeFiles/ncpamixer.dir/pulsemixer.cpp.o
+[ 15%] Building CXX object CMakeFiles/ncpamixer.dir/pa_object.cpp.o
+[ 21%] Building CXX object CMakeFiles/ncpamixer.dir/pa_sink.cpp.o
 [ 26%] Building CXX object CMakeFiles/ncpamixer.dir/pa_input.cpp.o
 [ 31%] Building CXX object CMakeFiles/ncpamixer.dir/pa_source.cpp.o
 [ 36%] Building CXX object CMakeFiles/ncpamixer.dir/pa_source_output.cpp.o
@@ -3400,441 +3339,20 @@ Install the project...
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
-==> Creating package "ncpamixer-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: ncpamixer 1.3.7-1 (Sun Mar  3 23:27:26 2024)
-==> Cleaning up...
-==> Making package: adwaita-qt-git 1.4.1.r17.g417df19-1 (Sun Mar  3 23:27:29 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Updating adwaita-qt git repo...
-==> Validating source files with sha512sums...
-    adwaita-qt ... Skipped
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Creating working copy of adwaita-qt git repo...
-Cloning into 'adwaita-qt'...
-done.
-==> Starting pkgver()...
-==> Updated version: adwaita-qt-git 1.4.1.r29.g0a77436-1
-==> Sources are ready.
-==> Making package: adwaita-qt-git 1.4.1.r29.g0a77436-1 (Sun Mar  3 23:27:35 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting pkgver()...
-==> Starting build()...
-CMake Warning (dev) at CMakeLists.txt:1 (project):
-  cmake_minimum_required() should be called prior to this top-level project()
-  call.  Please see the cmake-commands(7) manual for usage documentation of
-  both commands.
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
--- The C compiler identification is GNU 13.2.1
--- The CXX compiler identification is GNU 13.2.1
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found PkgConfig: /usr/bin/pkg-config (found version "2.1.0") 
--- Found XCB: /usr/lib/libxcb.so (Required is at least version "1.10") 
--- Configuring done (1.2s)
--- Generating done (0.0s)
--- Build files have been written to: /home/zakdggn/.cache/yay/adwaita-qt-git/src/build-qt5
-[  0%] Built target adwaitaqtpriv_autogen_timestamp_deps
-[  2%] Automatic MOC for target adwaitaqtpriv
-[  2%] Built target adwaitaqtpriv_autogen
-[  8%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaanimations.cpp.o
-[  8%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitaqtpriv_autogen/mocs_compilation.cpp.o
-[  8%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaanimationdata.cpp.o
-[ 10%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaanimation.cpp.o
-[ 12%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitabaseengine.cpp.o
-[ 14%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitabusyindicatordata.cpp.o
-[ 16%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitabusyindicatorengine.cpp.o
-[ 18%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitadialdata.cpp.o
-[ 20%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitadialengine.cpp.o
-[ 22%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaenabledata.cpp.o
-[ 24%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitagenericdata.cpp.o
-[ 26%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaheaderviewdata.cpp.o
-[ 28%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaheaderviewengine.cpp.o
-[ 30%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitascrollbardata.cpp.o
-[ 32%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitascrollbarengine.cpp.o
-[ 34%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaspinboxengine.cpp.o
-[ 36%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitaspinboxdata.cpp.o
-[ 38%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitastackedwidgetdata.cpp.o
-[ 40%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitastackedwidgetengine.cpp.o
-[ 42%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitatabbarengine.cpp.o
-[ 44%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitatabbardata.cpp.o
-[ 46%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitatoolboxengine.cpp.o
-[ 48%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitatransitiondata.cpp.o
-[ 50%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitatransitionwidget.cpp.o
-[ 52%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitawidgetstateengine.cpp.o
-[ 54%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/animations/adwaitawidgetstatedata.cpp.o
-[ 56%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitaaddeventfilter.cpp.o
-[ 58%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitamnemonics.cpp.o
-[ 60%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitasplitterproxy.cpp.o
-[ 62%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitawidgetexplorer.cpp.o
-[ 64%] Building CXX object src/lib/CMakeFiles/adwaitaqtpriv.dir/adwaitawindowmanager.cpp.o
-[ 66%] Linking CXX shared library libadwaitaqtpriv.so
-[ 68%] Built target adwaitaqtpriv
-[ 68%] Built target adwaitaqt_autogen_timestamp_deps
-[ 70%] Automatic MOC for target adwaitaqt
-[ 70%] Built target adwaitaqt_autogen
-[ 72%] Generating qrc_stylesheet.cpp
-[ 80%] Building CXX object src/lib/CMakeFiles/adwaitaqt.dir/adwaita.cpp.o
-[ 80%] Building CXX object src/lib/CMakeFiles/adwaitaqt.dir/adwaitaqt_autogen/mocs_compilation.cpp.o
-[ 80%] Building CXX object src/lib/CMakeFiles/adwaitaqt.dir/adwaitacolors.cpp.o
-[ 80%] Building CXX object src/lib/CMakeFiles/adwaitaqt.dir/adwaitarenderer.cpp.o
-[ 82%] Building CXX object src/lib/CMakeFiles/adwaitaqt.dir/qrc_stylesheet.cpp.o
-[ 84%] Linking CXX shared library libadwaitaqt.so
-[ 86%] Built target adwaitaqt
-[ 86%] Built target adwaita-qt_autogen_timestamp_deps
-[ 88%] Automatic MOC for target adwaita-qt
-[ 88%] Built target adwaita-qt_autogen
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitastyleplugin.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitahelper.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaita-qt_autogen/mocs_compilation.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitastyle.cpp.o
-[ 98%] Linking CXX shared module adwaita.so
-[100%] Built target adwaita-qt
-CMake Warning (dev) at CMakeLists.txt:1 (project):
-  cmake_minimum_required() should be called prior to this top-level project()
-  call.  Please see the cmake-commands(7) manual for usage documentation of
-  both commands.
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
--- The C compiler identification is GNU 13.2.1
--- The CXX compiler identification is GNU 13.2.1
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
--- Performing Test HAVE_STDATOMIC
--- Performing Test HAVE_STDATOMIC - Success
--- Found WrapAtomic: TRUE  
--- Found OpenGL: /usr/lib/libOpenGL.so   
--- Found WrapOpenGL: TRUE  
--- Found XKB: /usr/lib/libxkbcommon.so (found suitable version "1.6.0", minimum required is "0.5.0") 
--- Found WrapVulkanHeaders: /usr/include  
--- Configuring done (1.9s)
--- Generating done (0.0s)
--- Build files have been written to: /home/zakdggn/.cache/yay/adwaita-qt-git/src/build-qt6
-[  0%] Built target adwaitaqt6priv_autogen_timestamp_deps
-[  2%] Automatic MOC for target adwaitaqt6priv
-[  2%] Built target adwaitaqt6priv_autogen
-[  6%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitaqt6priv_autogen/mocs_compilation.cpp.o
-[  6%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaanimations.cpp.o
-[  8%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaanimation.cpp.o
-[ 10%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaanimationdata.cpp.o
-[ 12%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitabaseengine.cpp.o
-[ 14%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitabusyindicatordata.cpp.o
-[ 16%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitabusyindicatorengine.cpp.o
-[ 18%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitadialdata.cpp.o
-[ 20%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitadialengine.cpp.o
-[ 22%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaenabledata.cpp.o
-[ 24%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitagenericdata.cpp.o
-[ 26%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaheaderviewdata.cpp.o
-[ 28%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaheaderviewengine.cpp.o
-[ 30%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitascrollbardata.cpp.o
-[ 32%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitascrollbarengine.cpp.o
-[ 34%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaspinboxengine.cpp.o
-[ 36%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitaspinboxdata.cpp.o
-[ 38%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitastackedwidgetdata.cpp.o
-[ 40%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitastackedwidgetengine.cpp.o
-[ 42%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitatabbarengine.cpp.o
-[ 44%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitatabbardata.cpp.o
-[ 46%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitatoolboxengine.cpp.o
-[ 48%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitatransitiondata.cpp.o
-[ 50%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitatransitionwidget.cpp.o
-[ 52%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitawidgetstateengine.cpp.o
-[ 54%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/animations/adwaitawidgetstatedata.cpp.o
-[ 56%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitaaddeventfilter.cpp.o
-[ 58%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitamnemonics.cpp.o
-[ 60%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitasplitterproxy.cpp.o
-[ 62%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitawidgetexplorer.cpp.o
-[ 64%] Building CXX object src/lib/CMakeFiles/adwaitaqt6priv.dir/adwaitawindowmanager.cpp.o
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitasplitterproxy.cpp: In member function ‘void Adwaita::SplitterProxy::clearSplitter()’:
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitasplitterproxy.cpp:312:67: warning: ‘QHoverEvent::QHoverEvent(QEvent::Type, const QPointF&, const QPointF&, Qt::KeyboardModifiers, const QPointingDevice*)’ is deprecated: Use the other constructor [-Wdeprecated-declarations]
-  312 |             _splitter.data()->mapFromGlobal(QCursor::pos()), _hook);
-      |                                                                   ^
-In file included from /usr/include/qt6/QtGui/QHoverEvent:1,
-                 from /home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitasplitterproxy.h:27,
-                 from /home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitasplitterproxy.cpp:20:
-/usr/include/qt6/QtGui/qevent.h:253:5: note: declared here
-  253 |     QHoverEvent(Type type, const QPointF &pos, const QPointF &oldPos,
-      |     ^~~~~~~~~~~
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitawindowmanager.cpp: In member function ‘bool Adwaita::AppEventFilter::appMouseEvent(QObject*, QEvent*)’:
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitawindowmanager.cpp:142:127: warning: ‘QMouseEvent::QMouseEvent(QEvent::Type, const QPointF&, Qt::MouseButton, Qt::MouseButtons, Qt::KeyboardModifiers, const QPointingDevice*)’ is deprecated: Use another constructor [-Wdeprecated-declarations]
-  142 |         QMouseEvent mouseEvent(QEvent::MouseButtonRelease, _parent->_dragPoint, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
-      |                                                                                                                               ^
-In file included from /usr/include/qt6/QtGui/QMouseEvent:1,
-                 from /home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitawindowmanager.cpp:63:
-/usr/include/qt6/QtGui/qevent.h:200:5: note: declared here
-  200 |     QMouseEvent(Type type, const QPointF &localPos, Qt::MouseButton button,
-      |     ^~~~~~~~~~~
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitawindowmanager.cpp: In member function ‘bool Adwaita::WindowManager::mousePressEvent(QObject*, QEvent*)’:
-/home/zakdggn/.cache/yay/adwaita-qt-git/src/adwaita-qt/src/lib/adwaitawindowmanager.cpp:337:110: warning: ‘QMouseEvent::QMouseEvent(QEvent::Type, const QPointF&, Qt::MouseButton, Qt::MouseButtons, Qt::KeyboardModifiers, const QPointingDevice*)’ is deprecated: Use another constructor [-Wdeprecated-declarations]
-  337 |     QMouseEvent localMouseEvent(QEvent::MouseMove, localPoint, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
-      |                                                                                                              ^
-/usr/include/qt6/QtGui/qevent.h:200:5: note: declared here
-  200 |     QMouseEvent(Type type, const QPointF &localPos, Qt::MouseButton button,
-      |     ^~~~~~~~~~~
-[ 66%] Linking CXX shared library libadwaitaqt6priv.so
-[ 68%] Built target adwaitaqt6priv
-[ 68%] Built target adwaitaqt6_autogen_timestamp_deps
-[ 70%] Automatic MOC for target adwaitaqt6
-[ 70%] Built target adwaitaqt6_autogen
-[ 72%] Generating qrc_stylesheet.cpp
-[ 76%] Building CXX object src/lib/CMakeFiles/adwaitaqt6.dir/adwaitarenderer.cpp.o
-[ 76%] Building CXX object src/lib/CMakeFiles/adwaitaqt6.dir/adwaita.cpp.o
-[ 78%] Building CXX object src/lib/CMakeFiles/adwaitaqt6.dir/adwaitacolors.cpp.o
-[ 80%] Building CXX object src/lib/CMakeFiles/adwaitaqt6.dir/adwaitaqt6_autogen/mocs_compilation.cpp.o
-[ 82%] Building CXX object src/lib/CMakeFiles/adwaitaqt6.dir/qrc_stylesheet.cpp.o
-[ 84%] Linking CXX shared library libadwaitaqt6.so
-[ 86%] Built target adwaitaqt6
-[ 86%] Built target adwaita-qt_autogen_timestamp_deps
-[ 88%] Automatic MOC for target adwaita-qt
-[ 88%] Built target adwaita-qt_autogen
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitahelper.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaita-qt_autogen/mocs_compilation.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitastyleplugin.cpp.o
-[ 96%] Building CXX object src/style/CMakeFiles/adwaita-qt.dir/adwaitastyle.cpp.o
-[ 98%] Linking CXX shared module adwaita.so
-[100%] Built target adwaita-qt
-==> Entering fakeroot environment...
-==> Starting package_adwaita-qt5-git()...
--- Install configuration: ""
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqtpriv.so.1.4.50
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqtpriv.so.1
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqtpriv.so
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqt.so.1.4.50
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqt.so.1
--- Set non-toolchain portion of runtime path of "/home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqt.so.1.4.50" to ""
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/libadwaitaqt.so
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/include/AdwaitaQt/adwaita.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/include/AdwaitaQt/adwaitacolors.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/include/AdwaitaQt/adwaitarenderer.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/include/AdwaitaQt/adwaitaqt_export.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/pkgconfig/adwaita-qt.pc
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/cmake/AdwaitaQt/AdwaitaQtConfig.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/cmake/AdwaitaQt/AdwaitaQtConfigVersion.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/cmake/AdwaitaQt/AdwaitaQtTargets.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/cmake/AdwaitaQt/AdwaitaQtTargets-noconfig.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/qt/plugins/styles/adwaita.so
--- Set non-toolchain portion of runtime path of "/home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt5-git/usr/lib/qt/plugins/styles/adwaita.so" to ""
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "adwaita-qt5-git"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Starting package_adwaita-qt6-git()...
--- Install configuration: ""
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6priv.so.1.4.50
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6priv.so.1
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6priv.so
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6.so.1.4.50
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6.so.1
--- Set non-toolchain portion of runtime path of "/home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6.so.1.4.50" to ""
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/libadwaitaqt6.so
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/include/AdwaitaQt6/adwaita.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/include/AdwaitaQt6/adwaitacolors.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/include/AdwaitaQt6/adwaitarenderer.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/include/AdwaitaQt6/adwaitaqt_export.h
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/pkgconfig/adwaita-qt6.pc
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/cmake/AdwaitaQt6/AdwaitaQt6Config.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/cmake/AdwaitaQt6/AdwaitaQt6ConfigVersion.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/cmake/AdwaitaQt6/AdwaitaQt6Targets.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/cmake/AdwaitaQt6/AdwaitaQt6Targets-noconfig.cmake
--- Installing: /home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/qt6/plugins/styles/adwaita.so
--- Set non-toolchain portion of runtime path of "/home/zakdggn/.cache/yay/adwaita-qt-git/pkg/adwaita-qt6-git/usr/lib/qt6/plugins/styles/adwaita.so" to ""
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "adwaita-qt6-git"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "adwaita-qt-git-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: adwaita-qt-git 1.4.1.r29.g0a77436-1 (Sun Mar  3 23:30:21 2024)
-==> Cleaning up...
-==> Making package: bluetuith-bin 0.2.1-3 (Sun Mar  3 23:30:27 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found bluetuith_0.2.1_Linux_x86_64.tar.gz
-==> Validating source_x86_64 files with sha256sums...
-    bluetuith_0.2.1_Linux_x86_64.tar.gz ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Extracting bluetuith_0.2.1_Linux_x86_64.tar.gz with bsdtar
-==> Sources are ready.
-==> Making package: bluetuith-bin 0.2.1-3 (Sun Mar  3 23:30:39 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Entering fakeroot environment...
-==> Starting package()...
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "bluetuith-bin"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "bluetuith-bin-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: bluetuith-bin 0.2.1-3 (Sun Mar  3 23:30:51 2024)
-==> Cleaning up...
-==> Making package: spotify-adblock-git 1:1.0.2.r0.g9ba383b-2 (Sun Mar  3 23:30:53 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Updating spotify-adblock git repo...
-  -> Found spotify-adblock.desktop
-==> Validating source files with sha512sums...
-    spotify-adblock ... Skipped
-    spotify-adblock.desktop ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Creating working copy of spotify-adblock git repo...
-Cloning into 'spotify-adblock'...
-done.
-==> Starting pkgver()...
-==> Updated version: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1
-==> Sources are ready.
-==> Making package: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Sun Mar  3 23:30:56 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting pkgver()...
-==> Starting build()...
-# cargo build --profile release
-cargo build --release
-    Updating crates.io index
- Downloading crates ...
-  Downloaded serde_regex v1.1.0
-  Downloaded equivalent v1.0.1
-  Downloaded serde_spanned v0.6.3
-  Downloaded toml_datetime v0.6.3
-  Downloaded lazy_static v1.4.0
-  Downloaded toml v0.7.6
-  Downloaded toml_edit v0.19.14
-  Downloaded winnow v0.5.0
-  Downloaded hashbrown v0.14.0
-  Downloaded memchr v2.5.0
-  Downloaded regex-automata v0.3.3
-  Downloaded libc v0.2.147
-  Downloaded regex-syntax v0.7.4
-  Downloaded serde_derive v1.0.174
-  Downloaded serde v1.0.174
-  Downloaded regex v1.9.1
-  Downloaded aho-corasick v1.0.2
-  Downloaded indexmap v2.0.0
-   Compiling serde v1.0.174
-   Compiling serde_derive v1.0.174
-   Compiling memchr v2.5.0
-   Compiling hashbrown v0.14.0
-   Compiling equivalent v1.0.1
-   Compiling regex-syntax v0.7.4
-   Compiling indexmap v2.0.0
-   Compiling aho-corasick v1.0.2
-   Compiling libc v0.2.147
-   Compiling winnow v0.5.0
-   Compiling toml_datetime v0.6.3
-   Compiling serde_spanned v0.6.3
-   Compiling regex-automata v0.3.3
-   Compiling toml_edit v0.19.14
-   Compiling toml v0.7.6
-   Compiling regex v1.9.1
-   Compiling serde_regex v1.1.0
-   Compiling lazy_static v1.4.0
-   Compiling spotify-adblock v1.0.2 (/home/zakdggn/.cache/yay/spotify-adblock-git/src/spotify-adblock)
-    Finished release [optimized] target(s) in 1m 32s
-==> Entering fakeroot environment...
-==> Starting package()...
-install -D --mode=644 --strip target/release/libspotifyadblock.so /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/usr/lib/spotify-adblock.so 
-install -D --mode=644 config.toml /home/zakdggn/.cache/yay/spotify-adblock-git/pkg/spotify-adblock-git/etc/spotify-adblock/config.toml 
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "spotify-adblock-git"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "spotify-adblock-git-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: spotify-adblock-git 1:1.0.3.r0.g5a3281d-1 (Sun Mar  3 23:32:33 2024)
+==> Finished making: ncpamixer 1.3.7-1 (Tue Mar  5 00:58:55 2024)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (7)                New Version            Net Change
+Package (3)          New Version            Net Change
 
-adwaita-qt5-git            1.4.1.r29.g0a77436-1     0.69 MiB
-bluetuith-bin              0.2.1-3                  8.72 MiB
-bluetuith-bin-debug        0.2.1-3                  0.00 MiB
-ncpamixer                  1.3.7-1                  0.11 MiB
-ncpamixer-debug            1.3.7-1                  1.89 MiB
-spotify-adblock-git        1:1.0.3.r0.g5a3281d-1    2.03 MiB
-spotify-adblock-git-debug  1:1.0.3.r0.g5a3281d-1    0.00 MiB
+bluetuith-bin        0.2.1-3                  8.72 MiB
+ncpamixer            1.3.7-1                  0.11 MiB
+spotify-adblock-git  1:1.0.3.r0.g5a3281d-1    2.03 MiB
 
-Total Installed Size:  13.44 MiB
+Total Installed Size:  10.86 MiB
 
 :: Proceed with installation? [Y/n] 
 checking keyring...
@@ -3843,19 +3361,13 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
-installing ncpamixer...
-installing ncpamixer-debug...
-installing adwaita-qt5-git...
-Optional dependencies for adwaita-qt5-git
-    qt5-x11extras: For X11 and/or xwayland support [installed]
+installing spotify-adblock-git...
 installing bluetuith-bin...
 Optional dependencies for bluetuith-bin
     networkmanager: For PANU networking [installed]
     modemmanager: For DUN networking
     pulseaudio: For switching device audio profiles [installed]
-installing bluetuith-bin-debug...
-installing spotify-adblock-git...
-installing spotify-adblock-git-debug...
+installing ncpamixer...
 :: Running post-transaction hooks...
 (1/2) Arming ConditionNeedsUpdate...
 (2/2) Updating the desktop file MIME type cache...
@@ -3875,14 +3387,14 @@ Created "/boot/EFI/Linux".
 Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/systemd/systemd-bootx64.efi".
 Copied "/usr/lib/systemd/boot/efi/systemd-bootx64.efi" to "/boot/EFI/BOOT/BOOTX64.EFI".
 ! Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! !
-! Random seed file '/boot/loader/.#bootctlrandom-seed5240404db14fdb83' is world accessible, which is a security hole! !
+! Random seed file '/boot/loader/.#bootctlrandom-seedeba00fb886678759' is world accessible, which is a security hole! !
 Random seed file /boot/loader/random-seed successfully written (32 bytes).
 Created EFI boot entry "Linux Boot Manager".
 Created symlink /etc/systemd/system/sysinit.target.wants/systemd-boot-update.service → /usr/lib/systemd/system/systemd-boot-update.service.
-713031680 bytes (713 MB, 680 MiB) copied, 1 s, 713 MB/s1407188992 bytes (1.4 GB, 1.3 GiB) copied, 2 s, 703 MB/s2042626048 bytes (2.0 GB, 1.9 GiB) copied, 3 s, 681 MB/s2652897280 bytes (2.7 GB, 2.5 GiB) copied, 4 s, 663 MB/s3308257280 bytes (3.3 GB, 3.1 GiB) copied, 5 s, 662 MB/s3947888640 bytes (3.9 GB, 3.7 GiB) copied, 6 s, 658 MB/s
+1034944512 bytes (1.0 GB, 987 MiB) copied, 1 s, 1.0 GB/s1927282688 bytes (1.9 GB, 1.8 GiB) copied, 2 s, 963 MB/s2815426560 bytes (2.8 GB, 2.6 GiB) copied, 3 s, 938 MB/s3726639104 bytes (3.7 GB, 3.5 GiB) copied, 4 s, 931 MB/s
 4096+0 records in
 4096+0 records out
-4294967296 bytes (4.3 GB, 4.0 GiB) copied, 6.54346 s, 656 MB/s
+4294967296 bytes (4.3 GB, 4.0 GiB) copied, 4.63974 s, 926 MB/s
 Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
 no label, UUID=00000000-0000-0000-0000-000000000000
 Created symlink /etc/systemd/system/multi-user.target.wants/tlp.service → /usr/lib/systemd/system/tlp.service.
@@ -3905,7 +3417,7 @@ warning: polkit-124-2 is up to date -- skipping
 resolving dependencies...
 looking for conflicting packages...
 
-Package (44)                  New Version  Net Change  Download Size
+Package (45)                  New Version  Net Change  Download Size
 
 extra/chrono-date             3.0.1-3        0.41 MiB       0.07 MiB
 extra/fcft                    3.1.8-1        0.16 MiB       0.08 MiB
@@ -3945,6 +3457,7 @@ extra/swaybg                  1.2.0-1        0.04 MiB       0.02 MiB
 extra/swayidle                1.8.0-1        0.04 MiB       0.02 MiB
 extra/swayimg                 2.1-3          0.13 MiB       0.06 MiB
 extra/swaylock                1.7.2-1        0.09 MiB       0.03 MiB
+extra/ttf-roboto-mono         3.000-2        1.26 MiB       0.47 MiB
 extra/waybar                  0.9.24-3       1.68 MiB       0.65 MiB
 extra/wl-clipboard            1:2.2.1-1      0.12 MiB       0.03 MiB
 extra/wmenu                   0.1.6-1        0.05 MiB       0.02 MiB
@@ -3952,8 +3465,8 @@ extra/xdg-desktop-portal-gtk  1.15.1-1       0.45 MiB       0.11 MiB
 extra/xdg-desktop-portal-wlr  0.7.0-2        0.10 MiB       0.04 MiB
 extra/xorg-xwayland           23.2.4-2       2.24 MiB       0.90 MiB
 
-Total Download Size:   12.31 MiB
-Total Installed Size:  30.78 MiB
+Total Download Size:   12.78 MiB
+Total Installed Size:  32.04 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
@@ -3962,6 +3475,7 @@ Total Installed Size:  30.78 MiB
  xorg-xwayland-23.2.4-2-x86_64 downloading...
  waybar-0.9.24-3-x86_64 downloading...
  xorg-fonts-encodings-1.1.0-1-any downloading...
+ ttf-roboto-mono-3.000-2-any downloading...
  libimobiledevice-1.3.0-10-x86_64 downloading...
  wlroots-0.17.1-1-x86_64 downloading...
  xdg-desktop-portal-1.18.2-1-x86_64 downloading...
@@ -4062,6 +3576,7 @@ installing swaybg...
 installing swayidle...
 installing swayimg...
 installing swaylock...
+installing ttf-roboto-mono...
 installing chrono-date...
 installing spdlog...
 installing gtk-layer-shell...
@@ -4130,98 +3645,44 @@ Creating user 'usbmux' (usbmux user) with UID 140 and GID 140.
 ( 9/11) Updating fontconfig cache...
 (10/11) Updating icon theme caches...
 (11/11) Updating the desktop file MIME type cache...
-AUR Explicit (6): grimshot-1.9-1, rofi-lbonn-wayland-git-1.7.5.wayland1.r42.g5d4a3e14-1, chayang-0.1.0-1, nwg-bar-bin-0.1.6-2, wayland-pipewire-idle-inhibit-0.4.5-1, wlogout-1.2.1-1
-Sync Dependency (7): xcb-util-xrm-1.3-2, gobject-introspection-1.78.1-1, grim-1.4.1-1, libxdg-basedir-1.2.3-2, check-0.15.2-2, jq-1.7.1-1, slurp-1.5.0-1
-Sync Make Dependency (4): clang-16.0.6-2, meson-1.3.2-1, scdoc-1.11.3-1, wayland-protocols-1.33-1
-:: [1m(1/6) Downloaded PKGBUILD: wayland-pipewire-idle-inhibit[0m
-:: [1m(2/6) Downloaded PKGBUILD: nwg-bar-bin[0m
+AUR Explicit (6): chayang-0.1.0-1, wlogout-1.2.1-1, wayland-pipewire-idle-inhibit-0.4.5-1, nwg-bar-bin-0.1.6-2, rofi-lbonn-wayland-git-1.7.5.wayland1.r42.g5d4a3e14-1, grimshot-1.9-1
+Sync Dependency (8): check-0.15.2-2, libxdg-basedir-1.2.3-2, jq-1.7.1-1, xcb-util-cursor-0.1.5-1, gobject-introspection-1.78.1-1, xcb-util-xrm-1.3-2, slurp-1.5.0-1, grim-1.4.1-1
+Sync Make Dependency (4): clang-16.0.6-2, scdoc-1.11.3-1, meson-1.3.2-1, wayland-protocols-1.33-1
+:: [1m(1/6) Downloaded PKGBUILD: nwg-bar-bin[0m
+:: [1m(2/6) Downloaded PKGBUILD: wayland-pipewire-idle-inhibit[0m
 :: [1m(3/6) Downloaded PKGBUILD: chayang[0m
-:: [1m(4/6) Downloaded PKGBUILD: grimshot[0m
-:: [1m(5/6) Downloaded PKGBUILD: rofi-lbonn-wayland-git[0m
+:: [1m(4/6) Downloaded PKGBUILD: rofi-lbonn-wayland-git[0m
+:: [1m(5/6) Downloaded PKGBUILD: grimshot[0m
 :: [1m(6/6) Downloaded PKGBUILD: wlogout[0m
   6 wlogout                                  (Build Files Exist)
-  5 grimshot                                 (Build Files Exist)
-  4 rofi-lbonn-wayland-git                   (Build Files Exist)
-  3 chayang                                  (Build Files Exist)
-  2 nwg-bar-bin                              (Build Files Exist)
-  1 wayland-pipewire-idle-inhibit            (Build Files Exist)
+  5 wayland-pipewire-idle-inhibit            (Build Files Exist)
+  4 nwg-bar-bin                              (Build Files Exist)
+  3 rofi-lbonn-wayland-git                   (Build Files Exist)
+  2 grimshot                                 (Build Files Exist)
+  1 chayang                                  (Build Files Exist)
 ==> Packages to cleanBuild?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-  6 wayland-pipewire-idle-inhibit            (Build Files Exist)
-  5 wlogout                                  (Build Files Exist)
-  4 grimshot                                 (Build Files Exist)
+  6 wlogout                                  (Build Files Exist)
+  5 wayland-pipewire-idle-inhibit            (Build Files Exist)
+  4 nwg-bar-bin                              (Build Files Exist)
   3 rofi-lbonn-wayland-git                   (Build Files Exist)
-  2 chayang                                  (Build Files Exist)
-  1 nwg-bar-bin                              (Build Files Exist)
+  2 grimshot                                 (Build Files Exist)
+  1 chayang                                  (Build Files Exist)
 ==> Diffs to show?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-==> Making package: chayang 0.1.0-1 (Sun Mar  3 23:32:57 2024)
-==> Retrieving sources...
-  -> Downloading chayang-0.1.0.tar.gz...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 10559    0 10559    0     0  19435      0 --:--:-- --:--:-- --:--:-- 19445
-  -> Downloading chayang-0.1.0.tar.gz.sig...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0100   566    0   566    0     0    167      0 --:--:--  0:00:03 --:--:--   167
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha256sums...
-    chayang-0.1.0.tar.gz ... Passed
-    chayang-0.1.0.tar.gz.sig ... Skipped
-==> Making package: nwg-bar-bin 0.1.6-2 (Sun Mar  3 23:33:03 2024)
+==> Making package: nwg-bar-bin 0.1.6-2 (Tue Mar  5 00:59:12 2024)
 ==> Retrieving sources...
   -> Downloading nwg-bar-bin-0.1.6.tar.gz...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
- 54 3258k   54 1777k    0     0  1699k      0  0:00:01  0:00:01 --:--:-- 1699k100 3258k  100 3258k    0     0  2909k      0  0:00:01  0:00:01 --:--:-- 19.5M
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 3258k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 3258k  100 3258k    0     0  3413k      0 --:--:-- --:--:-- --:--:-- 10.6M
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with md5sums...
     nwg-bar-bin-0.1.6.tar.gz ... Passed
-==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Sun Mar  3 23:33:06 2024)
-==> Retrieving sources...
-  -> Downloading wayland-pipewire-idle-inhibit-0.4.5.tar.gz...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 38345    0 38345    0     0  42458      0 --:--:-- --:--:-- --:--:-- 42458
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha256sums...
-    wayland-pipewire-idle-inhibit-0.4.5.tar.gz ... Passed
-==> Making package: wlogout 1.2.1-1 (Sun Mar  3 23:33:08 2024)
-==> Retrieving sources...
-  -> Downloading wlogout-1.2.1.tar.gz...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  5  529k    5 30155    0     0  34162      0  0:00:15 --:--:--  0:00:15 34162100  529k  100  529k    0     0   568k      0 --:--:-- --:--:-- --:--:--  9.9M
-  -> Downloading wlogout-1.2.1.tar.gz.sig...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   566  100   566    0     0    500      0  0:00:01  0:00:01 --:--:--   954
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with md5sums...
-    wlogout-1.2.1.tar.gz ... Passed
-    wlogout-1.2.1.tar.gz.sig ... Skipped
-==> Making package: grimshot 1.9-1 (Sun Mar  3 23:33:13 2024)
-==> Retrieving sources...
-  -> Downloading grimshot-1.9...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5385  100  5385    0     0  16316      0 --:--:-- --:--:-- --:--:-- 16318100  5385  100  5385    0     0  16307      0 --:--:-- --:--:-- --:--:-- 16318
-  -> Downloading grimshot-1.9.1.scd...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2387  100  2387    0     0   9274      0 --:--:-- --:--:-- --:--:--  9287
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha256sums...
-    grimshot-1.9 ... Passed
-    grimshot-1.9.1.scd ... Passed
-==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland1.r42.g5d4a3e14-1 (Sun Mar  3 23:33:16 2024)
+==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland1.r42.g5d4a3e14-1 (Tue Mar  5 00:59:15 2024)
 ==> Retrieving sources...
   -> Cloning rofi-lbonn-wayland-git git repo...
 Cloning into bare repository '/home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/rofi-lbonn-wayland-git'...
@@ -4234,12 +3695,66 @@ Cloning into bare repository '/home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/li
     rofi-lbonn-wayland-git ... Skipped
     libgwater ... Skipped
     libnkutils ... Skipped
-:: [1m(1/6) Parsing SRCINFO: nwg-bar-bin[0m
-:: [1m(2/6) Parsing SRCINFO: wayland-pipewire-idle-inhibit[0m
-:: [1m(3/6) Parsing SRCINFO: wlogout[0m
+==> Making package: grimshot 1.9-1 (Tue Mar  5 00:59:21 2024)
+==> Retrieving sources...
+  -> Downloading grimshot-1.9...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  5385  100  5385    0     0  12930      0 --:--:-- --:--:-- --:--:-- 12913100  5385  100  5385    0     0  12924      0 --:--:-- --:--:-- --:--:-- 12913
+  -> Downloading grimshot-1.9.1.scd...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  2387  100  2387    0     0   9205      0 --:--:-- --:--:-- --:--:--  9216
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    grimshot-1.9 ... Passed
+    grimshot-1.9.1.scd ... Passed
+==> Making package: chayang 0.1.0-1 (Tue Mar  5 00:59:23 2024)
+==> Retrieving sources...
+  -> Downloading chayang-0.1.0.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0100 10559    0 10559    0     0   3139      0 --:--:--  0:00:03 --:--:--  3139
+  -> Downloading chayang-0.1.0.tar.gz.sig...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   566    0   566    0     0   3089      0 --:--:-- --:--:-- --:--:--  3109
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    chayang-0.1.0.tar.gz ... Passed
+    chayang-0.1.0.tar.gz.sig ... Skipped
+==> Making package: wlogout 1.2.1-1 (Tue Mar  5 00:59:28 2024)
+==> Retrieving sources...
+  -> Downloading wlogout-1.2.1.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  3  529k    3 17896    0     0  20748      0  0:00:26 --:--:--  0:00:26 20748100  529k  100  529k    0     0   540k      0 --:--:-- --:--:-- --:--:-- 4376k
+  -> Downloading wlogout-1.2.1.tar.gz.sig...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   566  100   566    0     0    743      0 --:--:-- --:--:-- --:--:--   743100   566  100   566    0     0    743      0 --:--:-- --:--:-- --:--:--     0
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with md5sums...
+    wlogout-1.2.1.tar.gz ... Passed
+    wlogout-1.2.1.tar.gz.sig ... Skipped
+==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Tue Mar  5 00:59:31 2024)
+==> Retrieving sources...
+  -> Downloading wayland-pipewire-idle-inhibit-0.4.5.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 38345    0 38345    0     0  78422      0 --:--:-- --:--:-- --:--:-- 78422
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    wayland-pipewire-idle-inhibit-0.4.5.tar.gz ... Passed
+:: [1m(1/6) Parsing SRCINFO: wayland-pipewire-idle-inhibit[0m
+:: [1m(2/6) Parsing SRCINFO: nwg-bar-bin[0m
+:: [1m(3/6) Parsing SRCINFO: rofi-lbonn-wayland-git[0m
 :: [1m(4/6) Parsing SRCINFO: grimshot[0m
-:: [1m(5/6) Parsing SRCINFO: rofi-lbonn-wayland-git[0m
-:: [1m(6/6) Parsing SRCINFO: chayang[0m
+:: [1m(5/6) Parsing SRCINFO: chayang[0m
+:: [1m(6/6) Parsing SRCINFO: wlogout[0m
 gpg: error reading key: No public key
 gpg: error reading key: No public key
 
@@ -4255,7 +3770,7 @@ gpg:               imported: 2
 resolving dependencies...
 looking for conflicting packages...
 
-Package (17)                 New Version  Net Change  Download Size
+Package (18)                 New Version  Net Change  Download Size
 
 extra/compiler-rt            16.0.6-3      36.95 MiB       3.16 MiB
 extra/ninja                  1.11.1-3       0.35 MiB       0.14 MiB
@@ -4273,10 +3788,11 @@ extra/meson                  1.3.2-1       13.39 MiB       2.04 MiB
 extra/scdoc                  1.11.3-1       0.03 MiB       0.01 MiB
 extra/slurp                  1.5.0-1        0.05 MiB       0.02 MiB
 extra/wayland-protocols      1.33-1         0.55 MiB       0.08 MiB
+extra/xcb-util-cursor        0.1.5-1        0.03 MiB       0.01 MiB
 extra/xcb-util-xrm           1.3-2          0.04 MiB       0.01 MiB
 
-Total Download Size:    50.04 MiB
-Total Installed Size:  277.53 MiB
+Total Download Size:    50.05 MiB
+Total Installed Size:  277.56 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
@@ -4296,6 +3812,7 @@ Total Installed Size:  277.53 MiB
  grim-1.4.1-1-x86_64 downloading...
  xcb-util-xrm-1.3-2-x86_64 downloading...
  scdoc-1.11.3-1-x86_64 downloading...
+ xcb-util-cursor-0.1.5-1-x86_64 downloading...
  libxdg-basedir-1.2.3-2-x86_64 downloading...
 checking keyring...
 checking package integrity...
@@ -4303,169 +3820,38 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
-installing compiler-rt...
-installing clang...
-Optional dependencies for clang
-    openmp: OpenMP support in clang with -fopenmp
-    python: for scan-view and git-clang-format [installed]
-    llvm: referenced by some clang headers
+installing grim...
 installing check...
 Optional dependencies for check
     check-docs: Documentation
-installing jq...
-installing wayland-protocols...
-installing scdoc...
+installing ninja...
+installing python-tqdm...
+Optional dependencies for python-tqdm
+    python-requests: telegram
+installing meson...
+installing xcb-util-cursor...
 installing python-markupsafe...
 installing python-mako...
 installing python-markdown...
 Optional dependencies for python-markdown
     python-yaml: parse Python in YAML metadata
 installing gobject-introspection...
+installing wayland-protocols...
+installing compiler-rt...
+installing clang...
+Optional dependencies for clang
+    openmp: OpenMP support in clang with -fopenmp
+    python: for scan-view and git-clang-format [installed]
+    llvm: referenced by some clang headers
+installing scdoc...
+installing jq...
 installing libxdg-basedir...
-installing ninja...
-installing python-tqdm...
-Optional dependencies for python-tqdm
-    python-requests: telegram
-installing meson...
-installing grim...
-installing xcb-util-xrm...
 installing slurp...
+installing xcb-util-xrm...
 :: Running post-transaction hooks...
 (1/2) Arming ConditionNeedsUpdate...
 (2/2) Updating the info directory file...
-==> Making package: chayang 0.1.0-1 (Sun Mar  3 23:33:28 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found chayang-0.1.0.tar.gz
-  -> Found chayang-0.1.0.tar.gz.sig
-==> Validating source files with sha256sums...
-    chayang-0.1.0.tar.gz ... Passed
-    chayang-0.1.0.tar.gz.sig ... Skipped
-==> Verifying source file signatures with gpg...
-    chayang-0.1.0.tar.gz ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Extracting chayang-0.1.0.tar.gz with bsdtar
-==> Sources are ready.
-==> Making package: chayang 0.1.0-1 (Sun Mar  3 23:33:31 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting build()...
-+ exec meson setup --prefix /usr --libexecdir lib --sbindir bin --buildtype plain --auto-features enabled --wrap-mode nodownload -D b_pie=true -D python.bytecompile=1 build
-The Meson build system
-Version: 1.3.2
-Source dir: /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0
-Build dir: /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build
-Build type: native build
-Project name: chayang
-Project version: 0.1.0
-C compiler for the host machine: sccache cc (gcc 13.2.1 "cc (GCC) 13.2.1 20230801")
-C linker for the host machine: cc ld.bfd 2.42.0
-Host machine cpu family: x86_64
-Host machine cpu: x86_64
-Found pkg-config: YES (/usr/bin/pkg-config) 2.1.0
-Build-time dependency wayland-scanner found: YES 1.22.0
-Program /usr/bin/wayland-scanner found: YES (/usr/bin/wayland-scanner)
-Run-time dependency wayland-protocols found: YES 1.33
-Run-time dependency wayland-client found: YES 1.22.0
-Build targets in project: 1
-
-chayang 0.1.0
-
-  User defined options
-    auto_features     : enabled
-    buildtype         : plain
-    libexecdir        : lib
-    prefix            : /usr
-    sbindir           : bin
-    wrap_mode         : nodownload
-    python.bytecompile: 1
-    b_pie             : true
-
-Found ninja-1.11.1 at /usr/bin/ninja
-Generating targets:   0%|          | 0/1 eta ?                                              Writing build.ninja:   0%|          | 0/40 eta ?                                                ninja: Entering directory `/home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build'
-[1/14] Generating 'chayang.p/viewporter-protocol.h'
-[2/14] Generating 'chayang.p/viewporter-protocol.c'
-[3/14] Generating 'chayang.p/single-pixel-buffer-v1-protocol.c'
-[4/14] Generating 'chayang.p/single-pixel-buffer-v1-protocol.h'
-[5/14] Generating 'chayang.p/xdg-shell-protocol.c'
-[6/14] Generating 'chayang.p/xdg-shell-protocol.h'
-[7/14] Generating 'chayang.p/wlr-layer-shell-unstable-v1-protocol.c'
-[8/14] Generating 'chayang.p/wlr-layer-shell-unstable-v1-protocol.h'
-[9/14] Compiling C object chayang.p/meson-generated_viewporter-protocol.c.o
-[10/14] Compiling C object chayang.p/meson-generated_single-pixel-buffer-v1-protocol.c.o
-[11/14] Compiling C object chayang.p/meson-generated_xdg-shell-protocol.c.o
-[12/14] Compiling C object chayang.p/meson-generated_wlr-layer-shell-unstable-v1-protocol.c.o
-[13/14] Compiling C object chayang.p/main.c.o
-[14/14] Linking target chayang
-INFO: autodetecting backend as ninja
-INFO: calculating backend command to run: /usr/bin/ninja -C /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build
-==> Entering fakeroot environment...
-==> Starting package()...
-ninja: Entering directory `/home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build'
-ninja: no work to do.
-Installing chayang to /home/zakdggn/.cache/yay/chayang/pkg/chayang/usr/bin
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "chayang"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "chayang-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: chayang 0.1.0-1 (Sun Mar  3 23:33:37 2024)
-==> Cleaning up...
-==> Making package: nwg-bar-bin 0.1.6-2 (Sun Mar  3 23:33:39 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found nwg-bar-bin-0.1.6.tar.gz
-==> Validating source files with md5sums...
-    nwg-bar-bin-0.1.6.tar.gz ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Extracting nwg-bar-bin-0.1.6.tar.gz with bsdtar
-==> Sources are ready.
-==> Making package: nwg-bar-bin 0.1.6-2 (Sun Mar  3 23:33:42 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Entering fakeroot environment...
-==> Starting package()...
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "nwg-bar-bin"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "nwg-bar-bin-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: nwg-bar-bin 0.1.6-2 (Sun Mar  3 23:33:48 2024)
-==> Cleaning up...
-==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Sun Mar  3 23:33:49 2024)
+==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Tue Mar  5 00:59:40 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -4476,105 +3862,105 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
 ==> Extracting sources...
   -> Extracting wayland-pipewire-idle-inhibit-0.4.5.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Sun Mar  3 23:33:52 2024)
+==> Making package: wayland-pipewire-idle-inhibit 0.4.5-1 (Tue Mar  5 00:59:42 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
 ==> Starting build()...
     Updating crates.io index
  Downloading crates ...
-  Downloaded anstyle v1.0.4
-  Downloaded anstyle-query v1.0.2
-  Downloaded termcolor v1.4.0
-  Downloaded cexpr v0.6.0
-  Downloaded shlex v1.2.0
   Downloaded peeking_take_while v0.1.2
-  Downloaded cookie-factory v0.3.2
+  Downloaded toml_datetime v0.6.5
   Downloaded errno v0.3.8
-  Downloaded dlib v0.5.2
-  Downloaded uncased v0.9.9
+  Downloaded pin-utils v0.1.0
   Downloaded timer v0.2.0
-  Downloaded serde_spanned v0.6.5
-  Downloaded quote v1.0.33
+  Downloaded dlib v0.5.2
+  Downloaded autocfg v1.1.0
+  Downloaded pkg-config v0.3.28
+  Downloaded colorchoice v1.0.0
+  Downloaded shlex v1.2.0
   Downloaded heck v0.4.1
+  Downloaded cexpr v0.6.0
+  Downloaded anstyle v1.0.4
+  Downloaded memoffset v0.7.1
+  Downloaded uncased v0.9.9
+  Downloaded glob v0.3.1
+  Downloaded bitflags v1.3.2
+  Downloaded cfg-if v1.0.0
+  Downloaded anstyle-parse v0.2.3
+  Downloaded humantime v2.1.0
+  Downloaded version_check v0.9.4
+  Downloaded lazycell v1.3.0
+  Downloaded downcast-rs v1.2.0
+  Downloaded is-terminal v0.4.9
+  Downloaded serde_spanned v0.6.5
+  Downloaded anstyle-query v1.0.2
+  Downloaded version-compare v0.1.1
+  Downloaded termcolor v1.4.0
+  Downloaded signal-hook-registry v1.4.1
+  Downloaded scoped-tls v1.0.1
+  Downloaded thiserror-impl v1.0.52
+  Downloaded cookie-factory v0.3.2
+  Downloaded utf8parse v0.2.1
+  Downloaded rustc-hash v1.1.0
+  Downloaded convert_case v0.6.0
+  Downloaded system-deps v6.2.0
+  Downloaded xdg v2.5.2
   Downloaded iana-time-zone v0.1.58
-  Downloaded serde_derive v1.0.193
-  Downloaded toml v0.8.8
+  Downloaded log v0.4.20
+  Downloaded bitflags v2.4.1
+  Downloaded clap_lex v0.6.0
+  Downloaded clap_derive v4.4.7
+  Downloaded env_logger v0.10.1
+  Downloaded once_cell v1.19.0
+  Downloaded strsim v0.10.0
+  Downloaded smallvec v1.11.2
+  Downloaded target-lexicon v0.12.12
+  Downloaded wayland-scanner v0.31.0
+  Downloaded libloading v0.7.4
+  Downloaded quote v1.0.33
+  Downloaded anyhow v1.0.76
   Downloaded clang-sys v1.6.1
+  Downloaded num-traits v0.2.17
+  Downloaded cfg-expr v0.15.5
+  Downloaded serde_derive v1.0.193
+  Downloaded wayland-client v0.31.1
   Downloaded indexmap v2.1.0
-  Downloaded serde v1.0.193
+  Downloaded toml v0.8.8
+  Downloaded signal-hook v0.3.17
+  Downloaded unicode-ident v1.0.12
   Downloaded minimal-lexical v0.2.1
-  Downloaded clap_builder v4.4.12
+  Downloaded aho-corasick v1.1.2
+  Downloaded serde v1.0.193
+  Downloaded memchr v2.6.4
+  Downloaded cc v1.0.83
+  Downloaded unicode-segmentation v1.10.1
+  Downloaded toml_edit v0.21.0
+  Downloaded wayland-protocols v0.31.0
+  Downloaded hashbrown v0.14.3
   Downloaded quick-xml v0.30.0
-  Downloaded chrono v0.4.31
+  Downloaded winnow v0.5.30
+  Downloaded clap_builder v4.4.12
+  Downloaded nom v7.1.3
   Downloaded regex v1.10.2
+  Downloaded chrono v0.4.31
+  Downloaded syn v2.0.43
+  Downloaded nix v0.26.4
+  Downloaded rustix v0.38.28
   Downloaded regex-syntax v0.8.2
   Downloaded regex-automata v0.4.3
   Downloaded libc v0.2.151
-  Downloaded rustix v0.38.28
-  Downloaded nix v0.26.4
-  Downloaded syn v2.0.43
-  Downloaded linux-raw-sys v0.4.12
-  Downloaded winnow v0.5.30
-  Downloaded hashbrown v0.14.3
-  Downloaded aho-corasick v1.1.2
-  Downloaded nom v7.1.3
-  Downloaded unicode-segmentation v1.10.1
-  Downloaded wayland-client v0.31.1
-  Downloaded toml_edit v0.21.0
-  Downloaded memchr v2.6.4
-  Downloaded unicode-ident v1.0.12
-  Downloaded cfg-expr v0.15.5
-  Downloaded num-traits v0.2.17
-  Downloaded wayland-protocols v0.31.0
-  Downloaded anyhow v1.0.76
-  Downloaded cc v1.0.83
-  Downloaded proc-macro2 v1.0.71
-  Downloaded libloading v0.7.4
-  Downloaded libspa-sys v0.7.2
-  Downloaded pipewire-sys v0.7.2
-  Downloaded clap_derive v4.4.7
-  Downloaded anstyle-parse v0.2.3
-  Downloaded log v0.4.20
-  Downloaded wayland-scanner v0.31.0
-  Downloaded system-deps v6.2.0
-  Downloaded xdg v2.5.2
-  Downloaded scoped-tls v1.0.1
-  Downloaded rustc-hash v1.1.0
-  Downloaded clap_lex v0.6.0
-  Downloaded version_check v0.9.4
-  Downloaded once_cell v1.19.0
-  Downloaded signal-hook v0.3.17
-  Downloaded thiserror-impl v1.0.52
-  Downloaded memoffset v0.7.1
-  Downloaded wayland-sys v0.31.1
-  Downloaded strsim v0.10.0
-  Downloaded smallvec v1.11.2
-  Downloaded humantime v2.1.0
-  Downloaded pkg-config v0.3.28
-  Downloaded downcast-rs v1.2.0
-  Downloaded glob v0.3.1
-  Downloaded anstream v0.6.5
-  Downloaded env_logger v0.10.1
-  Downloaded utf8parse v0.2.1
-  Downloaded cfg-if v1.0.0
-  Downloaded version-compare v0.1.1
-  Downloaded target-lexicon v0.12.12
-  Downloaded convert_case v0.6.0
-  Downloaded bitflags v1.3.2
-  Downloaded pin-utils v0.1.0
-  Downloaded is-terminal v0.4.9
-  Downloaded autocfg v1.1.0
-  Downloaded colorchoice v1.0.0
-  Downloaded toml_datetime v0.6.5
-  Downloaded bitflags v2.4.1
-  Downloaded lazycell v1.3.0
-  Downloaded signal-hook-registry v1.4.1
   Downloaded pipewire v0.7.2
-  Downloaded clap v4.4.12
+  Downloaded linux-raw-sys v0.4.12
+  Downloaded libspa-sys v0.7.2
+  Downloaded wayland-sys v0.31.1
   Downloaded libspa v0.7.2
-  Downloaded thiserror v1.0.52
+  Downloaded pipewire-sys v0.7.2
   Downloaded figment v0.10.13
+  Downloaded proc-macro2 v1.0.71
+  Downloaded clap v4.4.12
+  Downloaded thiserror v1.0.52
+  Downloaded anstream v0.6.5
   Downloaded wayland-backend v0.3.2
   Downloaded bindgen v0.66.1
    Compiling proc-macro2 v1.0.71
@@ -4586,19 +3972,19 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
    Compiling quote v1.0.33
    Compiling syn v2.0.43
    Compiling cc v1.0.83
-   Compiling glob v0.3.1
    Compiling equivalent v1.0.1
-   Compiling target-lexicon v0.12.12
+   Compiling glob v0.3.1
    Compiling hashbrown v0.14.3
    Compiling autocfg v1.1.0
+   Compiling target-lexicon v0.12.12
    Compiling indexmap v2.1.0
-   Compiling serde_spanned v0.6.5
-   Compiling toml_datetime v0.6.5
    Compiling clang-sys v1.6.1
-   Compiling winnow v0.5.30
    Compiling heck v0.4.1
+   Compiling winnow v0.5.30
    Compiling smallvec v1.11.2
    Compiling regex-syntax v0.8.2
+   Compiling serde_spanned v0.6.5
+   Compiling toml_datetime v0.6.5
    Compiling minimal-lexical v0.2.1
    Compiling cfg-if v1.0.0
    Compiling libloading v0.7.4
@@ -4606,22 +3992,22 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
    Compiling toml_edit v0.21.0
    Compiling regex-automata v0.4.3
    Compiling toml v0.8.8
-   Compiling cfg-expr v0.15.5
    Compiling serde_derive v1.0.193
+   Compiling cfg-expr v0.15.5
    Compiling bindgen v0.66.1
    Compiling version-compare v0.1.1
    Compiling system-deps v6.2.0
    Compiling regex v1.10.2
    Compiling cexpr v0.6.0
-   Compiling lazycell v1.3.0
-   Compiling bitflags v2.4.1
-   Compiling lazy_static v1.4.0
    Compiling rustc-hash v1.1.0
-   Compiling peeking_take_while v0.1.2
+   Compiling lazy_static v1.4.0
+   Compiling bitflags v2.4.1
+   Compiling lazycell v1.3.0
    Compiling shlex v1.2.0
+   Compiling peeking_take_while v0.1.2
    Compiling memoffset v0.7.1
-   Compiling version_check v0.9.4
    Compiling bitflags v1.3.2
+   Compiling version_check v0.9.4
    Compiling pin-utils v0.1.0
    Compiling nix v0.26.4
    Compiling log v0.4.20
@@ -4630,8 +4016,8 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
    Compiling aho-corasick v1.1.2
    Compiling num-traits v0.2.17
    Compiling wayland-backend v0.3.2
-   Compiling rustix v0.38.28
    Compiling utf8parse v0.2.1
+   Compiling rustix v0.38.28
    Compiling libspa-sys v0.7.2
    Compiling pipewire-sys v0.7.2
    Compiling anstyle-parse v0.2.3
@@ -4639,33 +4025,33 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
    Compiling libspa v0.7.2
    Compiling quick-xml v0.30.0
    Compiling linux-raw-sys v0.4.12
-   Compiling downcast-rs v1.2.0
-   Compiling anstyle-query v1.0.2
-   Compiling anyhow v1.0.76
-   Compiling colorchoice v1.0.0
-   Compiling scoped-tls v1.0.1
-   Compiling anstyle v1.0.4
-   Compiling thiserror v1.0.52
    Compiling unicode-segmentation v1.10.1
-   Compiling convert_case v0.6.0
+   Compiling anyhow v1.0.76
+   Compiling anstyle-query v1.0.2
+   Compiling anstyle v1.0.4
+   Compiling colorchoice v1.0.0
+   Compiling thiserror v1.0.52
+   Compiling downcast-rs v1.2.0
+   Compiling scoped-tls v1.0.1
    Compiling anstream v0.6.5
+   Compiling convert_case v0.6.0
    Compiling wayland-scanner v0.31.0
    Compiling figment v0.10.13
    Compiling thiserror-impl v1.0.52
-   Compiling clap_lex v0.6.0
-   Compiling signal-hook v0.3.17
-   Compiling iana-time-zone v0.1.58
    Compiling cookie-factory v0.3.2
    Compiling strsim v0.10.0
-   Compiling clap_builder v4.4.12
+   Compiling clap_lex v0.6.0
+   Compiling iana-time-zone v0.1.58
+   Compiling signal-hook v0.3.17
    Compiling chrono v0.4.31
+   Compiling clap_builder v4.4.12
    Compiling wayland-client v0.31.1
    Compiling is-terminal v0.4.9
    Compiling signal-hook-registry v1.4.1
    Compiling clap_derive v4.4.7
    Compiling once_cell v1.19.0
-   Compiling termcolor v1.4.0
    Compiling humantime v2.1.0
+   Compiling termcolor v1.4.0
    Compiling env_logger v0.10.1
    Compiling pipewire v0.7.2
    Compiling clap v4.4.12
@@ -4674,7 +4060,7 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
    Compiling serde_regex v1.1.0
    Compiling xdg v2.5.2
    Compiling wayland-pipewire-idle-inhibit v0.4.5 (/home/zakdggn/.cache/yay/wayland-pipewire-idle-inhibit/src/wayland-pipewire-idle-inhibit-0.4.5)
-    Finished release [optimized] target(s) in 3m 56s
+    Finished release [optimized] target(s) in 2m 18s
 ==> Entering fakeroot environment...
 ==> Starting package()...
 ==> Tidying install...
@@ -4689,128 +4075,24 @@ debugedit: ./usr/bin/nwg-bar: DWARF version 0 unhandled
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
-==> Creating package "wayland-pipewire-idle-inhibit-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: wayland-pipewire-idle-inhibit 0.4.5-1 (Sun Mar  3 23:38:26 2024)
+==> Finished making: wayland-pipewire-idle-inhibit 0.4.5-1 (Tue Mar  5 01:02:04 2024)
 ==> Cleaning up...
-==> Making package: wlogout 1.2.1-1 (Sun Mar  3 23:38:28 2024)
+==> Making package: nwg-bar-bin 0.1.6-2 (Tue Mar  5 01:02:05 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
-  -> Found wlogout-1.2.1.tar.gz
-  -> Found wlogout-1.2.1.tar.gz.sig
+  -> Found nwg-bar-bin-0.1.6.tar.gz
 ==> Validating source files with md5sums...
-    wlogout-1.2.1.tar.gz ... Passed
-    wlogout-1.2.1.tar.gz.sig ... Skipped
-==> Verifying source file signatures with gpg...
-    wlogout-1.2.1.tar.gz ... Passed
+    nwg-bar-bin-0.1.6.tar.gz ... Passed
 ==> Removing existing $srcdir/ directory...
 ==> Extracting sources...
-  -> Extracting wlogout-1.2.1.tar.gz with bsdtar
+  -> Extracting nwg-bar-bin-0.1.6.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: wlogout 1.2.1-1 (Sun Mar  3 23:38:31 2024)
+==> Making package: nwg-bar-bin 0.1.6-2 (Tue Mar  5 01:02:07 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
-==> Starting build()...
-The Meson build system
-Version: 1.3.2
-Source dir: /home/zakdggn/.cache/yay/wlogout/src
-Build dir: /home/zakdggn/.cache/yay/wlogout/src/build
-Build type: native build
-Project name: wlogout
-Project version: 1.1.1
-C compiler for the host machine: sccache cc (gcc 13.2.1 "cc (GCC) 13.2.1 20230801")
-C linker for the host machine: cc ld.bfd 2.42.0
-Host machine cpu family: x86_64
-Host machine cpu: x86_64
-Found pkg-config: YES (/usr/bin/pkg-config) 2.1.0
-Build-time dependency scdoc found: YES 1.11.3
-Program /usr/bin/scdoc found: YES (/usr/bin/scdoc)
-Program sh found: YES (/usr/bin/sh)
-Run-time dependency gtk+-wayland-3.0 found: YES 3.24.41
-Run-time dependency gtk-layer-shell-0 found: YES 0.8.2
-Build targets in project: 3
-
-wlogout 1.1.1
-
-  User defined options
-    prefix: /usr
-
-Found ninja-1.11.1 at /usr/bin/ninja
-Generating targets:   0%|          | 0/3 eta ?                                              Writing build.ninja:   0%|          | 0/32 eta ?                                                ninja: Entering directory `build'
-[1/4] Generating wlogout.1 with a custom command
-[2/4] Generating wlogout.5 with a custom command
-[3/4] Compiling C object wlogout.p/main.c.o
-[4/4] Linking target wlogout
-==> Entering fakeroot environment...
-==> Starting package()...
-ninja: Entering directory `build'
-[0/1] Installing files.
-Installing subdir /home/zakdggn/.cache/yay/wlogout/src/assets to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/hibernate.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/suspend.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/CREDIT.md to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/shutdown.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/reboot.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/logout.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing /home/zakdggn/.cache/yay/wlogout/src/assets/lock.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
-Installing subdir /home/zakdggn/.cache/yay/wlogout/src/icons to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/suspend.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/shutdown.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/hibernate.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/logout.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/reboot.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing /home/zakdggn/.cache/yay/wlogout/src/icons/lock.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
-Installing wlogout.1 to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/man/man1
-Installing wlogout.5 to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/man/man5
-Installing wlogout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/bin
-Installing /home/zakdggn/.cache/yay/wlogout/src/completions/wlogout.bash to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/bash-completion/completions
-Installing /home/zakdggn/.cache/yay/wlogout/src/completions/wlogout.fish to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/fish/completions
-Installing /home/zakdggn/.cache/yay/wlogout/src/completions/_wlogout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/zsh/site-functions
-Installing /home/zakdggn/.cache/yay/wlogout/src/layout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/etc/wlogout
-Installing /home/zakdggn/.cache/yay/wlogout/src/style.css to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/etc/wlogout
-==> Tidying install...
-  -> Removing libtool files...
-  -> Purging unwanted files...
-  -> Removing static library files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "wlogout"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Creating package "wlogout-debug"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: wlogout 1.2.1-1 (Sun Mar  3 23:38:39 2024)
-==> Cleaning up...
-==> Making package: grimshot 1.9-1 (Sun Mar  3 23:38:40 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found grimshot-1.9
-  -> Found grimshot-1.9.1.scd
-==> Validating source files with sha256sums...
-    grimshot-1.9 ... Passed
-    grimshot-1.9.1.scd ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-==> Sources are ready.
-==> Making package: grimshot 1.9-1 (Sun Mar  3 23:38:43 2024)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting build()...
 ==> Entering fakeroot environment...
 ==> Starting package()...
 ==> Tidying install...
@@ -4820,15 +4102,15 @@ Installing /home/zakdggn/.cache/yay/wlogout/src/style.css to /home/zakdggn/.cach
   -> Stripping unneeded symbols from binaries and libraries...
   -> Compressing man and info pages...
 ==> Checking for packaging issues...
-==> Creating package "grimshot"...
+==> Creating package "nwg-bar-bin"...
   -> Generating .PKGINFO file...
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: grimshot 1.9-1 (Sun Mar  3 23:38:45 2024)
+==> Finished making: nwg-bar-bin 0.1.6-2 (Tue Mar  5 01:02:10 2024)
 ==> Cleaning up...
-==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland1.r42.g5d4a3e14-1 (Sun Mar  3 23:38:48 2024)
+==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland1.r42.g5d4a3e14-1 (Tue Mar  5 01:02:12 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -4861,7 +4143,7 @@ Submodule path 'subprojects/libnkutils': checked out '72bd7fb07f627a864e724639ee
 ==> Starting pkgver()...
 ==> Updated version: rofi-lbonn-wayland-git 1.7.5.wayland2.r227.gbe7c088e-1
 ==> Sources are ready.
-==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland2.r227.gbe7c088e-1 (Sun Mar  3 23:38:56 2024)
+==> Making package: rofi-lbonn-wayland-git 1.7.5.wayland2.r227.gbe7c088e-1 (Tue Mar  5 01:02:19 2024)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -4985,7 +4267,7 @@ rofi 1.7.5+wayland2-dev
     wayland           : enabled
 
 Found ninja-1.11.1 at /usr/bin/ninja
-Generating targets:   0%|          | 0/49 eta ?Generating targets:  88%|████████▊ | 43/49 eta 00:00                                                    Writing build.ninja:   0%|          | 0/187 eta ?                                                 ninja: Entering directory `/home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/src/build'
+Generating targets:   0%|          | 0/49 eta ?                                               Writing build.ninja:   0%|          | 0/187 eta ?                                                 ninja: Entering directory `/home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/src/build'
 [1/150] Compiling C object subprojects/libnkutils/core/libnkutils-1.a.p/src_enum.c.o
 [2/150] Compiling C object subprojects/libgwater/xcb/liblibgwater-xcb.a.p/libgwater-xcb.c.o
 ../rofi-lbonn-wayland-git/subprojects/libgwater/xcb/libgwater-xcb.c: In function ‘_g_water_xcb_source_dispatch’:
@@ -5013,60 +4295,60 @@ Found ninja-1.11.1 at /usr/bin/ninja
 [11/150] Generating primary_selection_unstable_v1_protocol_c with a custom command
 [12/150] Generating primary_selection_unstable_v1_protocol_h with a custom command
 [13/150] Generating keyboard_shortcuts_inhibit_unstable_v1_protocol_c with a custom command
-[14/150] Compiling C object subprojects/libnkutils/core/libnkutils-1.a.p/src_gtk-settings.c.o
-[15/150] Generating keyboard_shortcuts_inhibit_unstable_v1_protocol_h with a custom command
-[16/150] Generating wlr_foreign_toplevel_management_unstable_v1_protocol_c with a custom command
-[17/150] Generating wlr_foreign_toplevel_management_unstable_v1_protocol_h with a custom command
-[18/150] Generating wlr_layer_shell_unstable_v1_protocol_c with a custom command
-[19/150] Generating wlr_layer_shell_unstable_v1_protocol_h with a custom command
-[20/150] Generating cursor_shape_v1_protocol_c with a custom command
-[21/150] Generating cursor_shape_v1_protocol_h with a custom command
-[22/150] Generating tablet_unstable_v2_protocol_c with a custom command
-[23/150] Compiling C object subprojects/libnkutils/core/nk-git-version-native.p/src_enum.c.o
+[14/150] Generating keyboard_shortcuts_inhibit_unstable_v1_protocol_h with a custom command
+[15/150] Generating wlr_foreign_toplevel_management_unstable_v1_protocol_c with a custom command
+[16/150] Generating wlr_foreign_toplevel_management_unstable_v1_protocol_h with a custom command
+[17/150] Generating wlr_layer_shell_unstable_v1_protocol_c with a custom command
+[18/150] Generating wlr_layer_shell_unstable_v1_protocol_h with a custom command
+[19/150] Compiling C object subprojects/libnkutils/core/libnkutils-1.a.p/src_gtk-settings.c.o
+[20/150] Compiling C object subprojects/libnkutils/core/nk-git-version-native.p/src_enum.c.o
+[21/150] Generating cursor_shape_v1_protocol_c with a custom command
+[22/150] Generating cursor_shape_v1_protocol_h with a custom command
+[23/150] Generating tablet_unstable_v2_protocol_c with a custom command
 [24/150] Generating tablet_unstable_v2_protocol_h with a custom command
-[25/150] Generating resources_c with a custom command
-[26/150] Generating resources_h with a custom command
+[25/150] Generating resources_h with a custom command
+[26/150] Generating resources_c with a custom command
 [27/150] Generating 'rofi.p/theme-lexer.c'
-[28/150] Compiling C object subprojects/libnkutils/core/nk-git-version-native.p/src_git-version.c.o
-[29/150] Generating 'widget.test.p/theme-lexer.c'
+[28/150] Generating 'widget.test.p/theme-lexer.c'
+[29/150] Compiling C object subprojects/libnkutils/core/nk-git-version-native.p/src_git-version.c.o
 [30/150] Compiling C object subprojects/libnkutils/core/nk-git-version-native.p/src_format-string.c.o
 [31/150] Generating 'box.test.p/theme-lexer.c'
 [32/150] Compiling C object subprojects/libnkutils/core/libnkutils-1.a.p/src_xdg-theme.c.o
 [33/150] Linking static target subprojects/libnkutils/core/libnkutils-1.a
-[34/150] Generating from 'lexer/theme-parser.y'
+[34/150] Generating 'scrollbar.test.p/theme-lexer.c'
 [35/150] Generating from 'lexer/theme-parser.y'
 [36/150] Generating from 'lexer/theme-parser.y'
-[37/150] Generating 'scrollbar.test.p/theme-lexer.c'
-[38/150] Generating 'textbox.test.p/theme-lexer.c'
-[39/150] Generating 'theme_parser.test.p/theme-lexer.c'
+[37/150] Generating 'textbox.test.p/theme-lexer.c'
+[38/150] Generating 'theme_parser.test.p/theme-lexer.c'
+[39/150] Generating from 'lexer/theme-parser.y'
 [40/150] Generating from 'lexer/theme-parser.y'
 [41/150] Generating from 'lexer/theme-parser.y'
 [42/150] Generating from 'lexer/theme-parser.y'
 [43/150] Linking target subprojects/libnkutils/core/nk-git-version-native
 [44/150] Generating subprojects/libnkutils/core/nkutils-git-version.h with a custom command
-[45/150] Compiling C object subprojects/libnkutils/core/nk-enum.test.p/tests_enum.c.o
-[46/150] Compiling C object subprojects/libnkutils/core/nk-format-string-replace.p/src_format-string-example.c.o
-[47/150] Compiling C object subprojects/libnkutils/core/nk-format-string.test.p/tests_format-string.c.o
-[48/150] Compiling C object subprojects/libnkutils/core/nk-xdg-theme-lookup.p/src_xdg-theme-example.c.o
-[49/150] Compiling C object subprojects/libnkutils/core/nk-colour.test.p/tests_colour.c.o
+[45/150] Compiling C object subprojects/libnkutils/core/nk-xdg-theme-lookup.p/src_xdg-theme-example.c.o
+[46/150] Compiling C object subprojects/libnkutils/core/nk-colour.test.p/tests_colour.c.o
+[47/150] Compiling C object subprojects/libnkutils/core/nk-format-string-replace.p/src_format-string-example.c.o
+[48/150] Compiling C object subprojects/libnkutils/core/nk-enum.test.p/tests_enum.c.o
+[49/150] Compiling C object subprojects/libnkutils/core/nk-format-string.test.p/tests_format-string.c.o
 [50/150] Compiling C object subprojects/libnkutils/core/nk-xdg-de.test.p/tests_xdg-de.c.o
 [51/150] Linking target subprojects/libnkutils/core/nk-enum.test
-[52/150] Compiling C object subprojects/libnkutils/core/nk-gtk-settings.test.p/tests_gtk-settings.c.o
-[53/150] Linking target subprojects/libnkutils/core/nk-xdg-de.test
-[54/150] Linking target subprojects/libnkutils/core/nk-colour.test
-[55/150] Linking target subprojects/libnkutils/core/nk-gtk-settings.test
-[56/150] Linking target subprojects/libnkutils/core/nk-xdg-theme-lookup
-[57/150] Compiling C object rofi.p/meson-generated_.._xdg-shell-protocol.c.o
+[52/150] Linking target subprojects/libnkutils/core/nk-xdg-de.test
+[53/150] Linking target subprojects/libnkutils/core/nk-colour.test
+[54/150] Linking target subprojects/libnkutils/core/nk-xdg-theme-lookup
+[55/150] Compiling C object subprojects/libnkutils/core/nk-gtk-settings.test.p/tests_gtk-settings.c.o
+[56/150] Linking target subprojects/libnkutils/core/nk-format-string-replace
+[57/150] Compiling C object subprojects/libnkutils/bindings/nk-bindings.test.p/tests_bindings.c.o
 [58/150] Compiling C object subprojects/libnkutils/bindings/libnkutils-bindings-1.a.p/src_bindings.c.o
 [59/150] Linking static target subprojects/libnkutils/bindings/libnkutils-bindings-1.a
-[60/150] Compiling C object subprojects/libnkutils/bindings/nk-bindings.test.p/tests_bindings.c.o
-[61/150] Linking target subprojects/libnkutils/core/nk-format-string-replace
-[62/150] Compiling C object subprojects/libnkutils/core/nk-xdg-theme.test.p/tests_xdg-theme.c.o
+[60/150] Compiling C object subprojects/libnkutils/core/nk-xdg-theme.test.p/tests_xdg-theme.c.o
+[61/150] Linking target subprojects/libnkutils/core/nk-gtk-settings.test
+[62/150] Compiling C object rofi.p/meson-generated_.._xdg-shell-protocol.c.o
 [63/150] Compiling C object rofi.p/meson-generated_.._primary-selection-unstable-v1-protocol.c.o
-[64/150] Compiling C object rofi.p/meson-generated_.._keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o
-[65/150] Compiling C object rofi.p/meson-generated_.._wlr-foreign-toplevel-management-unstable-v1-protocol.c.o
-[66/150] Linking target subprojects/libnkutils/core/nk-format-string.test
-[67/150] Compiling C object rofi.p/meson-generated_.._wlr-layer-shell-unstable-v1-protocol.c.o
+[64/150] Linking target subprojects/libnkutils/core/nk-format-string.test
+[65/150] Compiling C object rofi.p/meson-generated_.._keyboard-shortcuts-inhibit-unstable-v1-protocol.c.o
+[66/150] Compiling C object rofi.p/meson-generated_.._wlr-layer-shell-unstable-v1-protocol.c.o
+[67/150] Compiling C object rofi.p/meson-generated_.._wlr-foreign-toplevel-management-unstable-v1-protocol.c.o
 [68/150] Compiling C object rofi.p/meson-generated_.._cursor-shape-v1-protocol.c.o
 [69/150] Compiling C object rofi.p/meson-generated_.._tablet-unstable-v2-protocol.c.o
 [70/150] Linking target subprojects/libnkutils/core/nk-xdg-theme.test
@@ -5075,30 +4357,30 @@ Found ninja-1.11.1 at /usr/bin/ninja
 [73/150] Compiling C object rofi.p/meson-generated_theme-parser.c.o
 [74/150] Compiling C object rofi.p/meson-generated_theme-lexer.c.o
 [75/150] Compiling C object rofi.p/source_mode.c.o
-[76/150] Compiling C object rofi.p/source_keyb.c.o
-[77/150] Compiling C object rofi.p/source_rofi.c.o
-[78/150] Compiling C object rofi.p/config_config.c.o
+[76/150] Compiling C object rofi.p/source_rofi.c.o
+[77/150] Compiling C object rofi.p/config_config.c.o
+[78/150] Compiling C object rofi.p/source_keyb.c.o
 [79/150] Compiling C object rofi.p/source_display.c.o
 [80/150] Compiling C object rofi.p/source_timings.c.o
-[81/150] Compiling C object rofi.p/source_css-colors.c.o
+[81/150] Compiling C object rofi.p/source_history.c.o
 [82/150] Compiling C object rofi.p/source_helper.c.o
-[83/150] Compiling C object rofi.p/source_history.c.o
-[84/150] Compiling C object rofi.p/source_theme.c.o
-[85/150] Compiling C object rofi.p/source_rofi-icon-fetcher.c.o
+[83/150] Compiling C object rofi.p/source_css-colors.c.o
+[84/150] Compiling C object rofi.p/source_rofi-icon-fetcher.c.o
+[85/150] Compiling C object rofi.p/source_theme.c.o
 [86/150] Compiling C object rofi.p/source_widgets_box.c.o
-[87/150] Compiling C object rofi.p/source_widgets_icon.c.o
-[88/150] Compiling C object rofi.p/source_widgets_container.c.o
+[87/150] Compiling C object rofi.p/source_widgets_container.c.o
+[88/150] Compiling C object rofi.p/source_widgets_icon.c.o
 [89/150] Compiling C object rofi.p/source_view.c.o
 [90/150] Compiling C object rofi.p/source_widgets_widget.c.o
-[91/150] Compiling C object rofi.p/source_widgets_listview.c.o
-[92/150] Compiling C object rofi.p/source_widgets_scrollbar.c.o
+[91/150] Compiling C object rofi.p/source_widgets_textbox.c.o
+[92/150] Compiling C object rofi.p/source_xrmoptions.c.o
 [93/150] Compiling C object rofi.p/source_rofi-types.c.o
-[94/150] Compiling C object rofi.p/source_widgets_textbox.c.o
-[95/150] Compiling C object rofi.p/source_xrmoptions.c.o
+[94/150] Compiling C object rofi.p/source_widgets_listview.c.o
+[95/150] Compiling C object rofi.p/source_widgets_scrollbar.c.o
 [96/150] Compiling C object rofi.p/source_modes_run.c.o
 [97/150] Compiling C object rofi.p/source_modes_ssh.c.o
-[98/150] Compiling C object rofi.p/source_modes_combi.c.o
-[99/150] Compiling C object rofi.p/source_modes_drun.c.o
+[98/150] Compiling C object rofi.p/source_modes_drun.c.o
+[99/150] Compiling C object rofi.p/source_modes_combi.c.o
 [100/150] Compiling C object rofi.p/source_modes_script.c.o
 [101/150] Compiling C object rofi.p/source_modes_dmenu.c.o
 ../rofi-lbonn-wayland-git/source/modes/dmenu.c: In function ‘read_input_thread’:
@@ -5120,7 +4402,8 @@ Found ninja-1.11.1 at /usr/bin/ninja
       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [102/150] Compiling C object rofi.p/source_modes_help-keys.c.o
 [103/150] Compiling C object rofi.p/source_modes_filebrowser.c.o
-[104/150] Compiling C object rofi.p/source_modes_recursivebrowser.c.o
+[104/150] Compiling C object rofi.p/source_modes_window.c.o
+[105/150] Compiling C object rofi.p/source_modes_recursivebrowser.c.o
 ../rofi-lbonn-wayland-git/source/modes/recursivebrowser.c: In function ‘recursive_browser_input_thread’:
 ../rofi-lbonn-wayland-git/source/modes/recursivebrowser.c:266:3: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   266 |   write(pd->pipefd2[1], "r", 1);
@@ -5135,76 +4418,75 @@ Found ninja-1.11.1 at /usr/bin/ninja
 ../rofi-lbonn-wayland-git/source/modes/recursivebrowser.c:250:11: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   250 |           write(pd->pipefd2[1], "r", 1);
       |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[105/150] Compiling C object rofi.p/source_modes_window.c.o
-[106/150] Compiling C object rofi.p/source_xcb_display.c.o
-[107/150] Compiling C object rofi.p/source_wayland_view.c.o
-[108/150] Compiling C object rofi.p/source_xcb_view.c.o
+[106/150] Compiling C object rofi.p/source_xcb_view.c.o
+[107/150] Compiling C object rofi.p/source_xcb_display.c.o
+[108/150] Compiling C object rofi.p/source_modes_wayland-window.c.o
 [109/150] Compiling C object history.test.p/test_history-test.c.o
-[110/150] Compiling C object rofi.p/source_modes_wayland-window.c.o
-[111/150] Compiling C object rofi.p/source_wayland_display.c.o
-[112/150] Compiling C object helper_pidfile.test.p/test_helper-pidfile.c.o
-[113/150] Linking target history.test
-[114/150] Compiling C object widget.test.p/meson-generated_.._resources.c.o
+[110/150] Compiling C object rofi.p/source_wayland_view.c.o
+[111/150] Compiling C object helper_pidfile.test.p/test_helper-pidfile.c.o
+[112/150] Compiling C object rofi.p/source_wayland_display.c.o
+[113/150] Compiling C object widget.test.p/meson-generated_.._resources.c.o
+[114/150] Linking target history.test
 [115/150] Compiling C object widget.test.p/meson-generated_theme-parser.c.o
-[116/150] Compiling C object widget.test.p/test_widget-test.c.o
-[117/150] Compiling C object widget.test.p/meson-generated_theme-lexer.c.o
+[116/150] Compiling C object widget.test.p/meson-generated_theme-lexer.c.o
+[117/150] Compiling C object widget.test.p/test_widget-test.c.o
 [118/150] Compiling C object box.test.p/meson-generated_.._resources.c.o
 [119/150] Compiling C object box.test.p/meson-generated_theme-parser.c.o
-[120/150] Compiling C object box.test.p/test_box-test.c.o
-[121/150] Compiling C object box.test.p/meson-generated_theme-lexer.c.o
+[120/150] Compiling C object box.test.p/meson-generated_theme-lexer.c.o
+[121/150] Compiling C object box.test.p/test_box-test.c.o
 [122/150] Compiling C object scrollbar.test.p/meson-generated_theme-parser.c.o
 [123/150] Compiling C object scrollbar.test.p/meson-generated_.._resources.c.o
-[124/150] Compiling C object scrollbar.test.p/meson-generated_theme-lexer.c.o
-[125/150] Compiling C object scrollbar.test.p/test_scrollbar-test.c.o
-[126/150] Linking target helper_pidfile.test
+[124/150] Linking target helper_pidfile.test
+[125/150] Compiling C object scrollbar.test.p/meson-generated_theme-lexer.c.o
+[126/150] Compiling C object scrollbar.test.p/test_scrollbar-test.c.o
 [127/150] Compiling C object textbox.test.p/meson-generated_theme-parser.c.o
-[128/150] Compiling C object textbox.test.p/meson-generated_.._resources.c.o
-[129/150] Compiling C object textbox.test.p/meson-generated_theme-lexer.c.o
+[128/150] Compiling C object textbox.test.p/meson-generated_theme-lexer.c.o
+[129/150] Compiling C object textbox.test.p/meson-generated_.._resources.c.o
 [130/150] Compiling C object textbox.test.p/test_textbox-test.c.o
 [131/150] Compiling C object helper.test.p/test_helper-test.c.o
-[132/150] Linking target box.test
-[133/150] Linking target rofi
+[132/150] Linking target rofi
+[133/150] Linking target box.test
 [134/150] Linking target widget.test
-[135/150] Compiling C object helper_expand.test.p/test_helper-expand.c.o
-[136/150] Compiling C object helper_config_cmdline_parser.test.p/test_helper-config-cmdline-parser.c.o
+[135/150] Compiling C object helper_config_cmdline_parser.test.p/test_helper-config-cmdline-parser.c.o
+[136/150] Compiling C object helper_expand.test.p/test_helper-expand.c.o
 [137/150] Linking target scrollbar.test
 [138/150] Compiling C object theme_parser.test.p/meson-generated_theme-lexer.c.o
 [139/150] Compiling C object theme_parser.test.p/meson-generated_.._resources.c.o
-[140/150] Compiling C object theme_parser.test.p/meson-generated_theme-parser.c.o
-[141/150] Linking target helper.test
+[140/150] Linking target helper.test
+[141/150] Compiling C object theme_parser.test.p/meson-generated_theme-parser.c.o
 [142/150] Compiling C object mode.test.p/test_mode-test.c.o
-[143/150] Compiling C object helper_tokenize.test.p/test_helper-tokenize.c.o
-[144/150] Linking target helper_expand.test
-[145/150] Compiling C object theme_parser.test.p/test_theme-parser-test.c.o
-[146/150] Linking target helper_config_cmdline_parser.test
+[143/150] Compiling C object theme_parser.test.p/test_theme-parser-test.c.o
+[144/150] Compiling C object helper_tokenize.test.p/test_helper-tokenize.c.o
+[145/150] Linking target helper_config_cmdline_parser.test
+[146/150] Linking target helper_expand.test
 [147/150] Linking target textbox.test
-[148/150] Linking target helper_tokenize.test
-[149/150] Linking target mode.test
+[148/150] Linking target mode.test
+[149/150] Linking target helper_tokenize.test
 [150/150] Linking target theme_parser.test
 INFO: autodetecting backend as ninja
 INFO: calculating backend command to run: /usr/bin/ninja -C /home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/src/build
 ==> Starting check()...
 ninja: Entering directory `/home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/src/build'
 [1/1] Generating subprojects/libnkutils/core/nkutils-git-version.h with a custom command
- 1/19 libnkutils:enum / libnkutils enum module tests                   OK              0.05s   13 subtests passed
- 2/19 libnkutils:format-string / libnkutils format-string module tests OK              0.04s   94 subtests passed
- 3/19 libnkutils:colour / libnkutils colour module tests               OK              0.03s   17 subtests passed
- 4/19 libnkutils:gtk-settings / libnkutils gtk-settings module tests   OK              0.04s   4 subtests passed
- 5/19 libnkutils:xdg-de / libnkutils xdg-de module tests               OK              0.08s   19 subtests passed
- 6/19 rofi / history test                                              OK              0.03s
- 7/19 rofi / helper_pidfile test                                       OK              0.04s
- 8/19 rofi / widget test                                               OK              0.04s
- 9/19 libnkutils:xdg-theme / libnkutils xdg-theme module tests         OK              0.12s   9 subtests passed
-10/19 rofi / box test                                                  OK              0.04s
-11/19 rofi / scrollbar test                                            OK              0.05s
-12/19 rofi / helper test                                               OK              0.03s
-13/19 rofi / helper_expand test                                        OK              0.04s
-14/19 rofi / helper_config_cmdline_parser test                         OK              0.03s
-15/19 rofi / mode test                                                 OK              0.05s
-16/19 rofi / textbox test                                              OK              0.16s
-17/19 libnkutils:bindings / libnkutils bindings module tests           OK              0.30s   16 subtests passed
-18/19 rofi / helper_tokenize test                                      OK              0.10s
-19/19 rofi / theme_parser test                                         OK              0.35s
+ 1/19 libnkutils:enum / libnkutils enum module tests                   OK              0.03s   13 subtests passed
+ 2/19 libnkutils:colour / libnkutils colour module tests               OK              0.02s   17 subtests passed
+ 3/19 libnkutils:format-string / libnkutils format-string module tests OK              0.04s   94 subtests passed
+ 4/19 libnkutils:gtk-settings / libnkutils gtk-settings module tests   OK              0.02s   4 subtests passed
+ 5/19 libnkutils:xdg-de / libnkutils xdg-de module tests               OK              0.05s   19 subtests passed
+ 6/19 rofi / history test                                              OK              0.02s
+ 7/19 rofi / helper_pidfile test                                       OK              0.02s
+ 8/19 libnkutils:xdg-theme / libnkutils xdg-theme module tests         OK              0.06s   9 subtests passed
+ 9/19 rofi / widget test                                               OK              0.02s
+10/19 rofi / box test                                                  OK              0.03s
+11/19 rofi / scrollbar test                                            OK              0.02s
+12/19 rofi / helper test                                               OK              0.02s
+13/19 rofi / helper_expand test                                        OK              0.02s
+14/19 rofi / helper_config_cmdline_parser test                         OK              0.02s
+15/19 rofi / textbox test                                              OK              0.07s
+16/19 libnkutils:bindings / libnkutils bindings module tests           OK              0.14s   16 subtests passed
+17/19 rofi / mode test                                                 OK              0.03s
+18/19 rofi / helper_tokenize test                                      OK              0.05s
+19/19 rofi / theme_parser test                                         OK              0.17s
 
 Ok:                 19  
 Expected Fail:      0   
@@ -5284,33 +4566,238 @@ Installing /home/zakdggn/.cache/yay/rofi-lbonn-wayland-git/src/build/meson-priva
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
-==> Creating package "rofi-lbonn-wayland-git-debug"...
+==> Leaving fakeroot environment.
+==> Finished making: rofi-lbonn-wayland-git 1.7.5.wayland2.r227.gbe7c088e-1 (Tue Mar  5 01:02:55 2024)
+==> Cleaning up...
+==> Making package: grimshot 1.9-1 (Tue Mar  5 01:02:56 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found grimshot-1.9
+  -> Found grimshot-1.9.1.scd
+==> Validating source files with sha256sums...
+    grimshot-1.9 ... Passed
+    grimshot-1.9.1.scd ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+==> Sources are ready.
+==> Making package: grimshot 1.9-1 (Tue Mar  5 01:02:59 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting build()...
+==> Entering fakeroot environment...
+==> Starting package()...
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "grimshot"...
   -> Generating .PKGINFO file...
   -> Generating .BUILDINFO file...
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: rofi-lbonn-wayland-git 1.7.5.wayland2.r227.gbe7c088e-1 (Sun Mar  3 23:40:18 2024)
+==> Finished making: grimshot 1.9-1 (Tue Mar  5 01:03:00 2024)
+==> Cleaning up...
+==> Making package: chayang 0.1.0-1 (Tue Mar  5 01:03:02 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found chayang-0.1.0.tar.gz
+  -> Found chayang-0.1.0.tar.gz.sig
+==> Validating source files with sha256sums...
+    chayang-0.1.0.tar.gz ... Passed
+    chayang-0.1.0.tar.gz.sig ... Skipped
+==> Verifying source file signatures with gpg...
+    chayang-0.1.0.tar.gz ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Extracting chayang-0.1.0.tar.gz with bsdtar
+==> Sources are ready.
+==> Making package: chayang 0.1.0-1 (Tue Mar  5 01:03:04 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting build()...
++ exec meson setup --prefix /usr --libexecdir lib --sbindir bin --buildtype plain --auto-features enabled --wrap-mode nodownload -D b_pie=true -D python.bytecompile=1 build
+The Meson build system
+Version: 1.3.2
+Source dir: /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0
+Build dir: /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build
+Build type: native build
+Project name: chayang
+Project version: 0.1.0
+C compiler for the host machine: sccache cc (gcc 13.2.1 "cc (GCC) 13.2.1 20230801")
+C linker for the host machine: cc ld.bfd 2.42.0
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Found pkg-config: YES (/usr/bin/pkg-config) 2.1.0
+Build-time dependency wayland-scanner found: YES 1.22.0
+Program /usr/bin/wayland-scanner found: YES (/usr/bin/wayland-scanner)
+Run-time dependency wayland-protocols found: YES 1.33
+Run-time dependency wayland-client found: YES 1.22.0
+Build targets in project: 1
+
+chayang 0.1.0
+
+  User defined options
+    auto_features     : enabled
+    buildtype         : plain
+    libexecdir        : lib
+    prefix            : /usr
+    sbindir           : bin
+    wrap_mode         : nodownload
+    python.bytecompile: 1
+    b_pie             : true
+
+Found ninja-1.11.1 at /usr/bin/ninja
+Generating targets:   0%|          | 0/1 eta ?                                              Writing build.ninja:   0%|          | 0/40 eta ?                                                ninja: Entering directory `/home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build'
+[1/14] Generating 'chayang.p/xdg-shell-protocol.c'
+[2/14] Generating 'chayang.p/viewporter-protocol.h'
+[3/14] Generating 'chayang.p/xdg-shell-protocol.h'
+[4/14] Generating 'chayang.p/single-pixel-buffer-v1-protocol.c'
+[5/14] Generating 'chayang.p/viewporter-protocol.c'
+[6/14] Generating 'chayang.p/single-pixel-buffer-v1-protocol.h'
+[7/14] Generating 'chayang.p/wlr-layer-shell-unstable-v1-protocol.c'
+[8/14] Generating 'chayang.p/wlr-layer-shell-unstable-v1-protocol.h'
+[9/14] Compiling C object chayang.p/meson-generated_xdg-shell-protocol.c.o
+[10/14] Compiling C object chayang.p/meson-generated_single-pixel-buffer-v1-protocol.c.o
+[11/14] Compiling C object chayang.p/meson-generated_viewporter-protocol.c.o
+[12/14] Compiling C object chayang.p/meson-generated_wlr-layer-shell-unstable-v1-protocol.c.o
+[13/14] Compiling C object chayang.p/main.c.o
+[14/14] Linking target chayang
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /usr/bin/ninja -C /home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build
+==> Entering fakeroot environment...
+==> Starting package()...
+ninja: Entering directory `/home/zakdggn/.cache/yay/chayang/src/chayang-0.1.0/build'
+ninja: no work to do.
+Installing chayang to /home/zakdggn/.cache/yay/chayang/pkg/chayang/usr/bin
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "chayang"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: chayang 0.1.0-1 (Tue Mar  5 01:03:08 2024)
+==> Cleaning up...
+==> Making package: wlogout 1.2.1-1 (Tue Mar  5 01:03:09 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found wlogout-1.2.1.tar.gz
+  -> Found wlogout-1.2.1.tar.gz.sig
+==> Validating source files with md5sums...
+    wlogout-1.2.1.tar.gz ... Passed
+    wlogout-1.2.1.tar.gz.sig ... Skipped
+==> Verifying source file signatures with gpg...
+    wlogout-1.2.1.tar.gz ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Extracting wlogout-1.2.1.tar.gz with bsdtar
+==> Sources are ready.
+==> Making package: wlogout 1.2.1-1 (Tue Mar  5 01:03:11 2024)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting build()...
+The Meson build system
+Version: 1.3.2
+Source dir: /home/zakdggn/.cache/yay/wlogout/src
+Build dir: /home/zakdggn/.cache/yay/wlogout/src/build
+Build type: native build
+Project name: wlogout
+Project version: 1.1.1
+C compiler for the host machine: sccache cc (gcc 13.2.1 "cc (GCC) 13.2.1 20230801")
+C linker for the host machine: cc ld.bfd 2.42.0
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Found pkg-config: YES (/usr/bin/pkg-config) 2.1.0
+Build-time dependency scdoc found: YES 1.11.3
+Program /usr/bin/scdoc found: YES (/usr/bin/scdoc)
+Program sh found: YES (/usr/bin/sh)
+Run-time dependency gtk+-wayland-3.0 found: YES 3.24.41
+Run-time dependency gtk-layer-shell-0 found: YES 0.8.2
+Build targets in project: 3
+
+wlogout 1.1.1
+
+  User defined options
+    prefix: /usr
+
+Found ninja-1.11.1 at /usr/bin/ninja
+Generating targets:   0%|          | 0/3 eta ?                                              Writing build.ninja:   0%|          | 0/32 eta ?                                                ninja: Entering directory `build'
+[1/4] Generating wlogout.1 with a custom command
+[2/4] Generating wlogout.5 with a custom command
+[3/4] Compiling C object wlogout.p/main.c.o
+[4/4] Linking target wlogout
+==> Entering fakeroot environment...
+==> Starting package()...
+ninja: Entering directory `build'
+[0/1] Installing files.
+Installing subdir /home/zakdggn/.cache/yay/wlogout/src/assets to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/shutdown.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/CREDIT.md to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/logout.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/reboot.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/hibernate.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/lock.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing /home/zakdggn/.cache/yay/wlogout/src/assets/suspend.svg to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/assets
+Installing subdir /home/zakdggn/.cache/yay/wlogout/src/icons to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/lock.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/shutdown.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/logout.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/reboot.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/hibernate.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing /home/zakdggn/.cache/yay/wlogout/src/icons/suspend.png to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/wlogout/icons
+Installing wlogout.1 to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/man/man1
+Installing wlogout.5 to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/man/man5
+Installing wlogout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/bin
+Installing /home/zakdggn/.cache/yay/wlogout/src/completions/wlogout.bash to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/bash-completion/completions
+Installing /home/zakdggn/.cache/yay/wlogout/src/completions/wlogout.fish to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/fish/completions
+Installing /home/zakdggn/.cache/yay/wlogout/src/completions/_wlogout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/usr/share/zsh/site-functions
+Installing /home/zakdggn/.cache/yay/wlogout/src/layout to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/etc/wlogout
+Installing /home/zakdggn/.cache/yay/wlogout/src/style.css to /home/zakdggn/.cache/yay/wlogout/pkg/wlogout/etc/wlogout
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "wlogout"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: wlogout 1.2.1-1 (Tue Mar  5 01:03:16 2024)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (11)                         New Version                      Net Change
+Package (6)                    New Version                      Net Change
 
-chayang                              0.1.0-1                            0.03 MiB
-chayang-debug                        0.1.0-1                            0.11 MiB
-grimshot                             1.9-1                              0.01 MiB
-nwg-bar-bin                          0.1.6-2                            4.27 MiB
-nwg-bar-bin-debug                    0.1.6-2                            2.31 MiB
-rofi-lbonn-wayland-git               1.7.5.wayland2.r227.gbe7c088e-1    1.08 MiB
-rofi-lbonn-wayland-git-debug         1.7.5.wayland2.r227.gbe7c088e-1    3.31 MiB
-wayland-pipewire-idle-inhibit        0.4.5-1                            4.00 MiB
-wayland-pipewire-idle-inhibit-debug  0.4.5-1                           61.94 MiB
-wlogout                              1.2.1-1                            0.12 MiB
-wlogout-debug                        1.2.1-1                            0.08 MiB
+chayang                        0.1.0-1                            0.03 MiB
+grimshot                       1.9-1                              0.01 MiB
+nwg-bar-bin                    0.1.6-2                            4.27 MiB
+rofi-lbonn-wayland-git         1.7.5.wayland2.r227.gbe7c088e-1    1.08 MiB
+wayland-pipewire-idle-inhibit  0.4.5-1                            3.99 MiB
+wlogout                        1.2.1-1                            0.12 MiB
 
-Total Installed Size:  77.25 MiB
+Total Installed Size:  9.49 MiB
 
 :: Proceed with installation? [Y/n] 
 checking keyring...
@@ -5319,22 +4806,17 @@ loading package files...
 checking for file conflicts...
 checking available disk space...
 :: Processing package changes...
-installing chayang...
-installing chayang-debug...
-installing nwg-bar-bin...
-installing nwg-bar-bin-debug...
 installing wayland-pipewire-idle-inhibit...
-installing wayland-pipewire-idle-inhibit-debug...
-installing wlogout...
-installing wlogout-debug...
+installing nwg-bar-bin...
+installing rofi-lbonn-wayland-git...
+Optional dependencies for rofi-lbonn-wayland-git
+    i3-wm: use as a window switcher
 installing grimshot...
 Optional dependencies for grimshot
     libnotify: Notify users when a screenshot is taken [installed]
     wl-clipboard: Copy screenshots [installed]
-installing rofi-lbonn-wayland-git...
-Optional dependencies for rofi-lbonn-wayland-git
-    i3-wm: use as a window switcher
-installing rofi-lbonn-wayland-git-debug...
+installing chayang...
+installing wlogout...
 :: Running post-transaction hooks...
 (1/4) Reloading user manager configuration...
   Skipped: Running in chroot.
@@ -5345,6 +4827,7 @@ Created symlink /home/zakdggn/.config/systemd/user/default.target.wants/pipewire
 Created symlink /home/zakdggn/.config/systemd/user/sockets.target.wants/pipewire-pulse.socket → /usr/lib/systemd/user/pipewire-pulse.socket.
 Created symlink /home/zakdggn/.config/systemd/user/default.target.wants/syncthing.service → /usr/lib/systemd/user/syncthing.service.
 Cloning into bare repository '/home/zakdggn/.dotfiles'...
+Switched to branch 'sway'
 
 Installation successful!
 
