@@ -29,9 +29,6 @@ for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
     fi
 done
 
-# Copy wallpaper to Pictures
-cp "$UTILS"/wallpaper.png "$HOME"/Pictures/
-
 # Install dwm
 if [[ $WM = 'dwm' ]]; then
     git clone https://github.com/ZakDggn/dwm "$HOME"/dwm
@@ -45,6 +42,9 @@ if [[ $WM = 'dwm' ]]; then
     cd "$HOME"
     sudo mkdir -p /usr/share/xsessions
     sudo cp "$UTILS"/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
+
+    # Copy wallpaper to Pictures
+    cp "$UTILS"/wallpaper.png "$HOME"/Pictures/
 fi
 
 # Sway setup
