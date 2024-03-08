@@ -1,4 +1,3 @@
-adwaita-qt5-git
 bluetuith-bin
 keyd
 ncpamixer

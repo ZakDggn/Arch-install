@@ -44,7 +44,6 @@ pipewire-pulse
 playerctl
 plymouth
 progress
-qt5ct
 reflector
 sccache
 starship
