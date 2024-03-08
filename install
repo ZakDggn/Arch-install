@@ -22,20 +22,40 @@ if [[ $i -eq $TRIES ]]; then
   exit 1
 fi
 
-VALID_DRIVES=$(lsblk -pn | grep -o '^/dev/\S*')
+read -rp 'Automatic partitioning? [Y/n]: ' AUTO_PARTITION
+[[ $AUTO_PARTITION =~ ^[Nn] ]] && AUTO_PARTITION=no || AUTO_PARTITION=yes
+
 lsblk
-printf '\nSelect installation drive:\n'
-select DRIVE in $VALID_DRIVES; do
-  if [[ -n "$DRIVE" ]]; then
-    break
-  fi
-done
-if grep -q 'nvme' <<< "$DRIVE"; then
-  EFI_PARTITION="${DRIVE}p1"
-  ROOT_PARTITION="${DRIVE}p2"
+if [[ $AUTO_PARTITION = 'yes' ]]; then
+    VALID_DRIVES=$(lsblk -pn | grep -o '^/dev/\S*')
+    printf '\nSelect installation drive:\n'
+    select DRIVE in $VALID_DRIVES; do
+      if [[ -n "$DRIVE" ]]; then
+        break
+      fi
+    done
+    if grep -q 'nvme' <<< "$DRIVE"; then
+      EFI_PARTITION="${DRIVE}p1"
+      ROOT_PARTITION="${DRIVE}p2"
+    else
+      EFI_PARTITION="${DRIVE}1"
+      ROOT_PARTITION="${DRIVE}2"
+    fi
 else
-  EFI_PARTITION="${DRIVE}1"
-  ROOT_PARTITION="${DRIVE}2"
+    PARTITIONS=$(lsblk -no PATH | grep -E '(sd.|nvme.*p)[[:digit:]]')
+    printf '\nSelect EFI partition:\n'
+    select EFI_PARTITION in $PARTITIONS; do
+        if [[ -n "$EFI_PARTITION" ]]; then
+            break
+        fi
+    done
+    PARTITIONS=$(grep -v "$EFI_PARTITION" <<< "$PARTITIONS")
+    printf 'Select root partition:\n'
+    select ROOT_PARTITION in $PARTITIONS; do
+        if [[ -n "$ROOT_PARTITION" ]]; then
+            break
+        fi
+    done
 fi
 
 read -rp 'Enter username: ' USERNAME
