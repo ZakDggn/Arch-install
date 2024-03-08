@@ -1,4 +1,5 @@
 bluetuith-bin
+informant
 keyd
 ncpamixer
 spotify
