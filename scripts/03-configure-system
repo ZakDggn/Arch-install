@@ -39,10 +39,7 @@ cd ..
 rm -rf yay-bin
 
 # Install AUR packages
-sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/packages-aur.txt
-
-# Mark all Arch news as read
-informant read --all
+sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/packages-aur.txt
 
 # Time zone
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
@@ -172,7 +169,7 @@ systemctl enable bluetooth.service
 if [[ $WM = 'dwm' ]]; then
     # Install packages
     pacman -S --needed --noconfirm - < "$UTILS"/dwm/packages.txt
-    sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/dwm/packages-aur.txt
+    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/dwm/packages-aur.txt
 
     mv /etc/environment /etc/environment.backup
     cp "$UTILS"/dwm/environment /etc/environment
@@ -207,7 +204,7 @@ if [[ $WM = 'dwm' ]]; then
 elif [[ $WM = 'Sway' ]]; then
     # Install packages
     pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
-    sudo -u "$USERNAME" yay -S --needed --noconfirm - < "$UTILS"/sway/packages-aur.txt
+    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
 
     mv /etc/environment /etc/environment.backup
     cp "$UTILS"/sway/environment /etc/environment
