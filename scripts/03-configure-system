@@ -106,6 +106,12 @@ if [[ $LAPTOP = 'yes' ]]; then
     # Add user to video group and allow to change the brightness
     usermod -aG video "$USERNAME"
     cp "$UTILS"/backlight.rules /etc/udev/rules.d/backlight.rules
+
+    # Add libinput quirks file to fix disable touchpad while typing
+    cp "$UTILS"/local-overrides.quirks /etc/libinput/local-overrides.quirks
+
+    # Ignore lid close when using external monitor
+    sed -i 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/' /etc/systemd/logind.conf
 fi
 
 # Desktop setup
@@ -148,6 +154,9 @@ systemctl enable reflector.timer
 # Enable paccache.timer
 systemctl enable paccache.timer
 
+# Enable man-db timer
+systemctl enable man-db.timer
+
 # Disable PC Speaker
 cp "$UTILS"/nobeep.conf /etc/modprobe.d/nobeep.conf
 
@@ -161,6 +170,8 @@ systemctl enable getty@tty1
 
 # Enable bluetooth
 systemctl enable bluetooth.service
+# Don't automatically start bluetooth
+sed -i 's/^AutoEnable=.*/AutoEnable=false/' /etc/bluetooth/main.conf
 
 # Spotify remove banner
 "$SCRIPTS"/spotify-remove-banner

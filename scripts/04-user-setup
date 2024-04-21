@@ -16,6 +16,9 @@ systemctl --user enable pipewire-pulse.service
 # Enable syncthing service
 systemctl --user enable syncthing.service
 
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Bare clone dotfiles repo and set up config alias
 git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
