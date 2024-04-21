@@ -13,11 +13,13 @@ efibootmgr
 exfat-utils
 firefox
 fish
+fzf
 gimp
 git
 gnome-themes-extra
 gtk3
 htop
+keyd
 libreoffice-fresh
 linux-headers
 lsd
@@ -50,6 +52,7 @@ starship
 syncthing
 thunar
 tldr
+tmux
 trash-cli
 ttf-jetbrains-mono
 ttf-liberation

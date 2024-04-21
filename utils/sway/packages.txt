@@ -1,5 +1,6 @@
 foot
 gammastep
+kitty
 nwg-look
 polkit
 sway

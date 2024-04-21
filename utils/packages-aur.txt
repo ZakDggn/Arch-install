@@ -1,5 +1,4 @@
 bluetuith-bin
-keyd
 ncpamixer
 spotify
 spotify-adblock-git
