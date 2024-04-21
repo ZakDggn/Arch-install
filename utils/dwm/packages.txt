@@ -10,7 +10,6 @@ picom
 redshift
 rofi
 unclutter
-wmname
 xclip
 xfce4-screenshooter
 xorg-server

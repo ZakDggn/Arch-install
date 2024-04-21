@@ -58,5 +58,6 @@ ufw
 unzip
 vim
 wireplumber
+wmname
 xdg-utils
 zip

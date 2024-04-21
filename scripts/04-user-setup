@@ -21,6 +21,7 @@ git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 $config config status.showUntrackedFiles no
 mv .bashrc .bashrc.backup
+mv .bash_profile .bash_profile.backup
 $config checkout
 $config remote set-url origin git@github.com:ZakDggn/dotfiles
 
@@ -55,8 +56,4 @@ fi
 if [[ $WM = 'Sway' ]]; then
     # Create screenshots directory for grimshot
     mkdir "$HOME"/Pictures/Screenshots
-
-    # Switch dotfiles branch to sway
-    mv .bash_profile .bash_profile.backup
-    $config switch sway
 fi
