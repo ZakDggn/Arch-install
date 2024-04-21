@@ -42,7 +42,7 @@ if [[ $AUTO_PARTITION = 'yes' ]]; then
       ROOT_PARTITION="${DRIVE}2"
     fi
 else
-    PARTITIONS=$(lsblk -no PATH | grep -E '(sd.|nvme.*p)[[:digit:]]')
+    PARTITIONS=$(lsblk -no PATH | grep -E '(sd.|nvme.*p)[[:digit:]]|/dev/mapper/')
     printf '\nSelect EFI partition:\n'
     select EFI_PARTITION in $PARTITIONS; do
         if [[ -n "$EFI_PARTITION" ]]; then
@@ -88,7 +88,7 @@ if [[ -z $SWAP_SIZE ]]; then
 fi
 
 printf '\nSelect window manager:\n'
-select WM in Sway dwm; do
+select WM in sway dwm none; do
   if [[ -n "$WM" ]]; then
     break
   fi

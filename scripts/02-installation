@@ -21,11 +21,11 @@ if [[ $AUTO_PARTITION = 'yes' ]]; then
     sgdisk -o "${DRIVE}"
     sgdisk -I -n 1:0:+1000M -t=1:ef00 "${DRIVE}"
     sgdisk -I -n 2:0:0      -t=2:8300 "${DRIVE}"
-fi
 
-# Format the partitions
-mkfs.fat -F 32 "$EFI_PARTITION"
-mkfs.ext4 "$ROOT_PARTITION"
+    # Format the partitions
+    mkfs.fat -F 32 "$EFI_PARTITION"
+    mkfs.ext4 "$ROOT_PARTITION"
+fi
 
 # Mount the file systems
 mount "$ROOT_PARTITION" /mnt

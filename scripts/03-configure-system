@@ -61,15 +61,21 @@ systemctl enable NetworkManager.service
 # Root password
 echo "root:$PASSWORD" | chpasswd
 
-# Plymouth
-sed -i '/^HOOKS=/s/)/ plymouth)/' /etc/mkinitcpio.conf
-
 # Boot loader
 UUID=$(blkid "$ROOT_PARTITION" --match-tag UUID -o value)
 bootctl install
 cp "$UTILS"/loader.conf "$ESP"/loader/loader.conf
 sed "s/uuid/$UUID/" "$UTILS"/arch.conf > "$ESP"/loader/entries/arch.conf
 systemctl enable systemd-boot-update.service
+
+# Plymouth
+sed -i '/^HOOKS=/s/)/ plymouth)/' /etc/mkinitcpio.conf
+
+# Add mkinitcpio hook if installing on lvm
+if grep -q '/dev/mapper/' <<< "$ROOT_PARTITION"; then
+    pacman -S --noconfirm lvm2
+    sed -i '/^HOOKS=/s/block /block lvm2 /' /etc/mkinitcpio.conf
+fi
 
 # Nvidia setup
 if [[ $NVIDIA = 'yes' ]]; then
@@ -83,8 +89,10 @@ if [[ $NVIDIA = 'yes' ]]; then
     cp "$UTILS"/nvidia-power-management.conf /etc/modprobe.d/nvidia-power-management.conf
     systemctl enable nvidia-suspend.service
     systemctl enable nvidia-resume.service
-    mkinitcpio -P
 fi
+
+# Re-generate initramfs
+mkinitcpio -P
 
 # Create swapfile
 if [[ $SWAP_SIZE -ne 0 ]]; then
@@ -212,7 +220,7 @@ if [[ $WM = 'dwm' ]]; then
     fi
 
 # Sway setup
-elif [[ $WM = 'Sway' ]]; then
+elif [[ $WM = 'sway' ]]; then
     # Install packages
     pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
     sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt

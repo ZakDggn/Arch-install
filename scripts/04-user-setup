@@ -56,7 +56,7 @@ if [[ $WM = 'dwm' ]]; then
 fi
 
 # Sway setup
-if [[ $WM = 'Sway' ]]; then
+if [[ $WM = 'sway' ]]; then
     # Create screenshots directory for grimshot
-    mkdir "$HOME"/Pictures/Screenshots
+    mkdir -p "$HOME"/Pictures/Screenshots
 fi
