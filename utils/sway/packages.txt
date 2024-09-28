@@ -1,8 +1,10 @@
 foot
 gammastep
 kitty
+nwg-bar
 nwg-look
 polkit
+rofi-wayland
 sway
 swaybg
 swayidle

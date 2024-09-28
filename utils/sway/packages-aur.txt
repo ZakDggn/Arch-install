@@ -1,6 +1,4 @@
 chayang
 grimshot
-nwg-bar-bin
-rofi-lbonn-wayland-git
 wayland-pipewire-idle-inhibit
 wlogout

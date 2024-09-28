@@ -21,7 +21,7 @@ fi
 if [[ $NVIDIA = 'yes' ]]; then
     pacman -S --needed --noconfirm nvidia
 else
-    pacman -S --needed --noconfirm mesa xf86-video-amdgpu libva-mesa-driver
+    pacman -S --needed --noconfirm mesa libva-mesa-driver
 fi
 
 # Enable parallel compilation in makepkg.conf
