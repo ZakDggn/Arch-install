@@ -16,6 +16,7 @@ fish
 fzf
 gimp
 git
+gnome-keyring
 gnome-themes-extra
 gtk3
 htop
