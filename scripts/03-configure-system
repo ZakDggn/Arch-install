@@ -174,11 +174,15 @@ cp "$UTILS"/nobeep.conf /etc/modprobe.d/nobeep.conf
 # Power button suspends
 sed -i 's/#HandlePowerKey=.*/HandlePowerKey=suspend/' /etc/systemd/logind.conf
 
+# Suspend after idle in tty
+sed -i 's/#IdleAction=.*/IdleAction=suspend/' /etc/systemd/logind.conf
+sed -i 's/#IdleActionSec=.*/IdleActionSec=5min/' /etc/systemd/logind.conf
+
 # Prompt only the password for login on tty1
 mkdir -p /etc/systemd/system/getty@tty1.service.d
 sed "s/USERNAME/$USERNAME/" "$UTILS"/skip-username.conf > /etc/systemd/system/getty@tty1.service.d/skip-username.conf
 cp "$UTILS"/activate-numlock.conf /etc/systemd/system/getty@.service.d/activate-numlock.conf
-systemctl enable getty@tty1
+#systemctl enable getty@tty1
 
 # Enable bluetooth
 systemctl enable bluetooth.service
