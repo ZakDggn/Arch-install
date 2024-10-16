@@ -1,4 +1,2 @@
 chayang
-grimshot
 wayland-pipewire-idle-inhibit
-wlogout

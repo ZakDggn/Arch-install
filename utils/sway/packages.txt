@@ -7,6 +7,7 @@ polkit
 rofi-wayland
 sway
 swaybg
+sway-contrib
 swayidle
 swayimg
 swaylock

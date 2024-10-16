@@ -79,7 +79,7 @@ fi
 
 # Nvidia setup
 if [[ $NVIDIA = 'yes' ]]; then
-    sed -i '/^options/s/$/ nvidia_drm.modeset=1/' "$ESP"/loader/entries/arch.conf
+    sed -i '/^options/s/$/ nvidia_drm.modeset=1 nvidia_drm.fbdev=1/' "$ESP"/loader/entries/arch.conf
     sed -i '/^HOOKS=/s/\( *\)kms */\1/' /etc/mkinitcpio.conf
     # Enable early KMS
     sed -i '/^MODULES=/s/()/(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
@@ -204,7 +204,6 @@ if [[ $WM = 'dwm' ]]; then
     pacman -S --needed --noconfirm - < "$UTILS"/dwm/packages.txt
     sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/dwm/packages-aur.txt
 
-    mv /etc/environment /etc/environment.backup
     cp "$UTILS"/dwm/environment /etc/environment
 
     # Lightdm
@@ -235,17 +234,16 @@ if [[ $WM = 'dwm' ]]; then
 
 # Sway setup
 elif [[ $WM = 'sway' ]]; then
-    # Install packages
-    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
-    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
-
-    mv /etc/environment /etc/environment.backup
-    cp "$UTILS"/sway/environment /etc/environment
-
     if [[ $NVIDIA = 'yes' ]]; then
+        sudo -u "$USERNAME" yay -S --noconfirm "wlroots0.17-nvidia"
         install "$UTILS"/sway/start-sway-nvidia /usr/local/bin/start-sway
     else
         install "$UTILS"/sway/start-sway /usr/local/bin/start-sway
     fi
+    # Install packages
+    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
+    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
+
+    cp "$UTILS"/sway/environment /etc/environment
 fi
 
