@@ -29,7 +29,7 @@ fi
 
 # Mount the file systems
 mount "$ROOT_PARTITION" /mnt
-mount --mkdir "$EFI_PARTITION" /mnt"$ESP"
+mount -o umask=077 --mkdir "$EFI_PARTITION" /mnt"$ESP"
 
 # Select the mirrors
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup

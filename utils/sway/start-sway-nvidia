@@ -1,11 +1,12 @@
 #!/bin/bash
 
-export MOZ_ENABLE_WAYLAND=1
-export XDG_SCREENSHOTS_DIR=~/Pictures/Screenshots/
 export WLR_NO_HARDWARE_CURSORS=1
-export XDG_CURRENT_DESKTOP='sway:wlroots'
+export WLR_RENDERER=gles2
 export GBM_BACKEND='nvidia-drm'
 export __GLX_VENDOR_LIBRARY_NAME='nvidia'
-export WLR_RENDERER=gles2
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP='sway:wlroots'
+export XDG_SCREENSHOTS_DIR=~/Pictures/Screenshots
+export XDG_CONFIG_HOME=~/.config
 
 sway --unsupported-gpu

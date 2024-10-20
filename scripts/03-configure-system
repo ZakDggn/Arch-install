@@ -181,8 +181,9 @@ sed -i 's/#IdleActionSec=.*/IdleActionSec=5min/' /etc/systemd/logind.conf
 # Prompt only the password for login on tty1
 mkdir -p /etc/systemd/system/getty@tty1.service.d
 sed "s/USERNAME/$USERNAME/" "$UTILS"/skip-username.conf > /etc/systemd/system/getty@tty1.service.d/skip-username.conf
+mkdir -p /etc/systemd/system/getty@.service.d
 cp "$UTILS"/activate-numlock.conf /etc/systemd/system/getty@.service.d/activate-numlock.conf
-#systemctl enable getty@tty1
+systemctl enable getty@tty1
 
 # Enable bluetooth
 systemctl enable bluetooth.service
@@ -234,16 +235,17 @@ if [[ $WM = 'dwm' ]]; then
 
 # Sway setup
 elif [[ $WM = 'sway' ]]; then
+    # Install packages
+    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
+    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
+
     if [[ $NVIDIA = 'yes' ]]; then
+        pacman -Rndd --noconfirm "wlroots0.17"
         sudo -u "$USERNAME" yay -S --noconfirm "wlroots0.17-nvidia"
         install "$UTILS"/sway/start-sway-nvidia /usr/local/bin/start-sway
     else
         install "$UTILS"/sway/start-sway /usr/local/bin/start-sway
     fi
-    # Install packages
-    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
-    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
-
     cp "$UTILS"/sway/environment /etc/environment
 fi
 

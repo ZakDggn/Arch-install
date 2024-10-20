@@ -9,6 +9,7 @@ cd "$HOME"
 # Install Informant
 yay -S --noconfirm informant
 sudo informant read --all
+sudo usermod -aG informant "$USERNAME"
 
 # Enable pipewire-pulse service
 systemctl --user enable pipewire-pulse.service
