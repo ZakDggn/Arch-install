@@ -2,3 +2,4 @@ bluetuith-bin
 ncpamixer
 spotify
 spotify-adblock-git
+xcursor-breeze
