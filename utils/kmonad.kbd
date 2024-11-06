@@ -1,0 +1,91 @@
+(defcfg
+  input (device-file "KBD_PATH")
+  output (uinput-sink "KMonad output")
+  fallthrough true
+  allow-cmd false
+)
+
+(defalias
+  cap (tap-next esc (layer-toggle nav))
+  +cl (tap-macro caps (layer-add caps_layer))
+  -cl (tap-macro caps (layer-rem caps_layer))
+  swg (layer-switch graphite)
+  swq (layer-switch qwerty)
+  sft (around sft (layer-toggle graphite_shift))
+  ctl (around ctl (layer-toggle graphite_mod))
+  alt (around alt (layer-toggle graphite_mod))
+  met (around met (layer-toggle graphite_mod))
+  n (tap-hold 200 n @met)
+  r (tap-hold 200 r @alt)
+  t (tap-hold 200 t @ctl)
+  s (tap-hold-next-release 200 s @sft)
+  h (tap-hold-next-release 200 h @sft)
+  a (tap-hold 200 a @ctl)
+  e (tap-hold 200 e @alt)
+  i (tap-hold 200 i @met)
+  spc (tap-hold-next-release 250 spc (layer-toggle num))
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]
+  caps a    s    d    f    g    h    j    k    l    ;    '    bksl ret
+  lsft nubs z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(deflayer graphite
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  b    l    d    w    z    '    f    o    u    j    ;    =
+  @cap @n   @r   @t   @s   g    y    @h   @a   @e   @i   ,    bksl ret
+  @sft q    x    m    c    v    nubs k    p    .    -    /    @sft
+  @ctl @met @alt           @spc           @swq @met cmp  @ctl
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _    del
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    left down up   rght _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer qwerty
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              @swg _    _    _
+)
+
+(deflayer graphite_shift
+  _    _    '    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    -    _    _    _    _    _    _
+  @+cl _    _    _    _    _    _    _    _    _    _    /    _    _
+  _    _    _    _    _    _    _    _    _    _    2    ,    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer graphite_mod
+  _    _    2    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  lsft _    _    _    _    _    _    _    _    _    _    _    rsft
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer caps_layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @-cl _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)

@@ -118,9 +118,6 @@ if [[ $LAPTOP = 'yes' ]]; then
     usermod -aG video "$USERNAME"
     cp "$UTILS"/backlight.rules /etc/udev/rules.d/backlight.rules
 
-    # Add libinput quirks file to fix disable touchpad while typing
-    cp "$UTILS"/local-overrides.quirks /etc/libinput/local-overrides.quirks
-
     # Ignore lid close when using external monitor
     sed -i 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/' /etc/systemd/logind.conf
 fi
@@ -145,10 +142,14 @@ systemctl enable ufw.service
 #ufw allow syncthing
 install "$UTILS"/manage-syncthing /etc/NetworkManager/dispatcher.d/pre-up.d/
 
-# Keyd
-cp "$UTILS"/keyd/* /etc/keyd/
-systemctl enable keyd.service
-usermod -aG keyd "$USERNAME"
+# KMonad
+mkdir /etc/kmonad
+KBD_PATH="$($UTILS/kmonad-select-keyboard)"
+# escape forward slashes in keyboard path for use in next sed command
+KBD_PATH="$(sed 's/\//\\\//g' <<< "$KBD_PATH")"
+sed "s/KBD_PATH/$KBD_PATH/" "$UTILS"/kmonad.kbd > /etc/kmonad/kmonad.kbd
+cp "$UTILS"/kmonad.service /etc/systemd/system/kmonad.service
+systemctl enable kmonad.service
 
 # Enable automtic trim
 systemctl enable fstrim.timer

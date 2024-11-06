@@ -18,7 +18,7 @@ git
 gnome-keyring
 gnome-themes-extra
 gtk3
-keyd
+kmonad
 linux-headers
 lsd
 lxsession-gtk3

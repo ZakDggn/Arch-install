@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ -d "/dev/input/by-id/" ]]; then
+  KEYBOARDS=$(ls /dev/input/by-id/*-kbd)
+fi
+if [[ -z "$KEYBOARDS" ]]; then
+  KEYBOARDS=$(ls /dev/input/by-path/*-kbd)
+fi
+CORRECT_KBD=""
+HIGHEST_NUM=0
+for kbd in $KEYBOARDS; do
+  EVENT_PATH="$(realpath "$kbd")"
+  EVENT_NUM="$(grep -o '[0-9]\+$' <<< "$EVENT_PATH")"
+  if [[ $EVENT_NUM -gt $HIGHEST_NUM ]]; then
+    CORRECT_KBD=$kbd
+    HIGHEST_NUM=$EVENT_NUM
+  fi
+done
+echo "$CORRECT_KBD"
