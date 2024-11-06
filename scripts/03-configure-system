@@ -241,8 +241,6 @@ elif [[ $WM = 'sway' ]]; then
     sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
 
     if [[ $NVIDIA = 'yes' ]]; then
-        pacman -Rndd --noconfirm "wlroots0.17"
-        sudo -u "$USERNAME" yay -S --noconfirm "wlroots0.17-nvidia"
         install "$UTILS"/sway/start-sway-nvidia /usr/local/bin/start-sway
     else
         install "$UTILS"/sway/start-sway /usr/local/bin/start-sway
