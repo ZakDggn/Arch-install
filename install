@@ -17,7 +17,11 @@ mkdir /mnt$UTILS
 mount -o bind,ro utils /mnt$UTILS
 
 arch-chroot /mnt $SCRIPTS/03-configure-system
-arch-chroot -u "$USERNAME":"$USERNAME" /mnt $SCRIPTS/04-user-setup
+
+unset PASSWORD
+unset PASSWORD_CONFIRM
+export -p > utils/variables
+systemd-nspawn -u "$USERNAME" -D /mnt $SCRIPTS/04-user-setup
 
 umount /mnt$SCRIPTS
 rmdir /mnt$SCRIPTS

@@ -2,6 +2,8 @@
 
 set -eufo pipefail
 
+source /utils/variables
+
 USER=$USERNAME
 HOME=/home/$USERNAME
 cd "$HOME"
@@ -24,10 +26,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone --bare https://github.com/ZakDggn/dotfiles "$HOME"/.dotfiles
 config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 $config config status.showUntrackedFiles no
-mv .bashrc .bashrc.backup
-mv .bash_profile .bash_profile.backup
-$config submodule update --init
+rm .bashrc
+rm .bash_profile
 $config checkout
+$config submodule update --init
 $config remote set-url origin git@github.com:ZakDggn/dotfiles
 sed -i '/\[remote/a \	fetch = +refs\/heads\/\*:refs\/remotes\/origin\/\*' "$HOME"/.dotfiles/config
 

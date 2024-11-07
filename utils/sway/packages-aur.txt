@@ -1,2 +1,2 @@
 chayang
-wayland-pipewire-idle-inhibit
+sway-audio-idle-inhibit-git
