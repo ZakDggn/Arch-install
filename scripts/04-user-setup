@@ -34,7 +34,7 @@ $config remote set-url origin git@github.com:ZakDggn/dotfiles
 sed -i '/\[remote/a \	fetch = +refs\/heads\/\*:refs\/remotes\/origin\/\*' "$HOME"/.dotfiles/config
 
 # Create user's home directories
-for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
+for d in Documents Downloads Music Pictures Videos; do
     if [[ -d "$HDD_MNT"/$d ]]; then
         ln -s "$HDD_MNT"/$d "$HOME"/$d
     else
