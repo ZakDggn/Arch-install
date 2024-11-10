@@ -11,15 +11,18 @@
   -cl (tap-macro caps (layer-rem caps_layer))
   swg (multi-tap 200 ralt (layer-switch graphite))
   swq (multi-tap 200 ralt (layer-switch qwerty))
-  sft (around sft (layer-toggle graphite_shift))
+  lsh (around rsft (layer-toggle graphite_shift))
+  rsh (around lsft (layer-toggle graphite_shift))
   ctl (around ctl (layer-toggle graphite_mod))
   alt (around alt (layer-toggle graphite_mod))
   met (around met (layer-toggle graphite_mod))
   n (tap-hold 200 n @met)
   r (tap-hold 200 r @alt)
   t (tap-hold 200 t @ctl)
-  s (tap-hold-next-release 200 s @sft)
-  h (tap-hold-next-release 200 h @sft)
+  s (tap-hold-next-release 200 s @lsh)
+  mds (tap-hold-next-release 200 s lsft)
+  h (tap-hold-next-release 200 h @rsh)
+  mdh (tap-hold-next-release 200 h rsft)
   a (tap-hold 200 a @ctl)
   e (tap-hold 200 e @alt)
   i (tap-hold 200 i @met)
@@ -38,7 +41,7 @@
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
   tab  b    l    d    w    z    '    f    o    u    j    ;    =
   @cap @n   @r   @t   @s   g    y    @h   @a   @e   @i   ,    bksl ret
-  @sft q    x    m    c    v    nubs k    p    .    -    /    @sft
+  @lsh q    x    m    c    v    nubs k    p    .    -    /    @rsh
   @ctl @met @alt           @spc           @swq @met cmp  @ctl
 )
 
@@ -69,7 +72,7 @@
 (deflayer graphite_mod
   _    _    2    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    @mds _    _    @mdh _    _    _    _    _    _
   lsft _    _    _    _    _    _    _    _    _    _    _    rsft
   _    _    _              _              _    _    _    _
 )
