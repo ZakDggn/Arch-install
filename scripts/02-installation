@@ -2,9 +2,6 @@
 
 set -eufo pipefail
 
-# Set the console keyboard layout
-localectl set-keymap uk
-
 # Verify the boot mode
 if ! [ -f /sys/firmware/efi/fw_platform_size ]; then
     echo 'System is not booted in UEFI mode'
