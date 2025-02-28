@@ -87,13 +87,6 @@ if [[ -z $SWAP_SIZE ]]; then
   SWAP_SIZE=$DEFAULT_SWAP_SIZE
 fi
 
-printf '\nSelect window manager:\n'
-select WM in sway dwm none; do
-  if [[ -n "$WM" ]]; then
-    break
-  fi
-done
-
 ESP='/boot'
 HDD_MNT='/media/hdd'
 
@@ -107,7 +100,6 @@ Laptop: $LAPTOP
 NVIDIA: $NVIDIA
 Hostname: $HOSTNAME
 Swap size: $SWAP_SIZE GiB
-Window manager: $WM
 
 EOF
 

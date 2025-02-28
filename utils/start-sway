@@ -4,5 +4,6 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_DESKTOP='sway:wlroots'
 export XDG_SCREENSHOTS_DIR=~/Pictures/Screenshots
 export XDG_CONFIG_HOME=~/.config
+export MOZ_USE_XINPUT2=1
 
 sway

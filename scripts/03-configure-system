@@ -200,51 +200,13 @@ echo "password	optional	pam_gnome_keyring.so" >> /etc/pam.d/passwd
 # Spotify remove banner
 "$SCRIPTS"/spotify-remove-banner
 
-# dwm setup
-if [[ $WM = 'dwm' ]]; then
-    # Install packages
-    pacman -S --needed --noconfirm - < "$UTILS"/dwm/packages.txt
-    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/dwm/packages-aur.txt
-
-    cp "$UTILS"/dwm/environment /etc/environment
-
-    # Lightdm
-    systemctl enable lightdm.service
-    sed -i 's/^#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
-    sed -i 's/#greeter-setup-script=.*/greeter-setup-script=\/usr\/bin\/numlockx on/' /etc/lightdm/lightdm.conf
-    sed -i '/^webkit_theme/s/=.*/= litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
-    cp "$UTILS"/wallpaper.png /usr/share/backgrounds/
-
-    # Set keymap
-    cp "$UTILS"/dwm/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
-
-    # Create systemd sleep hook to lock when suspending
-    cp "$UTILS"/dwm/suspend@.service /etc/systemd/system/suspend@.service
-    systemctl enable suspend@"$USERNAME".service
-
-    # Create systemd resume hook to turn the display on when resuming from suspend
-    cp "$UTILS"/dwm/resume@.service /etc/systemd/system/resume@.service
-    systemctl enable resume@"$USERNAME".service
-
-    # Disable mouse acceleration
-    cp "$UTILS"/dwm/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-
-    # Touchpad
-    if [[ $LAPTOP = 'yes' ]]; then
-        cp "$UTILS"/dwm/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-    fi
-
 # Sway setup
-elif [[ $WM = 'sway' ]]; then
-    # Install packages
-    pacman -S --needed --noconfirm - < "$UTILS"/sway/packages.txt
-    sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/sway/packages-aur.txt
-
-    if [[ $NVIDIA = 'yes' ]]; then
-        install "$UTILS"/sway/start-sway-nvidia /usr/local/bin/start-sway
-    else
-        install "$UTILS"/sway/start-sway /usr/local/bin/start-sway
-    fi
-    cp "$UTILS"/sway/environment /etc/environment
+pacman -S --needed --noconfirm - < "$UTILS"/packages-sway.txt
+sudo -u "$USERNAME" yay -S --noconfirm - < "$UTILS"/packages-sway-aur.txt
+if [[ $NVIDIA = 'yes' ]]; then
+    install "$UTILS"/start-sway-nvidia /usr/local/bin/start-sway
+else
+    install "$UTILS"/start-sway /usr/local/bin/start-sway
 fi
 
+cp "$UTILS"/environment /etc/environment
