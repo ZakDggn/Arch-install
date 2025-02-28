@@ -144,12 +144,8 @@ install "$UTILS"/manage-syncthing /etc/NetworkManager/dispatcher.d/pre-up.d/
 
 # KMonad
 mkdir /etc/kmonad
-KBD_PATH="$($UTILS/kmonad-select-keyboard)"
-# escape forward slashes in keyboard path for use in next sed command
-KBD_PATH="$(sed 's/\//\\\//g' <<< "$KBD_PATH")"
-sed "s/KBD_PATH/$KBD_PATH/" "$UTILS"/kmonad.kbd > /etc/kmonad/kmonad.kbd
-cp "$UTILS"/kmonad.service /etc/systemd/system/kmonad.service
-systemctl enable kmonad.service
+cp "$UTILS"/kmonad.kbd > /etc/kmonad/config.kbd
+systemctl enable kmonad@config.service
 
 # Enable automtic trim
 systemctl enable fstrim.timer
